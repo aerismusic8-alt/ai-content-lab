@@ -113,6 +113,19 @@ Uploads land **private** by default. Setup details, including the redirect URI
 that has to be registered in Google Cloud console, are in
 `docs/PUBLISHING.md`.
 
+## Working with a second account
+
+Two OpenHands accounts cannot see each other's conversations, so they coordinate
+through this repository: `work/QUEUE.md` is the backlog and
+`scripts/queue.py` records who has which episode.
+
+```bash
+python3 scripts/queue.py list
+python3 scripts/queue.py claim ep02 --as account-1 --push
+```
+
+See `docs/TWO-ACCOUNTS.md`.
+
 ## Layout
 
 ```

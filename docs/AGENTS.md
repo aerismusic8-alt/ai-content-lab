@@ -22,6 +22,8 @@ work is pushed to `kongkeat938/ai-content-lab` and served from a link.
 | `content-lab/docs/CONTENT-PLAN.md` | the episode slate and the copyright evidence |
 | `content-lab/docs/RECIPE.md` | measured technical settings for audio, colour, sync |
 | `content-lab/docs/API.md` | the publishing channel an agent pulls from |
+| `content-lab/work/QUEUE.md` | the shared backlog — claim before you build |
+| `content-lab/docs/TWO-ACCOUNTS.md` | how two accounts share the work |
 | `.agents/skills/thai-story-video/SKILL.md` | how to build an episode, step by step |
 
 ## Non-negotiable rules
@@ -37,7 +39,11 @@ work is pushed to `kongkeat938/ai-content-lab` and served from a link.
    `assets/images/credits.json` and are shown on the page.
 5. **Verify before claiming done.** Loudness, true peak, colour range, line
    timings and seekability all have a check in the skill. Run them.
-6. **Publish the channel after every episode.** Run `scripts/build_api.py` and
+6. **Claim before you build, if another account may be working too.** Run
+   `python3 scripts/queue.py list`, then `claim <ep> --as <you> --push`. The
+   queue file is the lock; whoever commits first wins. Only the pipeline owner
+   edits `scripts/` — propose changes instead.
+7. **Publish the channel after every episode.** Run `scripts/build_api.py` and
    attach the media with `scripts/publish_release.sh`. Media goes to a GitHub
    Release, never into git — a 15 MB video per episode would make a repository
    nobody can clone.
