@@ -89,7 +89,15 @@ post it without a human copying anything:
 
 `posting.youtube`, `posting.facebook`, `posting.tiktok` and `posting.blog` hold
 text that is already formatted, and `media.video.url` is a permanent download
-link. See `docs/API.md`. The client is `scripts/post.py`.
+link. See `docs/API.md`.
+
+Three ways for an agent to use it:
+
+* `GET /llms.txt` — the instructions are inline, so nothing else is needed
+* `scripts/mcp_server.py` — the channel as five MCP tools (config: `mcp.json`)
+* `scripts/post.py` — a command-line client, `--list | --platform | --download | --report`
+
+A copy-paste prompt for an AI is in `docs/AGENT-PROMPT.md`.
 
 ## Layout
 

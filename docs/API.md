@@ -64,6 +64,28 @@ Returns `201` with the stored record. Rules:
   which is outside `site/`, so it is never served, and it is gitignored. The
   caller's address is recorded but shown masked on `GET`.
 
+## MCP — the channel as tools
+
+An AI that speaks MCP needs no URLs at all. `scripts/mcp_server.py` exposes five
+tools: `list_episodes`, `get_episode`, `get_posting`, `report_posted`,
+`list_posted`. It talks to this same HTTP API, so there is one source of truth.
+
+```json
+{
+  "mcpServers": {
+    "thai-story-channel": {
+      "command": "python3",
+      "args": ["/abs/path/to/content-lab/scripts/mcp_server.py"],
+      "env": { "CHANNEL_BASE": "https://<host>" }
+    }
+  }
+}
+```
+
+A ready copy is at `mcp.json`. Verified over the stdio protocol: `initialize`,
+`tools/list`, and calls to `list_episodes`, `get_posting`, `report_posted`,
+`list_posted` and `get_episode`.
+
 ## The client
 
 ```bash
@@ -75,6 +97,12 @@ python3 scripts/post.py ep01 --platform youtube --report https://youtu.be/XXXX
 ```
 
 `--base` overrides the channel URL; `CHANNEL_BASE` sets it for a session.
+
+## Instructions for the agent
+
+`GET /llms.txt` carries the publishing instructions inline, so an agent that
+reads it needs nothing else. For a copy-paste prompt or the MCP registration,
+see `docs/AGENT-PROMPT.md`.
 
 ## Regenerating
 

@@ -5,19 +5,43 @@
 > Facebook, TikTok and a blog. All stories are Thai public-domain
 > literature. Everything here is free to reuse with attribution.
 
-## How to use this
+## Instructions for an AI agent
+
+You are expected to publish these episodes. Follow this exactly.
+
+1. Read the catalogue to see what exists:
+   GET https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json
+2. Fetch the episode you want. Use its `posting` object verbatim — the
+   text is already formatted for the platform, including the chapter
+   timestamps, the source and the attribution:
+   GET https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/<slug>.json
+3. Before posting, check what has already been published, so you do not
+   post the same episode twice:
+   GET https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
+4. After posting, report the public URL back:
+   POST https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
+   body: {"episode":"ep01","platform":"youtube","url":"<link>"}
+
+Attach `media.video.url` as the video and `media.poster.url` as the
+thumbnail; both are permanent download links. Keep the attribution
+block and the `credits` list — the stories are public domain but the
+photographs are not all public domain.
+
+If every path returns 502, the host is restarting. Say so; do not retry
+in a loop.
+
+### Tools instead of URLs
+
+If you speak MCP, run `scripts/mcp_server.py` and use its tools:
+`list_episodes`, `get_episode`, `get_posting`, `report_posted`,
+`list_posted`. Then you need no URLs at all.
+
+## Endpoints
 
 - Catalogue: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json
 - One episode: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/<slug>.json
 - Feed: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml
-
-Fetch an episode JSON and read the `posting` object. It already contains
-the title, description, tags and hashtags in the right shape for each
-platform, so no rewriting is needed. `media.video.url` and
-`media.audio.url` are permanent download links. `chapters` gives the
-timestamps for a YouTube chapter list.
-
-Report what you posted with `POST /api/receipts` (see docs/API.md).
+- Receipts: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
 
 ## Episodes
 

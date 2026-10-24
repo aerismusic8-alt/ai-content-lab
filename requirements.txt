@@ -1,0 +1,8 @@
+# Pipeline dependencies. Everything here is free and open source.
+edge-tts>=6.1          # Thai text-to-speech (the only free Thai voices)
+Pillow>=10             # poster cards
+# ffmpeg is a system package, not pip: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+# Optional: only needed to run scripts/mcp_server.py, so an AI agent can call
+# the channel as tools instead of using URLs.
+mcp>=1.0

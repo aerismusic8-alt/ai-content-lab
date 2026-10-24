@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "thai-story-channel": {
+      "command": "python3",
+      "args": ["scripts/mcp_server.py"],
+      "env": {
+        "CHANNEL_BASE": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev"
+      }
+    }
+  }
+}
