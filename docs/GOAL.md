@@ -128,6 +128,30 @@ Priority order, with reasons, in `docs/CONTENT-PLAN.md`. Short version:
   somewhere real — that needs the user's approval.
 * **Long renders race the idle timer.** Split work into stages and commit often.
 
+## Where the work is stored
+
+Three places, and it matters which is which:
+
+| What | Where | Survives a sandbox recycle? |
+|---|---|---|
+| Scripts, docs, images, fonts, timings | `kongkeat938/ai-content-lab` (git) | yes — clone it anywhere |
+| Video and audio (large) | GitHub **Releases** of the same repo | yes — permanent download URL |
+| The running site and the link | the sandbox pod, port 12000 | **no** — dies with the pod |
+
+The repo is the source of truth. `git clone` plus `pip install edge-tts` plus
+`apt-get install ffmpeg` is enough to rebuild every episode from scratch.
+
+**Large media never goes into git.** A 15 MB video committed per episode means
+ten episodes is a ~150 MB repository that is slow to clone and keeps every
+version forever. Attach it to a release instead:
+
+```bash
+scripts/publish_release.sh episodes/ep02_mattanaphatha
+# -> https://github.com/kongkeat938/ai-content-lab/releases/download/ep02/ep02.mp4
+```
+
+That URL is permanent, unlike the sandbox link.
+
 ## Definition of done for an episode
 
 * narration script with speaker tags, in `episodes/<ep>/narration_th.txt`
@@ -139,3 +163,4 @@ Priority order, with reasons, in `docs/CONTENT-PLAN.md`. Short version:
 * video `yuv420p`, `color_range=tv`, 1920x1080
 * the page loads and the video can be **seeked** (range requests work)
 * committed to `kongkeat938/ai-content-lab`
+* media attached to a GitHub Release with `scripts/publish_release.sh`
