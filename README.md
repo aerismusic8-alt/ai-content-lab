@@ -71,7 +71,7 @@ python3 scripts/make_video.py episodes/ep01_gift_of_the_magi
 ### 6. Listen
 
 ```bash
-python3 -m http.server 12000 --directory site
+python3 scripts/serve.py 12000 site
 ```
 
 ## Layout

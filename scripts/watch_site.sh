@@ -6,10 +6,11 @@
 # recovers the server from idle cleanup or a crash.
 #
 # A 502 on every path means the process is gone (not that the page is broken),
-# so check `ps aux | grep http.server` before sharing a link.
+# so check `ps aux | grep serve.py` before sharing a link.
 
 PORT=12000
-DIR="$(cd "$(dirname "$0")/.." && pwd)/site"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+DIR="$ROOT/site"
 
 port_busy() {
   # `ss`/`netstat`/`lsof` are NOT installed in this image, and a missing tool
@@ -22,7 +23,9 @@ PY
 }
 
 start_server() {
-  setsid nohup python3 -m http.server "$PORT" --directory "$DIR" \
+  # serve.py, not `python3 -m http.server`: the stdlib server ignores Range
+  # headers, which stops <video> from seeking (and can block playback outright).
+  setsid nohup python3 "$ROOT/scripts/serve.py" "$PORT" "$DIR" \
     > /tmp/content_lab_http.log 2>&1 &
   sleep 2
 }
