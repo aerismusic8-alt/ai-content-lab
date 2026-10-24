@@ -1,0 +1,14 @@
+{
+  "script": "episodes/ep01_gift_of_the_magi/narration_th.txt",
+  "out": "episodes/ep01_gift_of_the_magi/audio_th.mp3",
+  "voice": "th-TH-NiwatNeural",
+  "rate": "-12%",
+  "pitch": "-10Hz",
+  "chars": 2781,
+  "lines": 108,
+  "words": 108,
+  "duration_sec": 305.5,
+  "lufs": "-14.4",
+  "true_peak_dbfs": "-3.4",
+  "timing": "episodes/ep01_gift_of_the_magi/timing.json"
+}

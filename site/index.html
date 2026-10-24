@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ของขวัญของคนโง่ — The Gift of the Magi</title>
+<style>
+  :root{
+    --gold:#d4af5f; --ink:#0b0a09; --paper:#f3efe7; --muted:#a9a29a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--ink);color:var(--paper)}
+  body{
+    font-family:"Sarabun","Noto Sans Thai",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+  }
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    justify-content:center;text-align:center;padding:48px 24px;
+    background:
+      radial-gradient(ellipse at 50% 40%, rgba(212,175,95,.16), transparent 62%),
+      linear-gradient(180deg,#100e0c 0%,#0b0a09 55%,#070605 100%);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,.82) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:860px}
+  .kicker{
+    font-size:13px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 22px;
+  }
+  h1{
+    font-size:clamp(34px,7.2vw,74px);line-height:1.12;margin:0 0 18px;
+    font-weight:800;letter-spacing:-.01em;
+  }
+  .sub{
+    font-size:clamp(13px,1.9vw,17px);letter-spacing:.30em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 40px;
+  }
+  .rule{width:120px;height:2px;background:var(--gold);margin:0 auto 40px}
+  .meta{
+    display:flex;gap:28px;justify-content:center;flex-wrap:wrap;
+    font-size:13px;color:var(--muted);margin-bottom:44px;
+  }
+  .meta b{color:var(--paper);font-weight:600}
+  .btn{
+    display:inline-block;padding:15px 40px;border:1px solid var(--gold);
+    color:var(--gold);text-decoration:none;font-weight:600;font-size:15px;
+    letter-spacing:.12em;transition:.25s;background:transparent;cursor:pointer;
+  }
+  .btn:hover{background:var(--gold);color:var(--ink)}
+  section{max-width:820px;margin:0 auto;padding:76px 24px}
+  h2{
+    font-size:15px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);
+    font-weight:600;margin:0 0 32px;
+  }
+  video{width:100%;display:block;background:#000;border:1px solid #23201c}
+  audio{width:100%;margin-top:22px;filter:invert(.9) hue-rotate(180deg)}
+  .script{
+    white-space:pre-wrap;font-size:16.5px;line-height:2.1;color:#ded8cf;
+    border-left:2px solid #2b2723;padding-left:26px;
+  }
+  .script p{margin:0 0 1.35em}
+  .credits{font-size:13px;color:var(--muted);line-height:1.9}
+  .credits a{color:#c9a961;text-decoration:none;border-bottom:1px solid #3a342c}
+  .credits a:hover{color:var(--gold)}
+  footer{
+    text-align:center;padding:56px 24px 72px;color:#6d665e;font-size:12.5px;
+    border-top:1px solid #1b1815;letter-spacing:.06em;
+  }
+  .note{
+    background:#131110;border:1px solid #241f1a;padding:20px 24px;
+    font-size:14px;color:#b8b1a8;margin-top:34px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="kicker">เรื่องสั้นคลาสสิก · ฉบับภาษาไทย</p>
+    <h1>ของขวัญของคนโง่</h1>
+    <p class="sub">The Gift of the Magi · O. Henry</p>
+    <div class="rule"></div>
+    <div class="meta">
+      <span>ความยาว <b>5:05 นาที</b></span>
+      <span>บรรยาย <b>ไทย</b></span>
+      <span>8 <b>ฉากภาพ</b></span>
+    </div>
+    <a class="btn" href="#listen">ฟังเลย</a>
+  </div>
+</div>
+
+<section id="listen">
+  <h2>ฟังเรื่อง</h2>
+  <video controls poster="media/ep01_poster.jpg" preload="metadata">
+    <source src="media/ep01.mp4" type="video/mp4">
+    เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+  </video>
+  <audio controls preload="metadata" src="media/ep01.mp3"></audio>
+  <div class="note">
+    ถ้าโหลดวิดีโอช้า ใช้ปุ่มเล่นเสียงด้านบนได้เลย — เสียงเป็นไฟล์เดียวกัน
+  </div>
+</section>
+
+<section>
+  <h2>บทบรรยาย</h2>
+  <div class="script" id="script"></div>
+</section>
+
+<section>
+  <h2>ที่มาของเนื้อหาและภาพ</h2>
+  <div class="credits" id="credits"></div>
+</section>
+
+<footer>
+  สร้างด้วยเครื่องมือฟรี 100% · ข้อความต้นฉบับเป็นสาธารณสมบัติ (Public Domain)
+</footer>
+
+<script>
+fetch('media/ep01_narration.txt').then(r=>r.text()).then(t=>{
+  const el=document.getElementById('script');
+  el.innerHTML = t.split(/\n\s*\n/).map(p=>'<p>'+p.replace(/\n/g,'<br>')+'</p>').join('');
+});
+fetch('credits.json').then(r=>r.json()).then(list=>{
+  const used={};
+  document.getElementById('credits').innerHTML = list.map(c=>
+    `<div>• “${c.title||c.file}” — ${c.creator} · <a href="${c.source}" target="_blank" rel="noopener">${c.license}</a></div>`
+  ).join('') + `<div style="margin-top:14px">ดนตรีประกอบและเสียงบรรยายสร้างด้วย edge-tts (ฟรี) · ฟอนต์ Kanit &amp; Prompt (SIL Open Font License)</div>`;
+});
+</script>
+</body>
+</html>

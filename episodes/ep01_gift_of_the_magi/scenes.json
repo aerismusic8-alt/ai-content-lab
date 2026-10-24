@@ -1,0 +1,71 @@
+{
+  "episode": "ep01_gift_of_the_magi",
+  "title": "ของขวัญของคนโง่",
+  "title_en": "The Gift of the Magi",
+  "scenes": [
+    {
+      "lines": [0, 9],
+      "image": "assets/images/img00_00.jpg",
+      "title": "ของขวัญของคนโง่",
+      "subtitle": "THE GIFT OF THE MAGI",
+      "chapter": "คืนก่อนวันคริสต์มาส",
+      "layout": 0
+    },
+    {
+      "lines": [10, 21],
+      "image": "assets/images/img09_00.jpg",
+      "title": "หนึ่งดอลลาร์แปดสิบเจ็ดเซนต์",
+      "subtitle": "ONE DOLLAR AND EIGHTY-SEVEN CENTS",
+      "chapter": "ห้องเช่าแปดดอลลาร์ต่อสัปดาห์",
+      "layout": 1
+    },
+    {
+      "lines": [22, 27],
+      "image": "assets/images/img02_00.jpg",
+      "title": "มรดกที่เธอภาคภูมิใจ",
+      "subtitle": "HER ONLY TREASURE",
+      "chapter": "ผมที่ยาวเลยเข่า",
+      "layout": 2
+    },
+    {
+      "lines": [28, 41],
+      "image": "assets/images/img05_00.jpg",
+      "title": "ขายผมไหม",
+      "subtitle": "WILL YOU BUY MY HAIR?",
+      "chapter": "ร้านทำผมกลางถนนหนาว",
+      "layout": 3
+    },
+    {
+      "lines": [42, 57],
+      "image": "assets/images/img01_00.jpg",
+      "title": "สายนาฬิกาแพลทินัม",
+      "subtitle": "A PLATINUM WATCH CHAIN",
+      "chapter": "ของขวัญที่เธอเลือก",
+      "layout": 4
+    },
+    {
+      "lines": [58, 71],
+      "image": "assets/images/img05_01.jpg",
+      "title": "ประตูเปิด",
+      "subtitle": "THE DOOR OPENED",
+      "chapter": "หกโมงเย็น",
+      "layout": 5
+    },
+    {
+      "lines": [72, 91],
+      "image": "assets/images/img07_00.jpg",
+      "title": "หวี กับผมที่ไม่มีแล้ว",
+      "subtitle": "THE COMBS",
+      "chapter": "ของขวัญสองชิ้นที่ใช้ไม่ได้",
+      "layout": 6
+    },
+    {
+      "lines": [92, 107],
+      "image": "assets/images/img04_00.jpg",
+      "title": "ของขวัญที่ฉลาดที่สุดในโลก",
+      "subtitle": "THE WISEST GIFT",
+      "chapter": "หนึ่งดอลลาร์แปดสิบเจ็ดเซนต์",
+      "layout": 7
+    }
+  ]
+}

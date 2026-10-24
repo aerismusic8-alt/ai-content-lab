@@ -1,0 +1,11 @@
+# build scratch
+*.raw.mp3
+*.staged.wav
+__pycache__/
+*.pyc
+
+# the media is regenerable from scripts + sources
+site/media/*.mp4
+site/media/*.mp3
+episodes/*/audio_th.mp3
+episodes/*/video.mp4
