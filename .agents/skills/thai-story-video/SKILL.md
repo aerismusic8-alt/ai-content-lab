@@ -160,6 +160,35 @@ scripts/publish_episode.sh episodes/<ep> private
   calls/day each, separate from the shared 10,000 units.
 * The MCP tool `publish_to_youtube` defaults to `dry_run=True`.
 
+## The four channels
+
+The pipeline serves **four** channels, not one. The table lives in
+`../AX_CHANNELS.md` (with `AX_CHANNEL_DOSSIERS.md` for the detail) and the
+machine-readable copy is `../ax_channels.json`, loaded by `../ax_channels.py`.
+Run `python3 ax_channels.py show` for the current table, or
+`python3 ax_channels.py emit-content-lab` to rewrite `channels.json` here.
+
+| ch | handle | direction | length |
+|---|---|---|---|
+| ch1 | `@tatagenxgeny` | ช่องปรัชญา | ~11 นาที |
+| ch2 | `@Farmmer-n9t` | ช่องธรรมะก่อนนอน (rail ต้นแบบ) | 10–12 นาที |
+| ch3 | `@aerismusicth` | ช่องสร้างศิลปินเพลง | 3–4 นาที |
+| ch4 | `@aerisanime` | ช่องละคร · การ์ตูนอะนิเมะ | 10–25 นาที |
+
+Three things follow for the work in this repository:
+
+* **ch1 and ch2 use this pipeline as it is** — same narration-and-posters machine,
+  different voice and script. ch2 (dharma) is the reference; change it first.
+* **ch3 and ch4 are new pipelines**, not variations. Music videos and serialised
+  animation need generation and character-continuity work this pipeline does not
+  do. Do not start them until ch1/ch2 run unattended.
+* **One token per channel.** `publish_youtube.py` refuses to upload when the token
+  belongs to another channel. With four channels that guard is the main safety
+  net.
+
+An earlier spec had ch3/ch4 the other way round; the live channels contradict it.
+`ax_channels.json` records the correction under `_superseded`.
+
 ## Traps that already cost time — do not rediscover these
 
 * **Thai TTS emits `SentenceBoundary`, not `WordBoundary`.** Use those events for
