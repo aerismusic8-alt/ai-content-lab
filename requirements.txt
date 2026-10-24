@@ -6,3 +6,7 @@ Pillow>=10             # poster cards
 # Optional: only needed to run scripts/mcp_server.py, so an AI agent can call
 # the channel as tools instead of using URLs.
 mcp>=1.0
+
+# Optional: only needed to publish to YouTube (yt_auth.py, publish_youtube.py).
+google-api-python-client>=2.100
+google-auth-oauthlib>=1.2

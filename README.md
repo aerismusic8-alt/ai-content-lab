@@ -99,6 +99,20 @@ Three ways for an agent to use it:
 
 A copy-paste prompt for an AI is in `docs/AGENT-PROMPT.md`.
 
+## Publishing to YouTube
+
+The pipeline can upload an episode and report the link back on the channel.
+It needs a one-time OAuth token, which only a human with a browser can grant:
+
+```bash
+python3 scripts/yt_auth.py          # once; prints a URL to approve
+scripts/publish_episode.sh episodes/ep02_mattanaphatha private
+```
+
+Uploads land **private** by default. Setup details, including the redirect URI
+that has to be registered in Google Cloud console, are in
+`docs/PUBLISHING.md`.
+
 ## Layout
 
 ```

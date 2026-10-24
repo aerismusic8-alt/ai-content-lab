@@ -217,5 +217,63 @@ def list_posted() -> dict:
     return {"count": res.get("count", 0), "receipts": res.get("receipts", [])}
 
 
+@mcp.tool()
+def youtube_status() -> dict:
+    """Check whether this machine is allowed to upload to YouTube.
+
+    Returns whether an authorisation token exists and, if so, which channel it
+    belongs to. Call this before publish_to_youtube. When `ready` is false, tell
+    the user to run `python3 scripts/yt_auth.py` once — that needs a human with
+    a browser, and cannot be done by an agent.
+    """
+    import subprocess
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "yt_auth.py")
+    token = os.environ.get("YT_TOKEN_PATH",
+                           os.path.expanduser("~/.config/content-lab/yt_token.json"))
+    if not os.path.exists(token):
+        return {"ready": False, "token_path": token,
+                "reason": "no authorisation token yet",
+                "fix": "python3 scripts/yt_auth.py   (needs a browser, once)"}
+    proc = subprocess.run([sys.executable, script, "--check"],
+                          capture_output=True, text=True, timeout=120)
+    return {"ready": proc.returncode == 0, "token_path": token,
+            "output": (proc.stdout + proc.stderr).strip()}
+
+
+@mcp.tool()
+def publish_to_youtube(episode: str, privacy: str = "private",
+                       dry_run: bool = True) -> dict:
+    """Upload an episode to YouTube and record it on the channel.
+
+    `privacy` is private, unlisted or public. `dry_run` defaults to True: it
+    prints the exact title, description, tags and thumbnail that would be used
+    and uploads nothing. Only pass dry_run=False when the user has clearly asked
+    for the episode to be published.
+
+    The title, description, chapters, source and attribution all come from the
+    channel, so nothing is retyped. Requires `youtube_status().ready` to be true.
+    """
+    import subprocess
+    if privacy not in ("private", "unlisted", "public"):
+        return {"error": "privacy must be private, unlisted or public"}
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "publish_youtube.py")
+    cmd = [sys.executable, script, episode, "--base", DEFAULT_BASE,
+           "--privacy", privacy]
+    if dry_run:
+        cmd.append("--dry-run")
+    else:
+        cmd.append("--report")
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=3600,
+                          env={**os.environ, "CHANNEL_BASE": DEFAULT_BASE})
+    out = (proc.stdout + proc.stderr).strip()
+    result = {"ok": proc.returncode == 0, "dry_run": dry_run,
+              "privacy": privacy, "output": out[-4000:]}
+    for line in out.splitlines():
+        if line.startswith("published: "):
+            result["url"] = line.split("published: ", 1)[1].strip()
+    return result
+
+
 if __name__ == "__main__":
     mcp.run()

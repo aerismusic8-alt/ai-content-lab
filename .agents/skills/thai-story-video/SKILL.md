@@ -140,6 +140,26 @@ Three ways, in order of how little work they need:
 Test the server over the real protocol, not by importing it: send
 `initialize`, then `tools/list`, then a `tools/call`.
 
+### Publishing to YouTube directly
+
+The pipeline uploads by itself once it has an OAuth token:
+
+```bash
+python3 scripts/yt_auth.py          # once, needs a browser — a human step
+scripts/publish_episode.sh episodes/<ep> private
+```
+
+* `yt_auth.py` saves to `~/.config/content-lab/yt_token.json` (mode 600),
+  **outside the repo**, and gitignored. The sandbox has no browser and Google
+  retired the out-of-band flow in 2022, so the callback lands on a public sandbox
+  URL; the hostname is registered on the OAuth client and **changes with the
+  pod**, which means the redirect URI has to be re-registered each time.
+* Every upload lands **private** on purpose. Making it public stays a human
+  decision.
+* Quota is not the constraint: `videos.insert` and `thumbnails.set` get 100
+  calls/day each, separate from the shared 10,000 units.
+* The MCP tool `publish_to_youtube` defaults to `dry_run=True`.
+
 ## Traps that already cost time — do not rediscover these
 
 * **Thai TTS emits `SentenceBoundary`, not `WordBoundary`.** Use those events for

@@ -86,6 +86,21 @@ A ready copy is at `mcp.json`. Verified over the stdio protocol: `initialize`,
 `tools/list`, and calls to `list_episodes`, `get_posting`, `report_posted`,
 `list_posted` and `get_episode`.
 
+## Publishing straight to YouTube
+
+Beyond handing text to another service, the channel can publish itself:
+
+```bash
+python3 scripts/yt_auth.py                      # once, with a browser
+scripts/publish_episode.sh episodes/<ep> private
+python3 scripts/publish_youtube.py ep01 --dry-run
+```
+
+Over MCP there are two more tools, `youtube_status` and
+`publish_to_youtube(episode, privacy, dry_run=True)`. The dry run is the default,
+so a careless call prints the payload instead of uploading. See
+`docs/PUBLISHING.md`.
+
 ## The client
 
 ```bash
