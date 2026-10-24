@@ -21,6 +21,7 @@ work is pushed to `kongkeat938/ai-content-lab` and served from a link.
 | `content-lab/docs/GOAL.md` | the brief, the seven requirements, and the definition of done |
 | `content-lab/docs/CONTENT-PLAN.md` | the episode slate and the copyright evidence |
 | `content-lab/docs/RECIPE.md` | measured technical settings for audio, colour, sync |
+| `content-lab/docs/API.md` | the publishing channel an agent pulls from |
 | `.agents/skills/thai-story-video/SKILL.md` | how to build an episode, step by step |
 
 ## Non-negotiable rules
@@ -36,6 +37,10 @@ work is pushed to `kongkeat938/ai-content-lab` and served from a link.
    `assets/images/credits.json` and are shown on the page.
 5. **Verify before claiming done.** Loudness, true peak, colour range, line
    timings and seekability all have a check in the skill. Run them.
+6. **Publish the channel after every episode.** Run `scripts/build_api.py` and
+   attach the media with `scripts/publish_release.sh`. Media goes to a GitHub
+   Release, never into git — a 15 MB video per episode would make a repository
+   nobody can clone.
 
 ## Conventions
 

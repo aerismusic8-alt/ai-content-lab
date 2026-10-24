@@ -25,6 +25,7 @@ The project lives in `content-lab/` in the workspace and is pushed to
 5. **Pick music** and lay it under the voice.
 6. **Assemble**, then verify.
 7. **Serve** and share the link.
+8. **Publish the channel**, so an agent can pull the episode and post it.
 
 ## Copyright, the short version
 
@@ -90,9 +91,37 @@ python3 scripts/fetch_music.py
 # poster cards + assembled video
 python3 scripts/make_video.py episodes/<ep>
 
+# publish the machine-readable channel (after adding or editing an episode)
+python3 scripts/build_api.py
+
+# attach media to a GitHub Release (permanent URL, out of git)
+scripts/publish_release.sh episodes/<ep>
+
 # serve with range support, then share
 python3 scripts/serve.py 12000 site
 ```
+
+## The publishing channel
+
+`scripts/build_api.py` writes the channel from the same `scenes.json`,
+`timing.json` and `meta.json` the video is built from, so it cannot drift:
+
+| Path | What |
+|---|---|
+| `/llms.txt` | orientation for an AI agent |
+| `/api/index.json` | catalogue |
+| `/api/episodes/<slug>.json` | one episode, with a `posting` object |
+| `/feed.xml`, `/sitemap.xml` | Atom feed and crawler map |
+| `POST /api/receipts` | an agent reports what it posted |
+
+`posting.youtube` / `facebook` / `tiktok` / `blog` hold text already formatted
+for each platform. `media.video.url` is a permanent release download link.
+
+Add `episodes/<ep>/meta.json` to control the title, description, tags, hook,
+release tag and attribution. Without it, values are derived from `scenes.json`.
+
+Client for the pulling side: `scripts/post.py --list | --platform | --download
+| --report`. Docs: `docs/API.md`.
 
 ## Traps that already cost time — do not rediscover these
 
