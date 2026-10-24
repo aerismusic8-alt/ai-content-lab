@@ -1,0 +1,40 @@
+{
+  "generator": "content-lab build_api.py",
+  "generated": "2026-10-24T16:28:55+00:00",
+  "site": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev",
+  "title": "เรื่องเล่าไทย — Thai Story Episodes",
+  "count": 1,
+  "endpoints": {
+    "catalogue": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json",
+    "episode": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/<slug>.json",
+    "feed": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml",
+    "receipts": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts",
+    "llms": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/llms.txt"
+  },
+  "episodes": [
+    {
+      "id": "ep01",
+      "slug": "ep01_gift_of_the_magi",
+      "title": "ของขวัญของคนโง่",
+      "title_en": "The Gift of the Magi",
+      "series": "เรื่องเล่าต่างแดน",
+      "duration_hms": "05:06",
+      "published": "2026-10-24",
+      "url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json",
+      "video_url": "https://github.com/kongkeat938/ai-content-lab/releases/download/ep01/ep01.mp4",
+      "audio_url": "https://github.com/kongkeat938/ai-content-lab/releases/download/ep01/ep01.mp3",
+      "poster_url": "https://raw.githubusercontent.com/kongkeat938/ai-content-lab/main/site/media/ep01_poster.jpg",
+      "tags": [
+        "เรื่องเล่า",
+        "เรื่องสั้น",
+        "โอเฮนรี",
+        "นิทานก่อนนอน",
+        "ความรัก",
+        "ของขวัญ",
+        "เสียงบรรยายไทย",
+        "วรรณกรรมคลาสสิก"
+      ],
+      "chapters": 8
+    }
+  ]
+}

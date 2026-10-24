@@ -22,6 +22,7 @@ Seven requirements, and where each one is handled:
 | 4 | Poster-style background art | `scripts/make_poster.py` |
 | 5 | Background music, chosen by the director | `scripts/fetch_music.py` + `make_video.py` |
 | 6 | A link to watch the finished result | `scripts/serve.py` + `scripts/watch_site.sh` |
+| 8 | A machine-readable channel so an AI can pull and post | `scripts/build_api.py` + `docs/API.md` |
 | 7 | The goal, the skill and the memory must survive a session change | this file, `AGENTS.md`, `.agents/skills/`, `.openhands/memory/` |
 
 ## Why Thai sources, not translated ones
@@ -136,6 +137,7 @@ Three places, and it matters which is which:
 |---|---|---|
 | Scripts, docs, images, fonts, timings | `kongkeat938/ai-content-lab` (git) | yes — clone it anywhere |
 | Video and audio (large) | GitHub **Releases** of the same repo | yes — permanent download URL |
+| The API, feed and llms.txt | committed to git under `site/api/` | yes |
 | The running site and the link | the sandbox pod, port 12000 | **no** — dies with the pod |
 
 The repo is the source of truth. `git clone` plus `pip install edge-tts` plus

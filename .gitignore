@@ -9,3 +9,4 @@ site/media/*.mp4
 site/media/*.mp3
 episodes/*/audio_th.mp3
 episodes/*/video.mp4
+receipts/

@@ -1,0 +1,24 @@
+{
+  "release_tag": "ep01",
+  "series": "เรื่องเล่าต่างแดน",
+  "published": "2026-10-24",
+  "title": "ของขวัญของคนโง่",
+  "title_en": "The Gift of the Magi",
+  "hook": "หญิงสาวขายผมที่รักที่สุด เพื่อซื้อของขวัญให้คนที่เธอรัก แล้วเขาก็ทำสิ่งเดียวกัน",
+  "description": "คืนก่อนวันคริสต์มาส ในห้องเช่าเล็ก ๆ ของนิวยอร์ก หญิงสาวคนหนึ่งนับเงินในมือ เธอมีไม่มากนัก และกำลังจะทำอะไรบางอย่างที่คนทั้งโลกเรียกมันว่า ความรัก เรื่องสั้นคลาสสิกของโอ เฮนรี ว่าด้วยการให้ที่ไม่เหลืออะไรไว้เลย",
+  "tags": ["เรื่องเล่า", "เรื่องสั้น", "โอเฮนรี", "นิทานก่อนนอน", "ความรัก", "ของขวัญ", "เสียงบรรยายไทย", "วรรณกรรมคลาสสิก"],
+  "youtube_category_id": "24",
+  "voice_note": "edge-tts th-TH-NiwatNeural (ฟรี) — เสียงชาย ผู้เล่า",
+  "attribution": "เรื่อง: O. Henry, The Gift of the Magi (1905) — สาธารณสมบัติ\nภาพ: Openverse, CC BY 2.0 / PDM — รายชื่อผู้สร้างอยู่ในไฟล์ credits.json\nฟอนต์: Kanit, Prompt (SIL Open Font License)",
+  "source": {
+    "work": "The Gift of the Magi",
+    "author": "O. Henry (วิลเลียม ซิดนีย์ พอร์เตอร์)",
+    "year": 1905,
+    "licence": "public domain",
+    "url": "https://www.gutenberg.org/ebooks/7256",
+    "note": "ใช้เป็นตัวอย่างทดสอบระบบ เนื้อเรื่องต่างวัฒนธรรม — แผนต่อไปใช้บทประพันธ์ไทย"
+  },
+  "width": 1920,
+  "height": 1080,
+  "licence": "story: public domain; images: CC BY 2.0 / PDM (see credits)"
+}

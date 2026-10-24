@@ -1,0 +1,30 @@
+# เรื่องเล่าไทย — Thai Story Episodes
+
+> Thai narrated story episodes. Each episode is a video plus an audio
+> track, poster art, a full script and ready-to-post text for YouTube,
+> Facebook, TikTok and a blog. All stories are Thai public-domain
+> literature. Everything here is free to reuse with attribution.
+
+## How to use this
+
+- Catalogue: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json
+- One episode: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/<slug>.json
+- Feed: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml
+
+Fetch an episode JSON and read the `posting` object. It already contains
+the title, description, tags and hashtags in the right shape for each
+platform, so no rewriting is needed. `media.video.url` and
+`media.audio.url` are permanent download links. `chapters` gives the
+timestamps for a YouTube chapter list.
+
+Report what you posted with `POST /api/receipts` (see docs/API.md).
+
+## Episodes
+
+- [ของขวัญของคนโง่](https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json): 05:06, เรื่องเล่าต่างแดน, 2026-10-24
+
+## Licence
+
+Stories are public domain (Thai copyright lasts the author's life plus
+50 years). Photographs keep their own licences, listed per episode in
+`credits`. Attribution text is supplied in the episode JSON.

@@ -74,10 +74,27 @@ python3 scripts/make_video.py episodes/ep01_gift_of_the_magi
 python3 scripts/serve.py 12000 site
 ```
 
+## Publishing channel
+
+Every episode is published as machine-readable JSON so an agent can pull it and
+post it without a human copying anything:
+
+| | |
+|---|---|
+| `GET /llms.txt` | orientation written for an AI agent |
+| `GET /api/index.json` | catalogue of all episodes |
+| `GET /api/episodes/<slug>.json` | one episode, including ready-to-post text |
+| `GET /feed.xml` | Atom feed with media enclosures |
+| `POST /api/receipts` | report what was posted |
+
+`posting.youtube`, `posting.facebook`, `posting.tiktok` and `posting.blog` hold
+text that is already formatted, and `media.video.url` is a permanent download
+link. See `docs/API.md`. The client is `scripts/post.py`.
+
 ## Layout
 
 ```
-scripts/          pipeline (audio, images, posters, video)
+scripts/          pipeline (audio, images, posters, video, API, posting client)
 assets/fonts/     OFL fonts
 assets/images/    fetched photos + credits.json
 episodes/<ep>/    narration_th.txt, scenes.json, audio, timing, video

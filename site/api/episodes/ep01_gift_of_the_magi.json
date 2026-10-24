@@ -1,0 +1,306 @@
+{
+  "id": "ep01",
+  "slug": "ep01_gift_of_the_magi",
+  "series": "เรื่องเล่าต่างแดน",
+  "title": "ของขวัญของคนโง่",
+  "title_en": "The Gift of the Magi",
+  "language": "th",
+  "duration_sec": 305.5,
+  "duration_hms": "05:06",
+  "published": "2026-10-24",
+  "source": {
+    "work": "The Gift of the Magi",
+    "author": "O. Henry (วิลเลียม ซิดนีย์ พอร์เตอร์)",
+    "year": 1905,
+    "licence": "public domain",
+    "url": "https://www.gutenberg.org/ebooks/7256",
+    "note": "ใช้เป็นตัวอย่างทดสอบระบบ เนื้อเรื่องต่างวัฒนธรรม — แผนต่อไปใช้บทประพันธ์ไทย"
+  },
+  "licence": "story: public domain; images: CC BY 2.0 / PDM (see credits)",
+  "characters": 2781,
+  "lines": 108,
+  "media": {
+    "video": {
+      "url": "https://github.com/kongkeat938/ai-content-lab/releases/download/ep01/ep01.mp4",
+      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01.mp4",
+      "bytes": 15283573,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "codec": "h264",
+      "audio_codec": "aac"
+    },
+    "audio": {
+      "url": "https://github.com/kongkeat938/ai-content-lab/releases/download/ep01/ep01.mp3",
+      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01.mp3",
+      "bytes": 4888172,
+      "mime": "audio/mpeg",
+      "lufs": "-14.4",
+      "true_peak_dbfs": "-3.4",
+      "voice": "th-TH-NiwatNeural",
+      "rate": "-12%",
+      "pitch": "-10Hz"
+    },
+    "poster": {
+      "url": "https://raw.githubusercontent.com/kongkeat938/ai-content-lab/main/site/media/ep01_poster.jpg",
+      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01_poster.jpg",
+      "mime": "image/jpeg"
+    }
+  },
+  "chapters": [
+    {
+      "start": 0.0,
+      "time": "00:00",
+      "title": "ของขวัญของคนโง่",
+      "subtitle": "THE GIFT OF THE MAGI",
+      "chapter": "คืนก่อนวันคริสต์มาส",
+      "card_image": "assets/images/img00_00.jpg"
+    },
+    {
+      "start": 29.09,
+      "time": "00:29",
+      "title": "หนึ่งดอลลาร์แปดสิบเจ็ดเซนต์",
+      "subtitle": "ONE DOLLAR AND EIGHTY-SEVEN CENTS",
+      "chapter": "ห้องเช่าแปดดอลลาร์ต่อสัปดาห์",
+      "card_image": "assets/images/img09_00.jpg"
+    },
+    {
+      "start": 67.06,
+      "time": "01:07",
+      "title": "มรดกที่เธอภาคภูมิใจ",
+      "subtitle": "HER ONLY TREASURE",
+      "chapter": "ผมที่ยาวเลยเข่า",
+      "card_image": "assets/images/img02_00.jpg"
+    },
+    {
+      "start": 87.33,
+      "time": "01:27",
+      "title": "ขายผมไหม",
+      "subtitle": "WILL YOU BUY MY HAIR?",
+      "chapter": "ร้านทำผมกลางถนนหนาว",
+      "card_image": "assets/images/img05_00.jpg"
+    },
+    {
+      "start": 121.33,
+      "time": "02:01",
+      "title": "สายนาฬิกาแพลทินัม",
+      "subtitle": "A PLATINUM WATCH CHAIN",
+      "chapter": "ของขวัญที่เธอเลือก",
+      "card_image": "assets/images/img01_00.jpg"
+    },
+    {
+      "start": 168.24,
+      "time": "02:48",
+      "title": "ประตูเปิด",
+      "subtitle": "THE DOOR OPENED",
+      "chapter": "หกโมงเย็น",
+      "card_image": "assets/images/img05_01.jpg"
+    },
+    {
+      "start": 207.34,
+      "time": "03:27",
+      "title": "หวี กับผมที่ไม่มีแล้ว",
+      "subtitle": "THE COMBS",
+      "chapter": "ของขวัญสองชิ้นที่ใช้ไม่ได้",
+      "card_image": "assets/images/img07_00.jpg"
+    },
+    {
+      "start": 260.61,
+      "time": "04:21",
+      "title": "ของขวัญที่ฉลาดที่สุดในโลก",
+      "subtitle": "THE WISEST GIFT",
+      "chapter": "หนึ่งดอลลาร์แปดสิบเจ็ดเซนต์",
+      "card_image": "assets/images/img04_00.jpg"
+    }
+  ],
+  "script": "คืนก่อนวันคริสต์มาส\nในห้องเช่าเล็ก ๆ ของนิวยอร์ก\nมีหญิงสาวคนหนึ่งนับเงินอยู่ในมือ\nเธอมีไม่มากนัก และกำลังจะทำอะไรบางอย่าง\nที่คนทั้งโลกเรียกมันว่า ความรัก\n\nหนึ่งดอลลาร์ กับอีกแปดสิบเจ็ดเซนต์\nนั่นคือทั้งหมดที่เดลลามี\n\nเธอนับมันสามรอบ\nนับแล้วนับอีก หนึ่งดอลลาร์แปดสิบเจ็ดเซนต์\nและพรุ่งนี้คือวันคริสต์มาส\n\nห้องเช่าแคบ ๆ แปดดอลลาร์ต่อสัปดาห์\nกล่องจดหมายที่ไม่มีจดหมายส่งมาถึง\nป้ายชื่อที่เขียนว่า เจมส์ ดิลลิงแฮม ยัง\nชื่อยาว ๆ ที่เหลือจากวันที่เขายังมีงานดี ๆ\n\nแต่ตอนนี้ รายได้ของจิมลดลงครึ่งหนึ่ง\nและชื่อยาว ๆ นั้น ก็ไม่สำคัญอีกแล้ว\n\nเดลลาทรุดตัวลงบนโซฟาเก่า ๆ\nแล้วร้องไห้\n\nเธออยากซื้อของขวัญให้จิม\nสามีของเธอ ผู้ชายที่เธอรักที่สุดในโลก\n\nแต่เธอมีเงินแค่หนึ่งดอลลาร์แปดสิบเจ็ดเซนต์\nจะซื้ออะไรให้เขาได้\n\nเดลลาเดินไปหน้ากระจก\nปลดผมของเธอลง\n\nผมของเดลลายาวสวย เป็นมรดกที่เธอภาคภูมิใจที่สุด\nมันยาวเลยเข่าลงมา เงางามเหมือนน้ำไหล\nเมื่อเธอปล่อยลง มันก็คลี่เป็นผ้าคลุมสีน้ำตาลทั้งตัว\n\nแล้วความคิดหนึ่งก็ผุดขึ้นในหัวของเธอ\n\nเดลลาออกจากบ้าน\nเดินไปตามถนนที่หนาวเหน็บ\nและเข้าไปในร้านทำผม\n\nขายผมไหม\n\nเธอถาม\n\nผู้หญิงผมแดงที่ทำร้านวางมือลง\nมองผมของเดลลาด้วยสายตาของคนค้าขาย\n\nยี่สิบดอลลาร์\n\nเท่านั้นเองหรือ\n\nยี่สิบดอลลาร์\n\nเดลลาหลับตา แล้วพยักหน้า\n\nกรรไกรดังขึ้น\nปอยผมสีน้ำตาลตกลงพื้นทีละปอย\nทีละปอย\n\nหนึ่งชั่วโมงต่อมา\nเดลลากลับบ้าน ผมสั้นแค่ติ่งหู\n\nแต่ในมือเธอมีเงินยี่สิบดอลลาร์\nเธอใช้เวลาสองชั่วโมงเดินหาร้านแล้วหาร้านอีก\nเลือกของขวัญให้จิม\n\nและเธอก็พบมัน\nสายนาฬิกาแพลทินัม\nเรียบ เงางาม ไม่มีลวดลายเกินจำเป็น\nคู่ควรกับนาฬิกาทองคำของจิม\n\nนาฬิกาเรือนนั้นเป็นมรดกจากพ่อของเขา\nเป็นสิ่งที่มีค่าที่สุดที่จิมมี\nเป็นสิ่งเดียวที่เขาไม่เคยยอมปล่อย\n\nเดลลาจ่ายเงินยี่สิบดอลลาร์\nแล้วรีบกลับบ้านด้วยความดีใจ\n\nถึงบ้าน เธอต้มน้ำ กินข้าว\nแล้วนั่งรอจิมกลับมา\n\nหกโมงเย็น ประตูเปิด\n\nจิมก้าวเข้ามา แล้วหยุดชะงัก\n\nเขาจ้องมองเดลลา\nสายตาของเขาแปลกไป\nไม่ใช่โกรธ ไม่ใช่ผิดหวัง\nแต่เป็นสายตาของคนที่เพิ่งเห็นอะไรบางอย่าง\n\nเดลลาลุกขึ้นเดินไปหาเขา\n\nจิม อย่ามองฉันแบบนั้น\nฉันตัดผมขาย เพราะอยากได้ของขวัญให้เธอ\nผมของฉันมันจะยาวใหม่ก็ได้ ไม่เป็นไรนะ\n\nจิมไม่พูดอะไร\nเขาเดินเข้าไปกอดเธอแน่น\nกอดนาน จนเดลลาเริ่มหายใจไม่ออก\n\nแล้วเขาก็วางห่อของลงบนโต๊ะ\n\nเดลลาแกะห่อนั้น\nมือของเธอสั่น\n\nข้างในคือหวี\nหวีสองอันที่เธอเคยเห็นในร้าน\nหวีที่เธออยากได้มาตลอด\nหวีที่ทำมาเพื่อผมยาวของเธอโดยเฉพาะ\nหวีที่เธอฝันถึงทุกคืน\n\nเดลลาน้ำตาไหล\n\nแล้วเธอก็เงยหน้าขึ้นถาม\n\nจิม ขายนาฬิกาไปแล้วใช่ไหม\n\nจิมยิ้ม แล้วตอบเบา ๆ\n\nผมขายนาฬิกาไป\nเพื่อซื้อหวีให้เธอ\nเธอตัดผมขาย เพื่อซื้อสายนาฬิกาให้ผม\n\nทั้งคู่มองหน้ากัน\nแล้วก็หัวเราะออกมา\n\nในห้องแคบ ๆ แปดดอลลาร์ต่อสัปดาห์\nของขวัญสองชิ้นนั้นใช้ไม่ได้จริง\n\nหวี กับผมที่ไม่มีแล้ว\nสายนาฬิกา กับนาฬิกาที่ไม่มีแล้ว\n\nแต่นั่นแหละ\n\nของขวัญที่ดีที่สุด\nไม่ใช่สิ่งที่ซื้อด้วยเงิน\nแต่คือสิ่งที่เรายอมเสียสละ เพื่อคนที่เรารัก\n\nหนึ่งดอลลาร์แปดสิบเจ็ดเซนต์\nกับหัวใจที่ให้จนหมด\n\nของขวัญของคนสองคน\nที่ยอมเป็นคนโง่ เพื่อให้อีกคนได้ยิ้ม\n\nและนั่นแหละ\nคือของขวัญที่ฉลาดที่สุดในโลก\n\nขอบคุณที่ฟังเรื่องราวของเดลลาและจิม\nถ้าคุณมีใครสักคนที่รัก\nอย่าลืมบอกเขาว่าคุณรักเขา\n\nและถ้ายังไม่มี\nขอให้วันหนึ่งคุณได้เจอ\nคนที่ยอมเป็นคนโง่ เพื่อคุณเหมือนกัน\n",
+  "script_url": "https://raw.githubusercontent.com/kongkeat938/ai-content-lab/main/episodes/ep01_gift_of_the_magi/narration_th.txt",
+  "credits": [
+    {
+      "file": "img00_00.jpg",
+      "query": "candlelight window night",
+      "title": "Chanukah: First Candle",
+      "url": "https://live.staticflickr.com/4040/4177957143_d7b6cc1a87_b.jpg",
+      "license": "BY 2.0",
+      "creator": "Flavio~",
+      "source": "https://www.flickr.com/photos/37873897@N06/4177957143"
+    },
+    {
+      "file": "img00_01.jpg",
+      "query": "candlelight window night",
+      "title": "Dionysus",
+      "url": "https://live.staticflickr.com/99/290942437_8633094e3d_b.jpg",
+      "license": "BY 2.0",
+      "creator": "Wetsun",
+      "source": "https://www.flickr.com/photos/83307029@N00/290942437"
+    },
+    {
+      "file": "img01_00.jpg",
+      "query": "vintage pocket watch gold",
+      "title": "Pocket watch",
+      "url": "https://live.staticflickr.com/3463/3203909371_92128b5ab2_b.jpg",
+      "license": "BY 2.0",
+      "creator": "vidalia_11",
+      "source": "https://www.flickr.com/photos/56832361@N00/3203909371"
+    },
+    {
+      "file": "img01_01.jpg",
+      "query": "vintage pocket watch gold",
+      "title": "Pocket Watch",
+      "url": "https://live.staticflickr.com/4043/4435553414_e8b83f8427_b.jpg",
+      "license": "BY 2.0",
+      "creator": "BenGrantham",
+      "source": "https://www.flickr.com/photos/26072061@N06/4435553414"
+    },
+    {
+      "file": "img02_00.jpg",
+      "query": "long brown hair woman portrait",
+      "title": "The George Pub - Southwark - Nov 2014 - Wherefore Art Thou Romeo - Take 2",
+      "url": "https://live.staticflickr.com/7566/15892768722_9890426892_b.jpg",
+      "license": "BY 2.0",
+      "creator": "Gareth1953 All Right Now",
+      "source": "https://www.flickr.com/photos/40837632@N05/15892768722"
+    },
+    {
+      "file": "img02_01.jpg",
+      "query": "long brown hair woman portrait",
+      "title": "Richmond Lock and Weir - Apr 2011 - For Jeff to Cheer Him Up a Bit",
+      "url": "https://live.staticflickr.com/5143/5637639901_4fefb1dcd8_b.jpg",
+      "license": "BY 2.0",
+      "creator": "Gareth1953 All Right Now",
+      "source": "https://www.flickr.com/photos/40837632@N05/5637639901"
+    },
+    {
+      "file": "img04_00.jpg",
+      "query": "christmas tree lights bokeh",
+      "title": "Christmas Tree Lights Bokeh",
+      "url": "https://live.staticflickr.com/2695/4174879359_95597a0323_b.jpg",
+      "license": "BY 2.0",
+      "creator": "Sprogz",
+      "source": "https://www.flickr.com/photos/14341815@N00/4174879359"
+    },
+    {
+      "file": "img04_01.jpg",
+      "query": "christmas tree lights bokeh",
+      "title": "New iPad air with Christmas tree lights bokeh",
+      "url": "https://live.staticflickr.com/5517/11386567316_5f78f1f5fa_b.jpg",
+      "license": "BY 2.0",
+      "creator": "m01229",
+      "source": "https://www.flickr.com/photos/39908901@N06/11386567316"
+    },
+    {
+      "file": "img05_00.jpg",
+      "query": "old apartment window city night",
+      "title": "Red Baboon - 21 Ludgate Hill, Birmingham",
+      "url": "https://live.staticflickr.com/4039/4170301670_a82eab6271_b.jpg",
+      "license": "BY 2.0",
+      "creator": "ell brown",
+      "source": "https://www.flickr.com/photos/39415781@N06/4170301670"
+    },
+    {
+      "file": "img05_01.jpg",
+      "query": "old apartment window city night",
+      "title": "November 21, 2014",
+      "url": "https://live.staticflickr.com/7626/16367113883_75ba845d6b_b.jpg",
+      "license": "BY 2.0",
+      "creator": "osseous",
+      "source": "https://www.flickr.com/photos/10787737@N02/16367113883"
+    },
+    {
+      "file": "img07_00.jpg",
+      "query": "empty picture frame vintage",
+      "title": "cloudy sky ttv",
+      "url": "https://live.staticflickr.com/3061/2550378276_faeaa65351_b.jpg",
+      "license": "BY 2.0",
+      "creator": "borealnz",
+      "source": "https://www.flickr.com/photos/30725488@N00/2550378276"
+    },
+    {
+      "file": "img07_01.jpg",
+      "query": "empty picture frame vintage",
+      "title": "texture 162 vintage",
+      "url": "https://live.staticflickr.com/5165/5332438864_a90d3f156d_b.jpg",
+      "license": "BY 2.0",
+      "creator": "Nasos3",
+      "source": "https://www.flickr.com/photos/34413757@N02/5332438864"
+    },
+    {
+      "file": "img08_00.jpg",
+      "query": "winter street snow night",
+      "title": "Estonian National Museum",
+      "url": "https://live.staticflickr.com/65535/52515164941_c7842c53a6_b.jpg",
+      "license": "PDM 1.0",
+      "creator": "Lauri P. Photography",
+      "source": "https://www.flickr.com/photos/196810465@N05/52515164941"
+    },
+    {
+      "file": "img08_01.jpg",
+      "query": "winter street snow night",
+      "title": "Happy Chanukah: Snow Covered Chanukah Menorah",
+      "url": "https://live.staticflickr.com/5170/5225466525_56b0df064f_b.jpg",
+      "license": "BY 2.0",
+      "creator": "Dominic's pics",
+      "source": "https://www.flickr.com/photos/64097751@N00/5225466525"
+    },
+    {
+      "file": "img09_00.jpg",
+      "query": "new york brownstone winter",
+      "title": "straight outta Sesame Street",
+      "url": "https://live.staticflickr.com/2512/3829542564_0259300b22_b.jpg",
+      "license": "BY 2.0",
+      "creator": "Payton Chung",
+      "source": "https://www.flickr.com/photos/41813589@N00/3829542564"
+    },
+    {
+      "file": "img09_01.jpg",
+      "query": "new york brownstone winter",
+      "title": "A calm evening",
+      "url": "https://live.staticflickr.com/65535/48689401941_6d0345a682_b.jpg",
+      "license": "BY 2.0",
+      "creator": "spurekar",
+      "source": "https://www.flickr.com/photos/63324741@N04/48689401941"
+    }
+  ],
+  "posting": {
+    "youtube": {
+      "title": "ของขวัญของคนโง่ | The Gift of the Magi",
+      "description": "ของขวัญของคนโง่\nThe Gift of the Magi\n\nคืนก่อนวันคริสต์มาส ในห้องเช่าเล็ก ๆ ของนิวยอร์ก หญิงสาวคนหนึ่งนับเงินในมือ เธอมีไม่มากนัก และกำลังจะทำอะไรบางอย่างที่คนทั้งโลกเรียกมันว่า ความรัก เรื่องสั้นคลาสสิกของโอ เฮนรี ว่าด้วยการให้ที่ไม่เหลืออะไรไว้เลย\n\n⏱ ลำดับเรื่อง\n00:00  ของขวัญของคนโง่\n00:29  หนึ่งดอลลาร์แปดสิบเจ็ดเซนต์\n01:07  มรดกที่เธอภาคภูมิใจ\n01:27  ขายผมไหม\n02:01  สายนาฬิกาแพลทินัม\n02:48  ประตูเปิด\n03:27  หวี กับผมที่ไม่มีแล้ว\n04:21  ของขวัญที่ฉลาดที่สุดในโลก\n\n📖 ที่มา: The Gift of the Magi โดย O. Henry (วิลเลียม ซิดนีย์ พอร์เตอร์) — สาธารณสมบัติ\n🎧 เสียงบรรยาย: edge-tts th-TH-NiwatNeural (ฟรี) — เสียงชาย ผู้เล่า\n🖼 ภาพ: Openverse (CC BY / PDM)\n📜 บทเต็ม: https://raw.githubusercontent.com/kongkeat938/ai-content-lab/main/episodes/ep01_gift_of_the_magi/narration_th.txt\n\nเรื่อง: O. Henry, The Gift of the Magi (1905) — สาธารณสมบัติ\nภาพ: Openverse, CC BY 2.0 / PDM — รายชื่อผู้สร้างอยู่ในไฟล์ credits.json\nฟอนต์: Kanit, Prompt (SIL Open Font License)\n\n#เรื่องเล่า #เรื่องสั้น #โอเฮนรี #นิทานก่อนนอน #ความรัก #ของขวัญ #เสียงบรรยายไทย #วรรณกรรมคลาสสิก",
+      "tags": [
+        "เรื่องเล่า",
+        "เรื่องสั้น",
+        "โอเฮนรี",
+        "นิทานก่อนนอน",
+        "ความรัก",
+        "ของขวัญ",
+        "เสียงบรรยายไทย",
+        "วรรณกรรมคลาสสิก"
+      ],
+      "category_id": "24",
+      "language": "th",
+      "made_for_kids": false
+    },
+    "facebook": {
+      "caption": "ของขวัญของคนโง่\n\nหญิงสาวขายผมที่รักที่สุด เพื่อซื้อของขวัญให้คนที่เธอรัก แล้วเขาก็ทำสิ่งเดียวกัน\n\nฟังเต็ม 05:06 นาที\n#เรื่องเล่า #เรื่องสั้น #โอเฮนรี #นิทานก่อนนอน #ความรัก #ของขวัญ #เสียงบรรยายไทย #วรรณกรรมคลาสสิก"
+    },
+    "tiktok": {
+      "caption": "หญิงสาวขายผมที่รักที่สุด เพื่อซื้อของขวัญให้คนที่เธอรัก แล้วเขาก็ทำสิ่งเดียวกัน #เรื่องเล่า #เรื่องสั้น #โอเฮนรี #นิทานก่อนนอน #ความรัก #ของขวัญ #เสียงบรรยายไทย #วรรณกรรมคลาสสิก"
+    },
+    "blog": {
+      "title": "ของขวัญของคนโง่",
+      "excerpt": "คืนก่อนวันคริสต์มาส ในห้องเช่าเล็ก ๆ ของนิวยอร์ก หญิงสาวคนหนึ่งนับเงินในมือ เธอมีไม่มากนัก และกำลังจะทำอะไรบางอย่างที่คนทั้งโลกเรียกมันว่า ความรัก เรื่องสั้นคลาสสิกของโอ เฮนรี ว่าด้วยการให้ที่ไม่เหลืออะไรไว้เลย",
+      "body_markdown": "# ของขวัญของคนโง่\n\nคืนก่อนวันคริสต์มาส ในห้องเช่าเล็ก ๆ ของนิวยอร์ก หญิงสาวคนหนึ่งนับเงินในมือ เธอมีไม่มากนัก และกำลังจะทำอะไรบางอย่างที่คนทั้งโลกเรียกมันว่า ความรัก เรื่องสั้นคลาสสิกของโอ เฮนรี ว่าด้วยการให้ที่ไม่เหลืออะไรไว้เลย\n\n## ลำดับเรื่อง\n\n- `00:00` ของขวัญของคนโง่\n- `00:29` หนึ่งดอลลาร์แปดสิบเจ็ดเซนต์\n- `01:07` มรดกที่เธอภาคภูมิใจ\n- `01:27` ขายผมไหม\n- `02:01` สายนาฬิกาแพลทินัม\n- `02:48` ประตูเปิด\n- `03:27` หวี กับผมที่ไม่มีแล้ว\n- `04:21` ของขวัญที่ฉลาดที่สุดในโลก"
+    },
+    "hashtags": [
+      "เรื่องเล่า",
+      "เรื่องสั้น",
+      "โอเฮนรี",
+      "นิทานก่อนนอน",
+      "ความรัก",
+      "ของขวัญ",
+      "เสียงบรรยายไทย",
+      "วรรณกรรมคลาสสิก"
+    ]
+  },
+  "self": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json",
+  "webpage": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/"
+}
