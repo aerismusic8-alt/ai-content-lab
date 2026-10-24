@@ -79,6 +79,32 @@ The MCP server exposes two more tools:
 would be posted instead of posting. It only uploads when the caller explicitly
 passes `dry_run=false`.
 
+## More than one channel
+
+Four channels under one Google account share the daily upload cap, so give each
+channel its own token and its own entry in `channels.json`:
+
+```json
+{
+  "channels": [
+    { "slug": "dharma", "name": "...", "channel_id": "UC...", "account": "openhands-1",
+      "token_path": "~/.config/content-lab/yt_token_dharma.json" }
+  ]
+}
+```
+
+Then:
+
+```bash
+python3 scripts/yt_auth.py --check --expected-channel UCxxxx   # verify
+python3 scripts/publish_youtube.py ep02 --channel dharma
+```
+
+`publish_youtube.py` resolves the token per channel and calls `assert_channel`
+before it uploads a single byte, so a token that belongs to another channel stops
+the upload instead of posting to the wrong place. That guard exists because a
+browser can silently reuse whichever Google account is signed in.
+
 ## Quota
 
 The YouTube Data API gives every project, free:
@@ -90,8 +116,15 @@ The YouTube Data API gives every project, free:
 | everything else | 10,000 units shared |
 
 Uploads do not come out of the shared 10,000, so one episode per day is nowhere
-near a limit. Uploading is not what runs out — a bad request still costs quota,
-so failures are not free.
+near that limit. A bad request still costs quota, so failures are not free.
+
+There is a **second, tighter limit that is not in the API docs**: an account can
+only upload roughly **19 videos per day, shared across every channel on that
+Google account**. It returns `uploadLimitExceeded` (400) rather than a quota
+error, and it does **not** reset at midnight Pacific — it behaves as a rolling
+~24-hour window from the first upload of the burst. Measured earlier: a burst was
+still blocked 12 hours later. Two things follow: run one uploader at a time, and
+if four channels share one account they share those 19 uploads.
 
 ## What is deliberately not automated
 

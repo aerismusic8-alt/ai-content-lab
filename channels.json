@@ -1,0 +1,14 @@
+{
+  "channels": [
+    {
+      "slug": "default",
+      "name": "ยังไม่ตั้งชื่อ",
+      "channel_id": null,
+      "handle": null,
+      "account": "openhands-1",
+      "token_path": "~/.config/content-lab/yt_token_default.json",
+      "series": "เรื่องเล่าไทย",
+      "status": "planned"
+    }
+  ]
+}

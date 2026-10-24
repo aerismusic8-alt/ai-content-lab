@@ -31,6 +31,60 @@ SCOPES = ["https://www.googleapis.com/auth/youtube.upload",
           "https://www.googleapis.com/auth/youtube.readonly"]
 CATEGORY_IDS = {"film": "1", "music": "10", "entertainment": "24",
                 "education": "27", "people": "22"}
+REGISTRY = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "channels.json")
+
+
+def load_registry() -> dict:
+    if not os.path.exists(REGISTRY):
+        return {"channels": []}
+    with open(REGISTRY, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def find_channel(slug: str) -> dict:
+    for ch in load_registry().get("channels", []):
+        if ch.get("slug") == slug:
+            return ch
+    return {}
+
+
+def token_path_for(slug: str) -> str:
+    """One token file per channel, so two channels never share credentials.
+
+    Overriding YT_TOKEN_PATH forces a single token, which is how you would
+    deliberately point every channel at one account.
+    """
+    if os.environ.get("YT_TOKEN_PATH"):
+        return os.environ["YT_TOKEN_PATH"]
+    ch = find_channel(slug)
+    if ch.get("token_path"):
+        return os.path.expanduser(ch["token_path"])
+    return os.path.expanduser(f"~/.config/content-lab/yt_token_{slug}.json")
+
+
+def assert_channel(yt, expected: str | None, slug: str) -> dict:
+    """Refuse to upload when the token belongs to the wrong channel.
+
+    A browser can silently reuse whichever Google account is already signed in,
+    so authorising can hand back a token for a channel you did not mean. Without
+    this check the video would land on the wrong channel with no warning.
+    """
+    res = yt.channels().list(part="snippet,contentDetails", mine=True).execute()
+    items = res.get("items", [])
+    if not items:
+        sys.exit(f"The token for '{slug}' has no YouTube channel. "
+                 f"Re-run scripts/yt_auth.py with the right account.")
+    ch = items[0]
+    if expected and ch["id"] != expected:
+        sys.exit(
+            f"WRONG CHANNEL for '{slug}':\n"
+            f"  expected {expected}\n"
+            f"  token is {ch['id']} ({ch['snippet']['title']})\n"
+            f"The browser probably reused a different signed-in Google account.\n"
+            f"Revoke this app in that account and authorise again, or fix the\n"
+            f"channel_id for '{slug}' in channels.json.")
+    return ch
 
 
 def fetch(url: str) -> dict:
@@ -108,12 +162,23 @@ def main() -> int:
                     help="after uploading, record the URL with the channel")
     ap.add_argument("--cache", default=os.path.expanduser("~/.cache/content-lab"),
                     help="where to keep the downloaded video")
+    ap.add_argument("--channel", help="channel slug from channels.json "
+                                      "(picks the token and the expected channel)")
     args = ap.parse_args()
 
     ep = resolve(args.base, args.episode)
+    slug = args.channel or ep.get("channel") or "default"
+    ch_cfg = find_channel(slug)
+    expected = ch_cfg.get("channel_id")
+    if args.channel and not ch_cfg:
+        sys.exit(f"'{args.channel}' is not in channels.json. Add it first.")
+    os.environ["YT_TOKEN_PATH"] = token_path_for(slug)
     body = build_body(ep, args.privacy)
 
     print(f"episode : {ep['id']} — {ep['title']} ({ep['duration_hms']})")
+    print(f"channel : {slug}" + (f"  ({ch_cfg.get('name')})" if ch_cfg else "")
+          + (f"  expect {expected}" if expected else ""))
+    print(f"token   : {os.environ['YT_TOKEN_PATH']}")
     print(f"privacy : {args.privacy}")
     print(f"title   : {body['snippet']['title']}")
     print(f"tags    : {', '.join(body['snippet']['tags'][:8])}")
@@ -139,6 +204,10 @@ def main() -> int:
 
     creds = load_credentials()
     yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
+
+    # Refuse before uploading a single byte if the token is for another channel.
+    ch = assert_channel(yt, expected, slug)
+    print(f"  authorised as: {ch['snippet']['title']} ({ch['id']})")
 
     video_path = args.file or download(
         ep["media"]["video"]["url"], os.path.join(args.cache, f"{ep['id']}.mp4"))

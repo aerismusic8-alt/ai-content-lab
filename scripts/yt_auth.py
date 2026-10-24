@@ -61,7 +61,7 @@ def load_client_secrets(path: str | None) -> dict:
     sys.exit("Client secrets JSON has neither a 'web' nor an 'installed' section.")
 
 
-def save_token(creds) -> str:
+def save_token(creds, channel: dict | None = None) -> str:
     os.makedirs(os.path.dirname(TOKEN_PATH), exist_ok=True)
     doc = {
         "token": creds.token,
@@ -71,10 +71,25 @@ def save_token(creds) -> str:
         "client_secret": creds.client_secret,
         "scopes": list(creds.scopes or SCOPES),
     }
+    if channel:
+        # Recorded so a later upload can prove it is targeting the intended
+        # channel. Without this, a browser that silently reuses a logged-in
+        # account can hand back a token for a different channel.
+        doc["channel_id"] = channel.get("id")
+        doc["channel_title"] = channel.get("snippet", {}).get("title")
     fd = os.open(TOKEN_PATH, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
     with os.fdopen(fd, "w", encoding="utf-8") as fh:
         json.dump(doc, fh, indent=2)
     return TOKEN_PATH
+
+
+def channel_of(creds) -> dict | None:
+    """The channel this token can upload to, or None."""
+    from googleapiclient.discovery import build
+    yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
+    res = yt.channels().list(part="snippet,contentDetails", mine=True).execute()
+    items = res.get("items", [])
+    return items[0] if items else None
 
 
 def load_credentials():
@@ -134,6 +149,8 @@ def main() -> int:
                     help="verify the saved token against the API and exit")
     ap.add_argument("--print-redirects", action="store_true",
                     help="print the redirect URIs to register, then exit")
+    ap.add_argument("--expected-channel", metavar="CHANNEL_ID",
+                    help="fail if the token belongs to a different channel")
     args = ap.parse_args()
 
     if args.print_redirects:
@@ -146,19 +163,23 @@ def main() -> int:
         return 0
 
     if args.check:
-        from googleapiclient.discovery import build
         creds = load_credentials()
-        yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
-        res = yt.channels().list(part="snippet,contentDetails", mine=True).execute()
-        items = res.get("items", [])
-        if not items:
+        ch = channel_of(creds)
+        if not ch:
             print("Token works, but this account has no YouTube channel.")
             return 1
-        ch = items[0]
         print("token OK")
         print("  channel:", ch["snippet"]["title"])
         print("  id:     ", ch["id"])
         print("  uploads:", ch["contentDetails"]["relatedPlaylists"]["uploads"])
+        if args.expected_channel:
+            if ch["id"] != args.expected_channel:
+                print(f"\nWRONG CHANNEL: expected {args.expected_channel}, "
+                      f"token belongs to {ch['id']}")
+                print("The browser may have reused a different logged-in account. "
+                      "Re-authorise with the intended account selected.")
+                return 2
+            print("  matches --expected-channel")
         return 0
 
     client = load_client_secrets(args.client_secrets)
@@ -217,8 +238,19 @@ def main() -> int:
     if not creds.refresh_token:
         sys.exit("Google returned no refresh token. Re-run with prompt=consent "
                  "(the default) and revoke the app's access first if needed.")
-    path = save_token(creds)
+
+    ch = None
+    try:
+        ch = channel_of(creds)
+    except Exception as exc:
+        print(f"(could not read the channel now: {exc})", file=sys.stderr)
+    path = save_token(creds, ch)
+
     print(f"\nSaved to {path} (mode 600). Uploads can now run unattended.")
+    if ch:
+        print(f"Authorised for channel: {ch['snippet']['title']} ({ch['id']})")
+        print("If that is not the channel you meant, revoke the app's access in "
+              "the Google account and authorise again with the right account.")
     print("Verify with: python3 scripts/yt_auth.py --check")
     return 0
 
