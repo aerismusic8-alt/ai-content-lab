@@ -124,7 +124,9 @@ python3 scripts/queue.py list
 python3 scripts/queue.py claim ep02 --as account-1 --push
 ```
 
-See `docs/TWO-ACCOUNTS.md`.
+See `docs/TWO-ACCOUNTS.md`, and `docs/GITHUB-LIMITS.md` for what GitHub actually
+limits (short version: not the API — repository size is the only one that gets
+close, and the cheap fix is already in).
 
 ## Layout
 
