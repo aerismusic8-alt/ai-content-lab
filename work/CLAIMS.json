@@ -1,3 +1,10 @@
 {
-  "claims": []
+  "claims": [
+    {
+      "episode": "ep02",
+      "account": "account-1",
+      "status": "claimed",
+      "updated": "2026-10-24"
+    }
+  ]
 }
