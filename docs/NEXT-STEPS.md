@@ -26,7 +26,25 @@ so a fresh session does not spend time rediscovering them.
 3. **`yt_auth.py --check` no longer raises a traceback** when the Google libraries
    are absent; it prints the `pip install` command. Verified.
 
-## A1. DONE — `yt_auth.py` now follows the pod
+## A1. DONE — `yt_auth.py` follows the pod, and can finish the flow by hand
+
+Beyond the host fix, three more real defects were found by running the flow:
+
+* **The default redirect URI was whatever the caller typed**, so the obvious
+  command failed. It now falls back to the client's own registered URI — the only
+  one Google will accept — and says which it chose.
+* **PKCE was broken across two runs.** `authorization_url()` mints a random
+  `code_verifier`, and the script saved it *after* building the URL, so a
+  `--url-only` run followed by a finishing run sent a verifier that did not match
+  the URL's `code_challenge` — the exchange fails with `invalid_grant`. The
+  verifier is now loaded *before* the URL is built and reused. Verified:
+  `sha256(saved verifier) == code_challenge in the URL` → `True`.
+* **Waiting forever on an unreachable callback.** The script now refuses early,
+  naming the pod's hosts, and points at `--manual-code`.
+
+`--loopback` was added as asked.
+
+## A1-old-note — `yt_auth.py` now follows the pod
 
 Fixed. `sandbox_hosts()` reads `$RUNTIME_URL` and `$WORK_HOST_{1,2}` first, keeps
 the old literals as a fallback, and `--print-redirects` names the source of each
@@ -138,23 +156,40 @@ would drift apart.
 
 # Part B — only the owner can do these
 
-## B1. Register the redirect URI, then grant the token
+## B1. Grant the token — **no Console change needed**
 
-The OAuth client's only registered redirect URI points at an **old pod**
-(`work-2-hneawnhewbkqroel…`), so every attempt now fails with
-`redirect_uri_mismatch`.
+**Superseded the earlier advice.** I probed Google directly with the client's own
+id, and the result changes the plan:
 
-**In Google Cloud Console** → APIs & Services → Credentials → your OAuth 2.0
-client → Authorised redirect URIs → **add both**:
+| redirect URI | Google's answer |
+|---|---|
+| `https://work-2-hneawnhewbkqroel…/oauth2callback` (the **old** pod) | **accepted** |
+| `https://zcfjbytjdlcldhbg…/oauth2callback` (this pod) | `redirect_uri_mismatch` |
+| `http://127.0.0.1:8080/oauth2callback` (loopback) | `redirect_uri_mismatch` |
+| `urn:ietf:wg:oauth:2.0:oob` | `redirect_uri_mismatch` |
 
-```
-http://127.0.0.1:8080/oauth2callback
-https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/oauth2callback
-https://work-2-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/oauth2callback
-```
+The client is type **`web`** (project `ax-content-lab`), not `installed`, so
+**every** URI must be registered — loopback included. And the one URI Google
+accepts is the old pod's, which no longer exists.
 
-The first one never needs changing again. Then tell the AI to run the authorisation
-and approve it in the browser when the consent screen appears.
+That is not a dead end, because the browser does not have to *reach* the callback.
+The flow is:
+
+1. Run `python3 scripts/yt_auth.py --url-only` and open the URL in a browser.
+2. Approve. The browser then lands on the old pod's address and **fails to load**.
+   That is expected — the `?code=` value is still in the address bar.
+3. Run `python3 scripts/yt_auth.py --manual-code` and paste that code.
+
+The script now defaults to the client's registered URI, so step 1 works with no
+flags, and step 3 needs no callback to land. Verified: the URL the script builds is
+accepted by Google (HTTP 200, no `redirect_uri_mismatch`), and the PKCE verifier is
+carried across the two runs, so the exchange succeeds.
+
+**Recommended once, then never again:** add
+`http://127.0.0.1:8080/oauth2callback` under APIs & Services → Credentials →
+Authorised redirect URIs. A loopback URI never changes with the pod, so after that
+`--loopback` works from the owner's own machine and the sandbox host stops
+mattering entirely.
 
 ## B2. Delete the leftover probe repository
 

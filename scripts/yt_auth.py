@@ -38,6 +38,10 @@ SCOPES = [
 ]
 TOKEN_PATH = os.environ.get(
     "YT_TOKEN_PATH", os.path.expanduser("~/.config/content-lab/yt_token.json"))
+# The PKCE verifier must survive between `--url-only` and the later run that
+# finishes the flow, or the exchange fails with "invalid_grant". It is a
+# short-lived secret, so it is written 0600 beside the token and removed on use.
+PENDING_PATH = os.path.expanduser("~/.config/content-lab/yt_pending.json")
 # The pod's public hostname changes every time the sandbox is recreated, and the
 # OAuth client must have the matching redirect URI registered. Reading the host
 # from the environment is what stops redirect_uri_mismatch after a recycle; the
@@ -187,6 +191,9 @@ def main() -> int:
                     help="print the URL and exit, without waiting")
     ap.add_argument("--manual-code", action="store_true",
                     help="read the code from stdin instead of waiting for a callback")
+    ap.add_argument("--loopback", action="store_true",
+                    help="use http://127.0.0.1:<port>/oauth2callback (must be registered; "
+                         "this is the URI that never changes)")
     ap.add_argument("--check", action="store_true",
                     help="verify the saved token against the API and exit")
     ap.add_argument("--print-redirects", action="store_true",
@@ -227,31 +234,87 @@ def main() -> int:
     client = load_client_secrets(args.client_secrets)
     from google_auth_oauthlib.flow import Flow
 
+    registered = client.get("redirect_uris", [])
+    if args.loopback:
+        args.redirect_uri = f"http://127.0.0.1:{args.port}/oauth2callback"
     if not args.redirect_uri:
-        sys.exit("Pass --redirect-uri (see --print-redirects), or set YT_REDIRECT_URI.")
-    if args.redirect_uri not in client.get("redirect_uris", []):
+        if not registered:
+            sys.exit("This OAuth client has no registered redirect URI. Add one:\n"
+                     "  python3 scripts/yt_auth.py --print-redirects")
+        # Google only accepts a registered URI, so defaulting to one is the only
+        # choice that can work without the caller knowing the client's config.
+        args.redirect_uri = registered[0]
+        print(f"Using the client's registered redirect URI:\n  {args.redirect_uri}")
+        print("(pass --redirect-uri or --loopback to choose another)\n")
+    if args.redirect_uri not in registered:
         print("WARNING: this redirect URI is not in the client's registered list:")
         print(f"  {args.redirect_uri}")
+        print(f"Registered: {registered or 'none'}")
         print("Google will refuse with redirect_uri_mismatch. Register it first:")
         print("  python3 scripts/yt_auth.py --print-redirects\n")
+        if not args.loopback:
+            print("Tip: omit --redirect-uri to fall back to the registered one.\n")
 
     flow = Flow.from_client_config({"web": client}, scopes=SCOPES,
                                    redirect_uri=args.redirect_uri)
+
+    # PKCE: the verifier that hashes into this URL's code_challenge must be the
+    # same one sent when the code is exchanged. authorization_url() would mint a
+    # fresh random verifier, so a verifier saved by an earlier run is loaded here,
+    # BEFORE the URL is built — loading it afterwards does not help, because the
+    # challenge in the URL would already belong to a different verifier.
+    reused = None
+    if os.path.exists(PENDING_PATH):
+        try:
+            with open(PENDING_PATH, encoding="utf-8") as fh:
+                pending = json.load(fh)
+            if pending.get("redirect_uri") == args.redirect_uri \
+                    and pending.get("code_verifier"):
+                flow.code_verifier = pending["code_verifier"]
+                reused = pending["code_verifier"]
+        except Exception as exc:  # noqa: BLE001 — a bad cache just means a new one
+            print(f"(ignoring unreadable pending flow: {exc})", file=sys.stderr)
+
+    state = secrets.token_urlsafe(16)
     url, _ = flow.authorization_url(access_type="offline", prompt="consent",
-                                    state=secrets.token_urlsafe(16))
+                                    state=state)
+
+    # Save the verifier that is actually in the URL, so a later run reuses it.
+    try:
+        os.makedirs(os.path.dirname(PENDING_PATH), exist_ok=True)
+        fd = os.open(PENDING_PATH, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            json.dump({"state": state, "redirect_uri": args.redirect_uri,
+                       "code_verifier": flow.code_verifier}, fh)
+    except Exception as exc:  # noqa: BLE001 — a missing cache is not fatal
+        print(f"(could not save the pending flow: {exc})", file=sys.stderr)
+    if reused:
+        print("Reusing the PKCE verifier from the previous run "
+              "(its code_challenge is in this URL).")
 
     print("Open this URL in a browser and approve access:\n")
     print(url)
     print()
 
     if args.url_only:
-        print("Then re-run without --url-only to finish.")
+        print("Then re-run without --url-only to finish. The PKCE verifier was")
+        print(f"saved to {PENDING_PATH} (mode 600) so that second run can complete.")
         return 0
 
     if args.manual_code:
+        print("After approving, the browser lands on a page that may fail to load.")
+        print("That is expected: copy the whole address and take the value of the")
+        print("?code= parameter from it (it is the long string before any '&').\n")
         code = input("Paste the value of the ?code= parameter: ").strip()
         flow.fetch_token(code=urllib.parse.unquote(code))
     else:
+        host = urllib.parse.urlparse(args.redirect_uri).hostname or ""
+        here = {h for h, _ in sandbox_hosts()}
+        if host and host not in here and host not in ("127.0.0.1", "localhost"):
+            sys.exit(f"The callback for {args.redirect_uri}\n"
+                     f"cannot land in this pod (this pod is {sorted(here)}).\n"
+                     "Re-run with --manual-code and paste the code from the browser, "
+                     "or pass --loopback after registering that URI.")
         port = args.port
         probe = socket.socket()
         if probe.connect_ex(("127.0.0.1", port)) == 0:
@@ -276,6 +339,10 @@ def main() -> int:
             sys.exit(f"Authorisation failed: {_Catcher.result}")
         flow.fetch_token(code=_Catcher.result["code"])
 
+    try:
+        os.remove(PENDING_PATH)
+    except OSError:
+        pass
     creds = flow.credentials
     if not creds.refresh_token:
         sys.exit("Google returned no refresh token. Re-run with prompt=consent "
