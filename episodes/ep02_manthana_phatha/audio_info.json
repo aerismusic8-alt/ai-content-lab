@@ -1,0 +1,14 @@
+{
+  "script": "episodes/ep02_manthana_phatha/narration_th.txt",
+  "out": "episodes/ep02_manthana_phatha/audio_th.mp3",
+  "voice": "th-TH-NiwatNeural",
+  "rate": "-12%",
+  "pitch": "-10Hz",
+  "chars": 5916,
+  "lines": 251,
+  "words": 251,
+  "duration_sec": 662.83,
+  "lufs": "-14.4",
+  "true_peak_dbfs": "-3.4",
+  "timing": "episodes/ep02_manthana_phatha/timing.json"
+}

@@ -46,6 +46,7 @@ If you speak MCP, run `scripts/mcp_server.py` and use its tools:
 ## Episodes
 
 - [ของขวัญของคนโง่](https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json): 05:06, เรื่องเล่าต่างแดน, 2026-10-24
+- [มัทนะพาธา ตำนานแห่งดอกกุหลาบ](https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json): 11:03, ช่องธรรมะก่อนนอน, 2026-10-24
 
 ## Licence
 

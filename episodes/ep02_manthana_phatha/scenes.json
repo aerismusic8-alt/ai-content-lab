@@ -1,0 +1,150 @@
+{
+  "episode": "ep02_manthana_phatha",
+  "title": "มัทนะพาธา",
+  "title_en": "Manthana Phatha — The Pain of Love",
+  "scenes": [
+    {
+      "lines": [
+        0,
+        10
+      ],
+      "image": "assets/images/ep02/img00_00.jpg",
+      "title": "เปิดเรื่อง",
+      "subtitle": "NIGHT STORY",
+      "chapter": "ก่อนหลับ",
+      "layout": 0
+    },
+    {
+      "lines": [
+        11,
+        31
+      ],
+      "image": "assets/images/ep02/img10_00.jpg",
+      "title": "ผ่อนคลายร่างกาย",
+      "subtitle": "BODY SCAN",
+      "chapter": "หายใจช้า ๆ",
+      "layout": 1
+    },
+    {
+      "lines": [
+        32,
+        49
+      ],
+      "image": "assets/images/ep02/img02_00.jpg",
+      "title": "มัทนะพาธา",
+      "subtitle": "THE PAIN OF LOVE",
+      "chapter": "ความหมายของชื่อ",
+      "layout": 2
+    },
+    {
+      "lines": [
+        50,
+        64
+      ],
+      "image": "assets/images/ep02/img04_00.jpg",
+      "title": "สุเทษณ์",
+      "subtitle": "THE GOD WHO LOVED",
+      "chapter": "ภาคสวรรค์",
+      "layout": 3
+    },
+    {
+      "lines": [
+        65,
+        81
+      ],
+      "image": "assets/images/ep02/img07_00.jpg",
+      "title": "กรรมเก่า",
+      "subtitle": "THE OLD DEBT",
+      "chapter": "ชาติก่อน",
+      "layout": 4
+    },
+    {
+      "lines": [
+        82,
+        99
+      ],
+      "image": "assets/images/ep02/img05_00.jpg",
+      "title": "มนต์ที่ผิด",
+      "subtitle": "THE SPELL",
+      "chapter": "วิมานของสุเทษณ์",
+      "layout": 5
+    },
+    {
+      "lines": [
+        100,
+        112
+      ],
+      "image": "assets/images/ep02/img00_01.jpg",
+      "title": "คำสาป",
+      "subtitle": "THE CURSE",
+      "chapter": "ดอกกุหลาบ",
+      "layout": 6
+    },
+    {
+      "lines": [
+        113,
+        126
+      ],
+      "image": "assets/images/ep02/img09_00.jpg",
+      "title": "ป่าหิมวัน",
+      "subtitle": "THE FOREST",
+      "chapter": "อาศรมพระฤๅษี",
+      "layout": 7
+    },
+    {
+      "lines": [
+        127,
+        137
+      ],
+      "image": "assets/images/ep02/img01_00.jpg",
+      "title": "ท้าวชัยเสน",
+      "subtitle": "THE KING",
+      "chapter": "คืนวันเพ็ญ",
+      "layout": 0
+    },
+    {
+      "lines": [
+        138,
+        160
+      ],
+      "image": "assets/images/ep02/img11_00.jpg",
+      "title": "อิจฉา",
+      "subtitle": "JEALOUSY",
+      "chapter": "กรุงหัสดิน",
+      "layout": 1
+    },
+    {
+      "lines": [
+        161,
+        184
+      ],
+      "image": "assets/images/ep02/img00_00.jpg",
+      "title": "กุหลาบกอใหม่",
+      "subtitle": "THE NEW ROSE",
+      "chapter": "กลับสู่ป่า",
+      "layout": 2
+    },
+    {
+      "lines": [
+        185,
+        219
+      ],
+      "image": "assets/images/ep02/img06_00.jpg",
+      "title": "ไม่มีใครได้อะไร",
+      "subtitle": "NO ONE WON",
+      "chapter": "บทเรียนของเรื่อง",
+      "layout": 3
+    },
+    {
+      "lines": [
+        220,
+        250
+      ],
+      "image": "assets/images/ep02/img10_01.jpg",
+      "title": "ราตรีสวัสดิ์",
+      "subtitle": "GOOD NIGHT",
+      "chapter": "หลับสบาย",
+      "layout": 4
+    }
+  ]
+}

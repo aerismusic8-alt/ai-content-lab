@@ -1,0 +1,2517 @@
+{
+  "duration_sec": 662.832,
+  "words": [
+    {
+      "type": "SentenceBoundary",
+      "text": "เอนลงให้สบาย",
+      "offset_sec": 0.1,
+      "duration_sec": 2.1232956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ปล่อยไหล่ทั้งสองข้างให้ผ่อนคลาย",
+      "offset_sec": 2.1732956,
+      "duration_sec": 3.0113638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "หายใจเข้าลึกๆช้าๆ",
+      "offset_sec": 5.1846594,
+      "duration_sec": 2.6420456
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วปล่อยลมออกทางปาก",
+      "offset_sec": 7.8267051,
+      "duration_sec": 2.3863638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คืนนี้เราจะเล่าเรื่องหนึ่งให้ฟัง",
+      "offset_sec": 10.2130689,
+      "duration_sec": 2.8977274
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เป็นเรื่องเก่าแก่ของบ้านเรา",
+      "offset_sec": 13.1107964,
+      "duration_sec": 2.599432
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เรื่องของดอกกุหลาบดอกหนึ่ง",
+      "offset_sec": 15.7102284,
+      "duration_sec": 2.6420456
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "กับความรักที่ทำให้เจ็บปวด",
+      "offset_sec": 18.352274,
+      "duration_sec": 2.6562501
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ต้องตั้งใจฟังให้ครบ",
+      "offset_sec": 21.0085242,
+      "duration_sec": 2.4431819
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ต้องจำอะไร",
+      "offset_sec": 23.4517062,
+      "duration_sec": 2.0170456
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถ้าจะหลับก็หลับได้เลย",
+      "offset_sec": 25.4687518,
+      "duration_sec": 2.471591
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ลองค่อยๆสังเกตตัวเองทีละส่วน",
+      "offset_sec": 27.9403429,
+      "duration_sec": 3.224432
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ตั้งแต่ปลายเท้าขึ้นมา",
+      "offset_sec": 31.164775,
+      "duration_sec": 2.471591
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ปลายเท้าทั้งสองข้าง",
+      "offset_sec": 33.636366,
+      "duration_sec": 2.3579547
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ปล่อยให้มันหนัก",
+      "offset_sec": 35.9943208,
+      "duration_sec": 1.8039774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ปล่อยให้มันอุ่น",
+      "offset_sec": 37.7982982,
+      "duration_sec": 1.9318183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไล่ขึ้นมาถึงขา",
+      "offset_sec": 39.7301165,
+      "duration_sec": 2.2585228
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถึงสะโพก",
+      "offset_sec": 41.9886394,
+      "duration_sec": 1.6477273
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถึงท้อง",
+      "offset_sec": 43.6363668,
+      "duration_sec": 1.6051137
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถึงหน้าอก",
+      "offset_sec": 45.2414805,
+      "duration_sec": 1.6335228
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถึงไหล่",
+      "offset_sec": 46.8750034,
+      "duration_sec": 1.4772728
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถึงคอ",
+      "offset_sec": 48.3522762,
+      "duration_sec": 1.6619319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วก็ถึงใบหน้า",
+      "offset_sec": 50.0142082,
+      "duration_sec": 2.1875001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คิ้วที่ขมวดไว้คลายลง",
+      "offset_sec": 52.2017083,
+      "duration_sec": 2.5284092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "กรามที่เกร็งไว้คลายลง",
+      "offset_sec": 54.7301176,
+      "duration_sec": 2.4005683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ลิ้นที่เกาะเพดานปากปล่อยลง",
+      "offset_sec": 57.1306859,
+      "duration_sec": 2.8835229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "รอบดวงตาปล่อยให้เบา",
+      "offset_sec": 60.0142089,
+      "duration_sec": 2.5142047
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ร่างกายนี้ทำงานให้เรามาทั้งวัน",
+      "offset_sec": 62.5284136,
+      "duration_sec": 3.2102275
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คืนนี้ปล่อยให้มันได้พัก",
+      "offset_sec": 65.7386411,
+      "duration_sec": 2.4005683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ต้องเกร็งไม่ต้องเฝ้า",
+      "offset_sec": 68.1392095,
+      "duration_sec": 2.2869319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ปล่อยให้มันหนักลงเรื่อยๆ",
+      "offset_sec": 70.4261415,
+      "duration_sec": 2.5284092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เหมือนผ้าที่ค่อยๆจมลงในน้ำอุ่น",
+      "offset_sec": 72.9545507,
+      "duration_sec": 3.1107956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เรื่องนี้มีชื่อว่ามัทนะพาธา",
+      "offset_sec": 76.0653464,
+      "duration_sec": 3.0255684
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เป็นบทละครที่พระบาทสมเด็จพระมงกุฎเกล้าเจ้าอยู่หัวทรงพระราชนิพนธ์",
+      "offset_sec": 79.0909148,
+      "duration_sec": 5.355114
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คือในหลวงรัชกาลที่หกของเรา",
+      "offset_sec": 84.4460289,
+      "duration_sec": 2.9261365
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "พระองค์ทรงเขียนขึ้นเองทั้งหมด",
+      "offset_sec": 87.3721654,
+      "duration_sec": 2.7272729
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ได้อิงมาจากเรื่องใด",
+      "offset_sec": 90.0994384,
+      "duration_sec": 2.4431819
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ทรงเริ่มเขียนและเขียนจบในปีเดียวกัน",
+      "offset_sec": 92.5426204,
+      "duration_sec": 3.3238638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ชื่อเรื่องนี้มีความหมายลึก",
+      "offset_sec": 95.8664842,
+      "duration_sec": 2.4289774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนะแปลว่าความลุ่มหลง",
+      "offset_sec": 98.2954617,
+      "duration_sec": 2.7272729
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "หรือจะพูดให้ง่ายก็คือความรัก",
+      "offset_sec": 101.0227346,
+      "duration_sec": 2.8409092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "พาธาแปลว่าความเจ็บปวด",
+      "offset_sec": 103.8636439,
+      "duration_sec": 2.5852274
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "รวมกันแล้วมัทนะพาธา",
+      "offset_sec": 106.4488714,
+      "duration_sec": 2.7414774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คือความเจ็บปวดแห่งความรัก",
+      "offset_sec": 109.1903488,
+      "duration_sec": 2.5710229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เป็นชื่อที่ตรงกับเรื่องที่สุด",
+      "offset_sec": 111.7613718,
+      "duration_sec": 2.5426138
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เพราะเรื่องนี้ไม่ได้เล่าเรื่องรักที่สมหวัง",
+      "offset_sec": 114.3039856,
+      "duration_sec": 3.3096593
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่เล่าเรื่องรักที่ทำให้เจ็บ",
+      "offset_sec": 117.6136449,
+      "duration_sec": 2.5142047
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "และความเจ็บนั้น",
+      "offset_sec": 120.1278496,
+      "duration_sec": 2.0596592
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ได้เกิดจากความชั่วร้ายของใคร",
+      "offset_sec": 122.1875089,
+      "duration_sec": 2.9403411
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มันเกิดจากธรรมชาติของความรักเอง",
+      "offset_sec": 125.12785,
+      "duration_sec": 3.2812502
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เรื่องเริ่มต้นบนสวรรค์",
+      "offset_sec": 128.4091003,
+      "duration_sec": 2.5142047
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มีเทวดาองค์หนึ่งชื่อสุเทษณ์",
+      "offset_sec": 130.923305,
+      "duration_sec": 2.7840911
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านมีฤทธิ์มีเดชมาก",
+      "offset_sec": 133.7073961,
+      "duration_sec": 2.4147729
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่ท่านก็มีทุกข์เหมือนคนทั่วไป",
+      "offset_sec": 136.122169,
+      "duration_sec": 2.9403411
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านรักนางฟ้าองค์หนึ่ง",
+      "offset_sec": 139.0625101,
+      "duration_sec": 2.4573865
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางชื่อมัทนา",
+      "offset_sec": 141.5198967,
+      "duration_sec": 2.1875001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านรักมัทนามานานแล้ว",
+      "offset_sec": 143.7073968,
+      "duration_sec": 2.7414774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่รักเท่าไรก็ไม่ได้",
+      "offset_sec": 146.4488743,
+      "duration_sec": 2.4431819
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนาไม่เคยรักท่านตอบ",
+      "offset_sec": 148.8920563,
+      "duration_sec": 2.599432
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านยิ่งรักยิ่งทุกข์",
+      "offset_sec": 151.684,
+      "duration_sec": 2.1517047
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ยิ่งอยากได้ยิ่งเจ็บ",
+      "offset_sec": 153.7857047,
+      "duration_sec": 2.0880683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านจึงเรียกวิทยาธรองค์หนึ่ง",
+      "offset_sec": 155.873773,
+      "duration_sec": 2.9403411
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ชื่อมายาวิน",
+      "offset_sec": 158.8141141,
+      "duration_sec": 1.9460228
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เป็นผู้วิเศษที่รู้มนต์คาถา",
+      "offset_sec": 160.760137,
+      "duration_sec": 3.0539774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ให้ไปเรียกมัทนามาหา",
+      "offset_sec": 163.8141145,
+      "duration_sec": 2.6562501
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก่อนจะไปมายาวินทูลบอกสุเทษณ์ว่า",
+      "offset_sec": 166.4703647,
+      "duration_sec": 3.2670456
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ที่ท่านไม่ได้มัทนามาเพราะกรรมเก่า",
+      "offset_sec": 169.7374104,
+      "duration_sec": 3.1250002
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ในชาติก่อนท่านเป็นกษัตริย์แคว้นปัญจาล",
+      "offset_sec": 172.8624106,
+      "duration_sec": 3.3238638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านไปขอลูกสาวของกษัตริย์แคว้นสุราษฎร์",
+      "offset_sec": 176.1862745,
+      "duration_sec": 3.3096593
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คือนางมัทนาในชาตินั้น",
+      "offset_sec": 179.4959338,
+      "duration_sec": 2.7414774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่พ่อของนางไม่ยกให้",
+      "offset_sec": 182.2374113,
+      "duration_sec": 2.6278411
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "จึงเกิดสงครามขึ้น",
+      "offset_sec": 184.8652524,
+      "duration_sec": 2.2443183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สุดท้ายท่านชนะจับพ่อของนางเป็นเชลย",
+      "offset_sec": 187.1095707,
+      "duration_sec": 3.5511366
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางเข้ามาขอชีวิตพ่อไว้",
+      "offset_sec": 190.6607074,
+      "duration_sec": 2.8409092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วยอมเป็นบาทบริจาริกาของท่าน",
+      "offset_sec": 193.5016167,
+      "duration_sec": 3.3238638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่ก่อนจะตกเป็นของท่าน",
+      "offset_sec": 196.8254805,
+      "duration_sec": 2.5568183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางก็ชักดาบปลงพระชนม์ตัวเองเสียก่อน",
+      "offset_sec": 199.3822989,
+      "duration_sec": 3.3948866
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "กรรมนั้นยังไม่จบ",
+      "offset_sec": 202.7771855,
+      "duration_sec": 2.0170456
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางไปเกิดเป็นเทพธิดา",
+      "offset_sec": 204.7942311,
+      "duration_sec": 2.5568183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านก็บำเพ็ญจนได้ไปเกิดบนสวรรค์",
+      "offset_sec": 207.3510495,
+      "duration_sec": 3.4517047
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่หนี้ที่ค้างไว้",
+      "offset_sec": 210.8027543,
+      "duration_sec": 2.1306819
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ยังค้างอยู่",
+      "offset_sec": 212.9334363,
+      "duration_sec": 1.846591
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สุเทษณ์ฟังแล้วก็ยังไม่เชื่อ",
+      "offset_sec": 214.7800273,
+      "duration_sec": 2.8409092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านสั่งให้มายาวินลองดูก่อน",
+      "offset_sec": 217.6209366,
+      "duration_sec": 2.9971593
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มายาวินจึงเรียกมัทนามา",
+      "offset_sec": 220.6180959,
+      "duration_sec": 2.8693183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ด้วยมนต์ที่ผูกไว้",
+      "offset_sec": 223.4874143,
+      "duration_sec": 2.1306819
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนามาแล้วก็จริง",
+      "offset_sec": 225.6180963,
+      "duration_sec": 2.4289774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่ไม่รู้ตัว",
+      "offset_sec": 228.0470737,
+      "duration_sec": 1.9034092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถามอะไรก็ตอบย้อนกลับไปอย่างนั้น",
+      "offset_sec": 229.950483,
+      "duration_sec": 3.0539774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เหมือนคนไม่มีสติ",
+      "offset_sec": 233.0044605,
+      "duration_sec": 2.1164774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สุเทษณ์ขัดใจนัก",
+      "offset_sec": 235.1209379,
+      "duration_sec": 1.9744319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สั่งให้คลายมนต์",
+      "offset_sec": 237.0953698,
+      "duration_sec": 2.0170456
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เมื่อมนต์คลายมัทนาตื่นขึ้น",
+      "offset_sec": 239.1124154,
+      "duration_sec": 2.6562501
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ตกใจที่ตนมาอยู่ในวิมานของสุเทษณ์",
+      "offset_sec": 241.7686656,
+      "duration_sec": 3.6221593
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "โดยไม่รู้ตัวเลย",
+      "offset_sec": 245.390825,
+      "duration_sec": 2.0596592
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สุเทษณ์พยายามฝากรักกับมัทนา",
+      "offset_sec": 247.4504842,
+      "duration_sec": 3.2386366
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "บอกความในใจที่เก็บไว้มานาน",
+      "offset_sec": 250.6891208,
+      "duration_sec": 3.0539774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่มัทนาไม่รักตอบ",
+      "offset_sec": 253.7430983,
+      "duration_sec": 2.2869319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ว่าจะพูดอย่างไร",
+      "offset_sec": 256.0300303,
+      "duration_sec": 2.2869319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางก็ไม่ยอมรับรัก",
+      "offset_sec": 258.3169623,
+      "duration_sec": 2.4005683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สุเทษณ์โกรธจัด",
+      "offset_sec": 260.7175307,
+      "duration_sec": 1.9318183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "จึงสาปส่งนางลงไปเกิดเป็นดอกกุหลาบ",
+      "offset_sec": 262.649349,
+      "duration_sec": 3.3948866
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "อยู่ในโลกของมนุษย์",
+      "offset_sec": 266.0442356,
+      "duration_sec": 2.1022728
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "และจะกลับคืนเป็นคนได้",
+      "offset_sec": 268.1465085,
+      "duration_sec": 2.6136365
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เพียงคืนวันเพ็ญเท่านั้น",
+      "offset_sec": 270.760145,
+      "duration_sec": 2.471591
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คืนเดียวเท่านั้น",
+      "offset_sec": 273.2317361,
+      "duration_sec": 1.9886365
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "พอฟ้าสว่างก็กลับเป็นกุหลาบดังเดิม",
+      "offset_sec": 275.2203726,
+      "duration_sec": 3.380682
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่มีเงื่อนไขอยู่อย่างหนึ่ง",
+      "offset_sec": 278.6010547,
+      "duration_sec": 2.4431819
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถ้านางได้รักบุรุษผู้ใดแล้ว",
+      "offset_sec": 281.0442367,
+      "duration_sec": 2.911932
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางจะคงรูปมนุษย์อยู่ได้ตลอดไป",
+      "offset_sec": 283.9561687,
+      "duration_sec": 3.2528411
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "และถ้าวันใดนางมีทุกข์เพราะความรัก",
+      "offset_sec": 287.2090099,
+      "duration_sec": 3.0539774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ให้มาขอโทษท่าน",
+      "offset_sec": 290.2629874,
+      "duration_sec": 2.3437501
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านจะยกโทษให้นาง",
+      "offset_sec": 292.6067375,
+      "duration_sec": 2.5000001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนาลงมาเกิดเป็นดอกกุหลาบ",
+      "offset_sec": 295.1067377,
+      "duration_sec": 2.8977274
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "อยู่ในป่าหิมวัน",
+      "offset_sec": 298.0044652,
+      "duration_sec": 2.2869319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ในป่านั้นมีพระฤๅษีองค์หนึ่ง",
+      "offset_sec": 300.2913972,
+      "duration_sec": 2.8835229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ชื่อพระกาละทรรศิน",
+      "offset_sec": 303.1749201,
+      "duration_sec": 2.3721592
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านมีศิษย์อยู่หลายคน",
+      "offset_sec": 305.74,
+      "duration_sec": 2.4500001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "วันหนึ่งพระกาละทรรศินเห็นกุหลาบมัทนา",
+      "offset_sec": 308.1400001,
+      "duration_sec": 3.5511366
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านชอบใจมาก",
+      "offset_sec": 311.6911368,
+      "duration_sec": 2.0454546
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สั่งให้ศิษย์ขุดไปปลูกไว้ใกล้อาศรม",
+      "offset_sec": 313.7365915,
+      "duration_sec": 3.3238638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เมื่อถึงคืนวันเพ็ญ",
+      "offset_sec": 317.0604553,
+      "duration_sec": 2.2159092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนาก็กลายเป็นร่างมนุษย์",
+      "offset_sec": 319.2763646,
+      "duration_sec": 2.6704547
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คอยรับใช้พระฤๅษีและศิษย์ทั้งหลาย",
+      "offset_sec": 321.9468193,
+      "duration_sec": 3.2954547
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คอยตักน้ำหาไม้ห่อข้าว",
+      "offset_sec": 325.2422741,
+      "duration_sec": 2.7698865
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ปรนนิบัติเรื่อยมา",
+      "offset_sec": 328.0121607,
+      "duration_sec": 2.1164774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "พระฤๅษีก็รักนางเหมือนลูกของท่าน",
+      "offset_sec": 330.1286381,
+      "duration_sec": 3.0823865
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "วันหนึ่งท้าวชัยเสนผู้ครองนครหัสดิน",
+      "offset_sec": 333.2110247,
+      "duration_sec": 3.5085229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เสด็จประพาสป่า",
+      "offset_sec": 336.7195477,
+      "duration_sec": 2.0596592
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ผ่านมาถึงอาศรมของพระกาละทรรศิน",
+      "offset_sec": 338.7792069,
+      "duration_sec": 3.3096593
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "บังเอิญตรงกับคืนวันเพ็ญ",
+      "offset_sec": 342.0888663,
+      "duration_sec": 2.7414774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านจึงได้พบกับนางมัทนา",
+      "offset_sec": 344.8303437,
+      "duration_sec": 2.8693183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ทั้งสองต่างรักกันในคืนนั้น",
+      "offset_sec": 347.6996621,
+      "duration_sec": 2.7982956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "พระกาละทรรศินก็จัดพิธีอภิเษกให้",
+      "offset_sec": 350.4979578,
+      "duration_sec": 3.6079548
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนาได้เดินทางไปกับท้าวชัยเสน",
+      "offset_sec": 354.1059126,
+      "duration_sec": 3.2812502
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เข้าไปอยู่ในกรุงหัสดิน",
+      "offset_sec": 357.3871628,
+      "duration_sec": 2.4857956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "และนับจากนั้น",
+      "offset_sec": 359.8729585,
+      "duration_sec": 1.9744319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางก็ไม่กลับเป็นดอกกุหลาบอีกเลย",
+      "offset_sec": 361.8473904,
+      "duration_sec": 3.1534093
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท้าวชัยเสนหลงรักมัทนามาก",
+      "offset_sec": 365.0007997,
+      "duration_sec": 2.8977274
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "จนลืมมเหสีของตน",
+      "offset_sec": 367.8985272,
+      "duration_sec": 2.5000001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มเหสีองค์นั้นชื่อนางจัณฑี",
+      "offset_sec": 370.3985274,
+      "duration_sec": 3.0255684
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางหึงหวงมัทนา",
+      "offset_sec": 373.4240958,
+      "duration_sec": 2.2727274
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ทั้งอิจฉาทั้งริษยา",
+      "offset_sec": 375.6968233,
+      "duration_sec": 2.5426138
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "จึงคิดอุบายขึ้นมา",
+      "offset_sec": 378.2394371,
+      "duration_sec": 2.3579547
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางใส่ร้ายมัทนา",
+      "offset_sec": 380.5973918,
+      "duration_sec": 2.2869319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ว่าลอบเป็นชู้กับทหารเอกของท้าวชัยเสน",
+      "offset_sec": 382.8843238,
+      "duration_sec": 3.693182
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ทหารคนนั้นชื่อศุภางค์",
+      "offset_sec": 386.5775059,
+      "duration_sec": 2.6420456
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วนางยังยุยงพระราชบิดาของตน",
+      "offset_sec": 389.2195515,
+      "duration_sec": 3.3380684
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ให้ยกทัพมาตีเมืองหัสดิน",
+      "offset_sec": 392.5576199,
+      "duration_sec": 2.8267047
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท้าวชัยเสนออกไปรบ",
+      "offset_sec": 395.3843247,
+      "duration_sec": 2.3863638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ครั้นเมื่อกลับมา",
+      "offset_sec": 397.7706885,
+      "duration_sec": 2.0880683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ได้ยินข่าวว่ามัทนาลอบคบกับศุภางค์",
+      "offset_sec": 399.8587568,
+      "duration_sec": 3.7500002
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านกริ้วจัด",
+      "offset_sec": 403.6087571,
+      "duration_sec": 1.6761364
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สั่งให้ประหารมัทนาเสียทันที",
+      "offset_sec": 405.2848936,
+      "duration_sec": 3.068182
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่เพชฌฆาตสงสารนาง",
+      "offset_sec": 408.3530756,
+      "duration_sec": 2.6420456
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "จึงแอบปล่อยนางหนีไป",
+      "offset_sec": 410.9951213,
+      "duration_sec": 2.4289774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ส่วนศุภางค์",
+      "offset_sec": 413.4240987,
+      "duration_sec": 1.8323864
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ด้วยความจงรักภักดีต่อท้าวชัยเสน",
+      "offset_sec": 415.2564852,
+      "duration_sec": 3.3238638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ออกไปรบเป็นครั้งสุดท้าย",
+      "offset_sec": 418.5803491,
+      "duration_sec": 2.7982956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ในฐานะไพร่ทหารเลวคนหนึ่ง",
+      "offset_sec": 421.3786448,
+      "duration_sec": 2.7130683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "และตายอยู่ในที่รบนั้น",
+      "offset_sec": 424.0917132,
+      "duration_sec": 2.5710229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนาหนีกลับมาถึงป่าหิมวัน",
+      "offset_sec": 426.6627361,
+      "duration_sec": 3.1676138
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางทำพลีกรรมบูชาสุเทษณ์เทพบุตร",
+      "offset_sec": 429.8303499,
+      "duration_sec": 3.3096593
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "จนสุเทษณ์เสด็จมา",
+      "offset_sec": 433.1400093,
+      "duration_sec": 2.2869319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านเอ่ยปากจะช่วยให้นางได้คืนสู่สวรรค์",
+      "offset_sec": 435.4269413,
+      "duration_sec": 3.6363639
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่ท่านก็ขอความรักจากนางอีกครั้ง",
+      "offset_sec": 439.0633052,
+      "duration_sec": 3.224432
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนาปฏิเสธ",
+      "offset_sec": 442.2877372,
+      "duration_sec": 2.0596592
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางบอกว่าตัวนางนั้น",
+      "offset_sec": 444.3473965,
+      "duration_sec": 2.5000001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่สามารถจะรักใครได้อีกแล้ว",
+      "offset_sec": 446.8473966,
+      "duration_sec": 2.8693183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สุเทษณ์โกรธนัก",
+      "offset_sec": 449.716715,
+      "duration_sec": 1.9176137
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "จึงสาปให้นางเป็นกุหลาบไปตลอดชีวิต",
+      "offset_sec": 451.6343288,
+      "duration_sec": 3.2954547
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ฝ่ายท้าวชัยเสน",
+      "offset_sec": 454.9297836,
+      "duration_sec": 2.159091
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เมื่อรบชนะและได้รู้ความจริงทั้งหมด",
+      "offset_sec": 457.0888747,
+      "duration_sec": 2.9971593
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็กริ้วมเหสีจัณฑีมาก",
+      "offset_sec": 460.086034,
+      "duration_sec": 2.5284092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านลงอาญานาง",
+      "offset_sec": 462.6144433,
+      "duration_sec": 2.1732956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วออกไปตามหามัทนาในป่า",
+      "offset_sec": 464.98,
+      "duration_sec": 2.9755684
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่สิ่งที่ท่านพบ",
+      "offset_sec": 467.9055684,
+      "duration_sec": 2.0596592
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มีเพียงกอกุหลาบกอใหม่",
+      "offset_sec": 469.9652276,
+      "duration_sec": 2.4857956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ที่ขึ้นอยู่บนกองกูณฑ์",
+      "offset_sec": 472.4510232,
+      "duration_sec": 2.4857956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ซึ่งมัทนาใช้บูชาสุเทษณ์",
+      "offset_sec": 474.9368189,
+      "duration_sec": 2.7982956
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท้าวชัยเสนทำอะไรไม่ได้อีกแล้ว",
+      "offset_sec": 477.7351145,
+      "duration_sec": 3.0823865
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านยืนอยู่ตรงนั้นนาน",
+      "offset_sec": 480.8175011,
+      "duration_sec": 2.5000001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ด้วยความรักที่ไม่อาจปล่อยวาง",
+      "offset_sec": 483.3175013,
+      "duration_sec": 2.8835229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านจึงขุดกุหลาบต้นนั้นขึ้นมา",
+      "offset_sec": 486.2010242,
+      "duration_sec": 3.0397729
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วนำกลับไปปลูกไว้ในสวนขวัญของกรุงหัสดิน",
+      "offset_sec": 489.2407972,
+      "duration_sec": 3.9630684
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เรื่องก็จบลงเพียงเท่านี้",
+      "offset_sec": 493.2038657,
+      "duration_sec": 2.6136365
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่มีใครได้อะไรตามที่อยากได้",
+      "offset_sec": 495.8175022,
+      "duration_sec": 3.0965911
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สุเทษณ์อยากได้ความรักของมัทนา",
+      "offset_sec": 498.9140933,
+      "duration_sec": 3.0823865
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ไม่ได้",
+      "offset_sec": 501.9964799,
+      "duration_sec": 1.8039774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท้าวชัยเสนอยากได้มัทนากลับคืน",
+      "offset_sec": 503.8004573,
+      "duration_sec": 3.3380684
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ไม่ได้",
+      "offset_sec": 507.1385258,
+      "duration_sec": 1.8039774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนาเองอยากเป็นคนธรรมดา",
+      "offset_sec": 508.9425032,
+      "duration_sec": 2.8977274
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ไม่ได้",
+      "offset_sec": 511.8402307,
+      "duration_sec": 1.8039774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ทุกคนล้วนรัก",
+      "offset_sec": 513.6442081,
+      "duration_sec": 1.8892046
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "และทุกคนล้วนเจ็บ",
+      "offset_sec": 515.5334127,
+      "duration_sec": 2.002841
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เพราะความรักที่ถือไว้แน่นเกินไป",
+      "offset_sec": 517.5362538,
+      "duration_sec": 3.0397729
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ลองคิดดูดีๆ",
+      "offset_sec": 520.5760268,
+      "duration_sec": 2.2159092
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "สุเทษณ์ไม่ได้เป็นคนชั่ว",
+      "offset_sec": 522.791936,
+      "duration_sec": 2.5852274
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านเพียงรักมาก",
+      "offset_sec": 525.3771635,
+      "duration_sec": 2.002841
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "และไม่รู้จะทำอย่างไรกับความรักนั้น",
+      "offset_sec": 527.3800045,
+      "duration_sec": 3.2812502
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านจึงใช้ฤทธิ์ใช้มนต์ใช้คำสาป",
+      "offset_sec": 530.6612548,
+      "duration_sec": 3.0255684
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ทุกอย่างที่ท่านมี",
+      "offset_sec": 533.6868232,
+      "duration_sec": 2.1875001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เพื่อให้ได้สิ่งที่ท่านอยากได้",
+      "offset_sec": 535.8743233,
+      "duration_sec": 2.6704547
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่มนต์บังคับได้แค่ร่างกาย",
+      "offset_sec": 538.5447781,
+      "duration_sec": 2.7272729
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "บังคับใจไม่ได้",
+      "offset_sec": 541.272051,
+      "duration_sec": 2.1448865
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท้าวชัยเสนก็ไม่ได้เป็นคนเลว",
+      "offset_sec": 543.4169375,
+      "duration_sec": 2.9971593
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านรักมัทนาจริง",
+      "offset_sec": 546.4140968,
+      "duration_sec": 2.3437501
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่ท่านก็เชื่อคนอื่นง่ายเกินไป",
+      "offset_sec": 548.757847,
+      "duration_sec": 3.0965911
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ท่านไม่ถามมัทนาสักคำ",
+      "offset_sec": 551.8544381,
+      "duration_sec": 2.6562501
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก่อนจะตัดสินใจ",
+      "offset_sec": 554.5106883,
+      "duration_sec": 2.1306819
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ความรักที่ไม่มีคำถาม",
+      "offset_sec": 556.6413703,
+      "duration_sec": 2.599432
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "จึงกลายเป็นความรักที่ทำร้าย",
+      "offset_sec": 559.2408023,
+      "duration_sec": 2.8125002
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ส่วนมัทนา",
+      "offset_sec": 562.0533025,
+      "duration_sec": 1.8607955
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางไม่เคยได้เลือกอะไรเลย",
+      "offset_sec": 563.9140981,
+      "duration_sec": 2.5710229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถูกสาปถูกพาไปถูกใส่ร้ายถูกประหาร",
+      "offset_sec": 566.485121,
+      "duration_sec": 3.4517047
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ทุกอย่างเกิดขึ้นกับนาง",
+      "offset_sec": 569.9368258,
+      "duration_sec": 2.5426138
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "โดยที่นางไม่ได้เป็นคนเลือก",
+      "offset_sec": 572.4794396,
+      "duration_sec": 2.5710229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "นางเพียงอยากเป็นคนธรรมดา",
+      "offset_sec": 575.0504626,
+      "duration_sec": 2.7130683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "อยากมีชีวิตธรรมดา",
+      "offset_sec": 577.7635309,
+      "duration_sec": 2.3721592
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แค่นั้นก็ไม่ได้",
+      "offset_sec": 580.1356902,
+      "duration_sec": 2.2585228
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ในหลวงรัชกาลที่หกทรงตั้งชื่อเรื่องนี้ไว้ดีแล้ว",
+      "offset_sec": 582.3942131,
+      "duration_sec": 4.0340912
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มัทนะพาธาความเจ็บปวดแห่งความรัก",
+      "offset_sec": 586.4283043,
+      "duration_sec": 3.1818184
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ใช่เพราะรักผิดคน",
+      "offset_sec": 589.6101227,
+      "duration_sec": 2.471591
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แต่เพราะความรักนั้น",
+      "offset_sec": 592.0817138,
+      "duration_sec": 2.2017047
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เมื่อกำไว้มันก็เจ็บ",
+      "offset_sec": 594.2834185,
+      "duration_sec": 2.2301137
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ถ้าวันนี้เรามีอะไรที่ยังกำไว้แน่น",
+      "offset_sec": 596.5135323,
+      "duration_sec": 3.3522729
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ลองค่อยๆคลายมือลง",
+      "offset_sec": 599.8658053,
+      "duration_sec": 2.3721592
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ต้องปล่อยทั้งหมดในคืนนี้",
+      "offset_sec": 602.2379645,
+      "duration_sec": 2.6988638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แค่รู้ตัวว่าเรากำอะไรอยู่",
+      "offset_sec": 604.9368284,
+      "duration_sec": 3.0113638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็พอแล้ว",
+      "offset_sec": 607.9481922,
+      "duration_sec": 1.7755683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ต้องตัดสินตัวเองว่าผิดหรือถูก",
+      "offset_sec": 609.7237605,
+      "duration_sec": 2.8835229
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ที่เรารักใครสักคนมากๆ",
+      "offset_sec": 612.6072835,
+      "duration_sec": 2.7840911
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ใช่ความผิด",
+      "offset_sec": 615.3913746,
+      "duration_sec": 1.8750001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ที่เรากลัวจะเสียเขาไป",
+      "offset_sec": 617.2663747,
+      "duration_sec": 2.5426138
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ก็ไม่ใช่ความผิด",
+      "offset_sec": 619.8089886,
+      "duration_sec": 1.9744319
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "มันเป็นเพียงธรรมชาติของหัวใจ",
+      "offset_sec": 621.964,
+      "duration_sec": 2.9187502
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ที่ยังยึดยังหวงยังกลัว",
+      "offset_sec": 624.8327502,
+      "duration_sec": 2.4431819
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คืนนี้ไม่ต้องแก้ไขอะไร",
+      "offset_sec": 627.2759322,
+      "duration_sec": 2.6278411
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ต้องคิดหาคำตอบ",
+      "offset_sec": 629.9037733,
+      "duration_sec": 2.2301137
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แค่ฟังเรื่องนี้จบ",
+      "offset_sec": 632.1338871,
+      "duration_sec": 2.0880683
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วปล่อยให้เรื่องมันผ่านไป",
+      "offset_sec": 634.2219554,
+      "duration_sec": 2.6988638
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "เหมือนน้ำที่ไหลผ่านก้อนหิน",
+      "offset_sec": 636.9208192,
+      "duration_sec": 2.8125002
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ไม่ต้องเกาะไม่ต้องดึงไว้",
+      "offset_sec": 639.7333194,
+      "duration_sec": 2.4289774
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "หายใจเข้าลึกๆอีกครั้ง",
+      "offset_sec": 642.1622969,
+      "duration_sec": 2.5568183
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ปล่อยลมออกช้าๆ",
+      "offset_sec": 644.7191153,
+      "duration_sec": 2.3011365
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ให้ลมหายใจยาวขึ้นอีกนิด",
+      "offset_sec": 647.0202518,
+      "duration_sec": 2.7272729
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วอีกนิด",
+      "offset_sec": 649.7475247,
+      "duration_sec": 1.7045455
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "คืนนี้ขอให้หลับสบาย",
+      "offset_sec": 651.4520703,
+      "duration_sec": 2.5000001
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ฝันดี",
+      "offset_sec": 653.9520705,
+      "duration_sec": 1.7045455
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "แล้วพรุ่งนี้ค่อยกลับมาฟังใหม่",
+      "offset_sec": 655.6566161,
+      "duration_sec": 2.8125002
+    },
+    {
+      "type": "SentenceBoundary",
+      "text": "ราตรีสวัสดิ์",
+      "offset_sec": 658.4691163,
+      "duration_sec": 1.7329546
+    }
+  ],
+  "lines": [
+    {
+      "text": "เอนลงให้สบาย",
+      "start": 0.1
+    },
+    {
+      "text": "ปล่อยไหล่ทั้งสองข้างให้ผ่อนคลาย",
+      "start": 2.173
+    },
+    {
+      "text": "หายใจเข้าลึกๆช้าๆ",
+      "start": 5.185
+    },
+    {
+      "text": "แล้วปล่อยลมออกทางปาก",
+      "start": 7.827
+    },
+    {
+      "text": "คืนนี้เราจะเล่าเรื่องหนึ่งให้ฟัง",
+      "start": 10.213
+    },
+    {
+      "text": "เป็นเรื่องเก่าแก่ของบ้านเรา",
+      "start": 13.111
+    },
+    {
+      "text": "เรื่องของดอกกุหลาบดอกหนึ่ง",
+      "start": 15.71
+    },
+    {
+      "text": "กับความรักที่ทำให้เจ็บปวด",
+      "start": 18.352
+    },
+    {
+      "text": "ไม่ต้องตั้งใจฟังให้ครบ",
+      "start": 21.009
+    },
+    {
+      "text": "ไม่ต้องจำอะไร",
+      "start": 23.452
+    },
+    {
+      "text": "ถ้าจะหลับก็หลับได้เลย",
+      "start": 25.469
+    },
+    {
+      "text": "ลองค่อยๆสังเกตตัวเองทีละส่วน",
+      "start": 27.94
+    },
+    {
+      "text": "ตั้งแต่ปลายเท้าขึ้นมา",
+      "start": 31.165
+    },
+    {
+      "text": "ปลายเท้าทั้งสองข้าง",
+      "start": 33.636
+    },
+    {
+      "text": "ปล่อยให้มันหนัก",
+      "start": 35.994
+    },
+    {
+      "text": "ปล่อยให้มันอุ่น",
+      "start": 37.798
+    },
+    {
+      "text": "ไล่ขึ้นมาถึงขา",
+      "start": 39.73
+    },
+    {
+      "text": "ถึงสะโพก",
+      "start": 41.989
+    },
+    {
+      "text": "ถึงท้อง",
+      "start": 43.636
+    },
+    {
+      "text": "ถึงหน้าอก",
+      "start": 45.241
+    },
+    {
+      "text": "ถึงไหล่",
+      "start": 46.875
+    },
+    {
+      "text": "ถึงคอ",
+      "start": 48.352
+    },
+    {
+      "text": "แล้วก็ถึงใบหน้า",
+      "start": 50.014
+    },
+    {
+      "text": "คิ้วที่ขมวดไว้คลายลง",
+      "start": 52.202
+    },
+    {
+      "text": "กรามที่เกร็งไว้คลายลง",
+      "start": 54.73
+    },
+    {
+      "text": "ลิ้นที่เกาะเพดานปากปล่อยลง",
+      "start": 57.131
+    },
+    {
+      "text": "รอบดวงตาปล่อยให้เบา",
+      "start": 60.014
+    },
+    {
+      "text": "ร่างกายนี้ทำงานให้เรามาทั้งวัน",
+      "start": 62.528
+    },
+    {
+      "text": "คืนนี้ปล่อยให้มันได้พัก",
+      "start": 65.739
+    },
+    {
+      "text": "ไม่ต้องเกร็งไม่ต้องเฝ้า",
+      "start": 68.139
+    },
+    {
+      "text": "ปล่อยให้มันหนักลงเรื่อยๆ",
+      "start": 70.426
+    },
+    {
+      "text": "เหมือนผ้าที่ค่อยๆจมลงในน้ำอุ่น",
+      "start": 72.955
+    },
+    {
+      "text": "เรื่องนี้มีชื่อว่ามัทนะพาธา",
+      "start": 76.065
+    },
+    {
+      "text": "เป็นบทละครที่พระบาทสมเด็จพระมงกุฎเกล้าเจ้าอยู่หัวทรงพระราชนิพนธ์",
+      "start": 79.091
+    },
+    {
+      "text": "คือในหลวงรัชกาลที่หกของเรา",
+      "start": 84.446
+    },
+    {
+      "text": "พระองค์ทรงเขียนขึ้นเองทั้งหมด",
+      "start": 87.372
+    },
+    {
+      "text": "ไม่ได้อิงมาจากเรื่องใด",
+      "start": 90.099
+    },
+    {
+      "text": "ทรงเริ่มเขียนและเขียนจบในปีเดียวกัน",
+      "start": 92.543
+    },
+    {
+      "text": "ชื่อเรื่องนี้มีความหมายลึก",
+      "start": 95.866
+    },
+    {
+      "text": "มัทนะแปลว่าความลุ่มหลง",
+      "start": 98.295
+    },
+    {
+      "text": "หรือจะพูดให้ง่ายก็คือความรัก",
+      "start": 101.023
+    },
+    {
+      "text": "พาธาแปลว่าความเจ็บปวด",
+      "start": 103.864
+    },
+    {
+      "text": "รวมกันแล้วมัทนะพาธา",
+      "start": 106.449
+    },
+    {
+      "text": "คือความเจ็บปวดแห่งความรัก",
+      "start": 109.19
+    },
+    {
+      "text": "เป็นชื่อที่ตรงกับเรื่องที่สุด",
+      "start": 111.761
+    },
+    {
+      "text": "เพราะเรื่องนี้ไม่ได้เล่าเรื่องรักที่สมหวัง",
+      "start": 114.304
+    },
+    {
+      "text": "แต่เล่าเรื่องรักที่ทำให้เจ็บ",
+      "start": 117.614
+    },
+    {
+      "text": "และความเจ็บนั้น",
+      "start": 120.128
+    },
+    {
+      "text": "ไม่ได้เกิดจากความชั่วร้ายของใคร",
+      "start": 122.188
+    },
+    {
+      "text": "มันเกิดจากธรรมชาติของความรักเอง",
+      "start": 125.128
+    },
+    {
+      "text": "เรื่องเริ่มต้นบนสวรรค์",
+      "start": 128.409
+    },
+    {
+      "text": "มีเทวดาองค์หนึ่งชื่อสุเทษณ์",
+      "start": 130.923
+    },
+    {
+      "text": "ท่านมีฤทธิ์มีเดชมาก",
+      "start": 133.707
+    },
+    {
+      "text": "แต่ท่านก็มีทุกข์เหมือนคนทั่วไป",
+      "start": 136.122
+    },
+    {
+      "text": "ท่านรักนางฟ้าองค์หนึ่ง",
+      "start": 139.063
+    },
+    {
+      "text": "นางชื่อมัทนา",
+      "start": 141.52
+    },
+    {
+      "text": "ท่านรักมัทนามานานแล้ว",
+      "start": 143.707
+    },
+    {
+      "text": "แต่รักเท่าไรก็ไม่ได้",
+      "start": 146.449
+    },
+    {
+      "text": "มัทนาไม่เคยรักท่านตอบ",
+      "start": 148.892
+    },
+    {
+      "text": "ท่านยิ่งรักยิ่งทุกข์",
+      "start": 151.684
+    },
+    {
+      "text": "ยิ่งอยากได้ยิ่งเจ็บ",
+      "start": 153.786
+    },
+    {
+      "text": "ท่านจึงเรียกวิทยาธรองค์หนึ่ง",
+      "start": 155.874
+    },
+    {
+      "text": "ชื่อมายาวิน",
+      "start": 158.814
+    },
+    {
+      "text": "เป็นผู้วิเศษที่รู้มนต์คาถา",
+      "start": 160.76
+    },
+    {
+      "text": "ให้ไปเรียกมัทนามาหา",
+      "start": 163.814
+    },
+    {
+      "text": "ก่อนจะไปมายาวินทูลบอกสุเทษณ์ว่า",
+      "start": 166.47
+    },
+    {
+      "text": "ที่ท่านไม่ได้มัทนามาเพราะกรรมเก่า",
+      "start": 169.737
+    },
+    {
+      "text": "ในชาติก่อนท่านเป็นกษัตริย์แคว้นปัญจาล",
+      "start": 172.862
+    },
+    {
+      "text": "ท่านไปขอลูกสาวของกษัตริย์แคว้นสุราษฎร์",
+      "start": 176.186
+    },
+    {
+      "text": "คือนางมัทนาในชาตินั้น",
+      "start": 179.496
+    },
+    {
+      "text": "แต่พ่อของนางไม่ยกให้",
+      "start": 182.237
+    },
+    {
+      "text": "จึงเกิดสงครามขึ้น",
+      "start": 184.865
+    },
+    {
+      "text": "สุดท้ายท่านชนะจับพ่อของนางเป็นเชลย",
+      "start": 187.11
+    },
+    {
+      "text": "นางเข้ามาขอชีวิตพ่อไว้",
+      "start": 190.661
+    },
+    {
+      "text": "แล้วยอมเป็นบาทบริจาริกาของท่าน",
+      "start": 193.502
+    },
+    {
+      "text": "แต่ก่อนจะตกเป็นของท่าน",
+      "start": 196.825
+    },
+    {
+      "text": "นางก็ชักดาบปลงพระชนม์ตัวเองเสียก่อน",
+      "start": 199.382
+    },
+    {
+      "text": "กรรมนั้นยังไม่จบ",
+      "start": 202.777
+    },
+    {
+      "text": "นางไปเกิดเป็นเทพธิดา",
+      "start": 204.794
+    },
+    {
+      "text": "ท่านก็บำเพ็ญจนได้ไปเกิดบนสวรรค์",
+      "start": 207.351
+    },
+    {
+      "text": "แต่หนี้ที่ค้างไว้",
+      "start": 210.803
+    },
+    {
+      "text": "ก็ยังค้างอยู่",
+      "start": 212.933
+    },
+    {
+      "text": "สุเทษณ์ฟังแล้วก็ยังไม่เชื่อ",
+      "start": 214.78
+    },
+    {
+      "text": "ท่านสั่งให้มายาวินลองดูก่อน",
+      "start": 217.621
+    },
+    {
+      "text": "มายาวินจึงเรียกมัทนามา",
+      "start": 220.618
+    },
+    {
+      "text": "ด้วยมนต์ที่ผูกไว้",
+      "start": 223.487
+    },
+    {
+      "text": "มัทนามาแล้วก็จริง",
+      "start": 225.618
+    },
+    {
+      "text": "แต่ไม่รู้ตัว",
+      "start": 228.047
+    },
+    {
+      "text": "ถามอะไรก็ตอบย้อนกลับไปอย่างนั้น",
+      "start": 229.95
+    },
+    {
+      "text": "เหมือนคนไม่มีสติ",
+      "start": 233.004
+    },
+    {
+      "text": "สุเทษณ์ขัดใจนัก",
+      "start": 235.121
+    },
+    {
+      "text": "สั่งให้คลายมนต์",
+      "start": 237.095
+    },
+    {
+      "text": "เมื่อมนต์คลายมัทนาตื่นขึ้น",
+      "start": 239.112
+    },
+    {
+      "text": "ก็ตกใจที่ตนมาอยู่ในวิมานของสุเทษณ์",
+      "start": 241.769
+    },
+    {
+      "text": "โดยไม่รู้ตัวเลย",
+      "start": 245.391
+    },
+    {
+      "text": "สุเทษณ์พยายามฝากรักกับมัทนา",
+      "start": 247.45
+    },
+    {
+      "text": "บอกความในใจที่เก็บไว้มานาน",
+      "start": 250.689
+    },
+    {
+      "text": "แต่มัทนาไม่รักตอบ",
+      "start": 253.743
+    },
+    {
+      "text": "ไม่ว่าจะพูดอย่างไร",
+      "start": 256.03
+    },
+    {
+      "text": "นางก็ไม่ยอมรับรัก",
+      "start": 258.317
+    },
+    {
+      "text": "สุเทษณ์โกรธจัด",
+      "start": 260.718
+    },
+    {
+      "text": "จึงสาปส่งนางลงไปเกิดเป็นดอกกุหลาบ",
+      "start": 262.649
+    },
+    {
+      "text": "อยู่ในโลกของมนุษย์",
+      "start": 266.044
+    },
+    {
+      "text": "และจะกลับคืนเป็นคนได้",
+      "start": 268.147
+    },
+    {
+      "text": "เพียงคืนวันเพ็ญเท่านั้น",
+      "start": 270.76
+    },
+    {
+      "text": "คืนเดียวเท่านั้น",
+      "start": 273.232
+    },
+    {
+      "text": "พอฟ้าสว่างก็กลับเป็นกุหลาบดังเดิม",
+      "start": 275.22
+    },
+    {
+      "text": "แต่มีเงื่อนไขอยู่อย่างหนึ่ง",
+      "start": 278.601
+    },
+    {
+      "text": "ถ้านางได้รักบุรุษผู้ใดแล้ว",
+      "start": 281.044
+    },
+    {
+      "text": "นางจะคงรูปมนุษย์อยู่ได้ตลอดไป",
+      "start": 283.956
+    },
+    {
+      "text": "และถ้าวันใดนางมีทุกข์เพราะความรัก",
+      "start": 287.209
+    },
+    {
+      "text": "ก็ให้มาขอโทษท่าน",
+      "start": 290.263
+    },
+    {
+      "text": "ท่านจะยกโทษให้นาง",
+      "start": 292.607
+    },
+    {
+      "text": "มัทนาลงมาเกิดเป็นดอกกุหลาบ",
+      "start": 295.107
+    },
+    {
+      "text": "อยู่ในป่าหิมวัน",
+      "start": 298.004
+    },
+    {
+      "text": "ในป่านั้นมีพระฤๅษีองค์หนึ่ง",
+      "start": 300.291
+    },
+    {
+      "text": "ชื่อพระกาละทรรศิน",
+      "start": 303.175
+    },
+    {
+      "text": "ท่านมีศิษย์อยู่หลายคน",
+      "start": 305.74
+    },
+    {
+      "text": "วันหนึ่งพระกาละทรรศินเห็นกุหลาบมัทนา",
+      "start": 308.14
+    },
+    {
+      "text": "ท่านชอบใจมาก",
+      "start": 311.691
+    },
+    {
+      "text": "สั่งให้ศิษย์ขุดไปปลูกไว้ใกล้อาศรม",
+      "start": 313.737
+    },
+    {
+      "text": "เมื่อถึงคืนวันเพ็ญ",
+      "start": 317.06
+    },
+    {
+      "text": "มัทนาก็กลายเป็นร่างมนุษย์",
+      "start": 319.276
+    },
+    {
+      "text": "คอยรับใช้พระฤๅษีและศิษย์ทั้งหลาย",
+      "start": 321.947
+    },
+    {
+      "text": "คอยตักน้ำหาไม้ห่อข้าว",
+      "start": 325.242
+    },
+    {
+      "text": "ปรนนิบัติเรื่อยมา",
+      "start": 328.012
+    },
+    {
+      "text": "พระฤๅษีก็รักนางเหมือนลูกของท่าน",
+      "start": 330.129
+    },
+    {
+      "text": "วันหนึ่งท้าวชัยเสนผู้ครองนครหัสดิน",
+      "start": 333.211
+    },
+    {
+      "text": "เสด็จประพาสป่า",
+      "start": 336.72
+    },
+    {
+      "text": "ผ่านมาถึงอาศรมของพระกาละทรรศิน",
+      "start": 338.779
+    },
+    {
+      "text": "บังเอิญตรงกับคืนวันเพ็ญ",
+      "start": 342.089
+    },
+    {
+      "text": "ท่านจึงได้พบกับนางมัทนา",
+      "start": 344.83
+    },
+    {
+      "text": "ทั้งสองต่างรักกันในคืนนั้น",
+      "start": 347.7
+    },
+    {
+      "text": "พระกาละทรรศินก็จัดพิธีอภิเษกให้",
+      "start": 350.498
+    },
+    {
+      "text": "มัทนาได้เดินทางไปกับท้าวชัยเสน",
+      "start": 354.106
+    },
+    {
+      "text": "เข้าไปอยู่ในกรุงหัสดิน",
+      "start": 357.387
+    },
+    {
+      "text": "และนับจากนั้น",
+      "start": 359.873
+    },
+    {
+      "text": "นางก็ไม่กลับเป็นดอกกุหลาบอีกเลย",
+      "start": 361.847
+    },
+    {
+      "text": "ท้าวชัยเสนหลงรักมัทนามาก",
+      "start": 365.001
+    },
+    {
+      "text": "จนลืมมเหสีของตน",
+      "start": 367.899
+    },
+    {
+      "text": "มเหสีองค์นั้นชื่อนางจัณฑี",
+      "start": 370.399
+    },
+    {
+      "text": "นางหึงหวงมัทนา",
+      "start": 373.424
+    },
+    {
+      "text": "ทั้งอิจฉาทั้งริษยา",
+      "start": 375.697
+    },
+    {
+      "text": "จึงคิดอุบายขึ้นมา",
+      "start": 378.239
+    },
+    {
+      "text": "นางใส่ร้ายมัทนา",
+      "start": 380.597
+    },
+    {
+      "text": "ว่าลอบเป็นชู้กับทหารเอกของท้าวชัยเสน",
+      "start": 382.884
+    },
+    {
+      "text": "ทหารคนนั้นชื่อศุภางค์",
+      "start": 386.578
+    },
+    {
+      "text": "แล้วนางยังยุยงพระราชบิดาของตน",
+      "start": 389.22
+    },
+    {
+      "text": "ให้ยกทัพมาตีเมืองหัสดิน",
+      "start": 392.558
+    },
+    {
+      "text": "ท้าวชัยเสนออกไปรบ",
+      "start": 395.384
+    },
+    {
+      "text": "ครั้นเมื่อกลับมา",
+      "start": 397.771
+    },
+    {
+      "text": "ก็ได้ยินข่าวว่ามัทนาลอบคบกับศุภางค์",
+      "start": 399.859
+    },
+    {
+      "text": "ท่านกริ้วจัด",
+      "start": 403.609
+    },
+    {
+      "text": "สั่งให้ประหารมัทนาเสียทันที",
+      "start": 405.285
+    },
+    {
+      "text": "แต่เพชฌฆาตสงสารนาง",
+      "start": 408.353
+    },
+    {
+      "text": "จึงแอบปล่อยนางหนีไป",
+      "start": 410.995
+    },
+    {
+      "text": "ส่วนศุภางค์",
+      "start": 413.424
+    },
+    {
+      "text": "ด้วยความจงรักภักดีต่อท้าวชัยเสน",
+      "start": 415.256
+    },
+    {
+      "text": "ก็ออกไปรบเป็นครั้งสุดท้าย",
+      "start": 418.58
+    },
+    {
+      "text": "ในฐานะไพร่ทหารเลวคนหนึ่ง",
+      "start": 421.379
+    },
+    {
+      "text": "และตายอยู่ในที่รบนั้น",
+      "start": 424.092
+    },
+    {
+      "text": "มัทนาหนีกลับมาถึงป่าหิมวัน",
+      "start": 426.663
+    },
+    {
+      "text": "นางทำพลีกรรมบูชาสุเทษณ์เทพบุตร",
+      "start": 429.83
+    },
+    {
+      "text": "จนสุเทษณ์เสด็จมา",
+      "start": 433.14
+    },
+    {
+      "text": "ท่านเอ่ยปากจะช่วยให้นางได้คืนสู่สวรรค์",
+      "start": 435.427
+    },
+    {
+      "text": "แต่ท่านก็ขอความรักจากนางอีกครั้ง",
+      "start": 439.063
+    },
+    {
+      "text": "มัทนาปฏิเสธ",
+      "start": 442.288
+    },
+    {
+      "text": "นางบอกว่าตัวนางนั้น",
+      "start": 444.347
+    },
+    {
+      "text": "ไม่สามารถจะรักใครได้อีกแล้ว",
+      "start": 446.847
+    },
+    {
+      "text": "สุเทษณ์โกรธนัก",
+      "start": 449.717
+    },
+    {
+      "text": "จึงสาปให้นางเป็นกุหลาบไปตลอดชีวิต",
+      "start": 451.634
+    },
+    {
+      "text": "ฝ่ายท้าวชัยเสน",
+      "start": 454.93
+    },
+    {
+      "text": "เมื่อรบชนะและได้รู้ความจริงทั้งหมด",
+      "start": 457.089
+    },
+    {
+      "text": "ก็กริ้วมเหสีจัณฑีมาก",
+      "start": 460.086
+    },
+    {
+      "text": "ท่านลงอาญานาง",
+      "start": 462.614
+    },
+    {
+      "text": "แล้วออกไปตามหามัทนาในป่า",
+      "start": 464.98
+    },
+    {
+      "text": "แต่สิ่งที่ท่านพบ",
+      "start": 467.906
+    },
+    {
+      "text": "มีเพียงกอกุหลาบกอใหม่",
+      "start": 469.965
+    },
+    {
+      "text": "ที่ขึ้นอยู่บนกองกูณฑ์",
+      "start": 472.451
+    },
+    {
+      "text": "ซึ่งมัทนาใช้บูชาสุเทษณ์",
+      "start": 474.937
+    },
+    {
+      "text": "ท้าวชัยเสนทำอะไรไม่ได้อีกแล้ว",
+      "start": 477.735
+    },
+    {
+      "text": "ท่านยืนอยู่ตรงนั้นนาน",
+      "start": 480.818
+    },
+    {
+      "text": "ด้วยความรักที่ไม่อาจปล่อยวาง",
+      "start": 483.318
+    },
+    {
+      "text": "ท่านจึงขุดกุหลาบต้นนั้นขึ้นมา",
+      "start": 486.201
+    },
+    {
+      "text": "แล้วนำกลับไปปลูกไว้ในสวนขวัญของกรุงหัสดิน",
+      "start": 489.241
+    },
+    {
+      "text": "เรื่องก็จบลงเพียงเท่านี้",
+      "start": 493.204
+    },
+    {
+      "text": "ไม่มีใครได้อะไรตามที่อยากได้",
+      "start": 495.818
+    },
+    {
+      "text": "สุเทษณ์อยากได้ความรักของมัทนา",
+      "start": 498.914
+    },
+    {
+      "text": "ก็ไม่ได้",
+      "start": 501.996
+    },
+    {
+      "text": "ท้าวชัยเสนอยากได้มัทนากลับคืน",
+      "start": 503.8
+    },
+    {
+      "text": "ก็ไม่ได้",
+      "start": 507.139
+    },
+    {
+      "text": "มัทนาเองอยากเป็นคนธรรมดา",
+      "start": 508.943
+    },
+    {
+      "text": "ก็ไม่ได้",
+      "start": 511.84
+    },
+    {
+      "text": "ทุกคนล้วนรัก",
+      "start": 513.644
+    },
+    {
+      "text": "และทุกคนล้วนเจ็บ",
+      "start": 515.533
+    },
+    {
+      "text": "เพราะความรักที่ถือไว้แน่นเกินไป",
+      "start": 517.536
+    },
+    {
+      "text": "ลองคิดดูดีๆ",
+      "start": 520.576
+    },
+    {
+      "text": "สุเทษณ์ไม่ได้เป็นคนชั่ว",
+      "start": 522.792
+    },
+    {
+      "text": "ท่านเพียงรักมาก",
+      "start": 525.377
+    },
+    {
+      "text": "และไม่รู้จะทำอย่างไรกับความรักนั้น",
+      "start": 527.38
+    },
+    {
+      "text": "ท่านจึงใช้ฤทธิ์ใช้มนต์ใช้คำสาป",
+      "start": 530.661
+    },
+    {
+      "text": "ทุกอย่างที่ท่านมี",
+      "start": 533.687
+    },
+    {
+      "text": "เพื่อให้ได้สิ่งที่ท่านอยากได้",
+      "start": 535.874
+    },
+    {
+      "text": "แต่มนต์บังคับได้แค่ร่างกาย",
+      "start": 538.545
+    },
+    {
+      "text": "บังคับใจไม่ได้",
+      "start": 541.272
+    },
+    {
+      "text": "ท้าวชัยเสนก็ไม่ได้เป็นคนเลว",
+      "start": 543.417
+    },
+    {
+      "text": "ท่านรักมัทนาจริง",
+      "start": 546.414
+    },
+    {
+      "text": "แต่ท่านก็เชื่อคนอื่นง่ายเกินไป",
+      "start": 548.758
+    },
+    {
+      "text": "ท่านไม่ถามมัทนาสักคำ",
+      "start": 551.854
+    },
+    {
+      "text": "ก่อนจะตัดสินใจ",
+      "start": 554.511
+    },
+    {
+      "text": "ความรักที่ไม่มีคำถาม",
+      "start": 556.641
+    },
+    {
+      "text": "จึงกลายเป็นความรักที่ทำร้าย",
+      "start": 559.241
+    },
+    {
+      "text": "ส่วนมัทนา",
+      "start": 562.053
+    },
+    {
+      "text": "นางไม่เคยได้เลือกอะไรเลย",
+      "start": 563.914
+    },
+    {
+      "text": "ถูกสาปถูกพาไปถูกใส่ร้ายถูกประหาร",
+      "start": 566.485
+    },
+    {
+      "text": "ทุกอย่างเกิดขึ้นกับนาง",
+      "start": 569.937
+    },
+    {
+      "text": "โดยที่นางไม่ได้เป็นคนเลือก",
+      "start": 572.479
+    },
+    {
+      "text": "นางเพียงอยากเป็นคนธรรมดา",
+      "start": 575.05
+    },
+    {
+      "text": "อยากมีชีวิตธรรมดา",
+      "start": 577.764
+    },
+    {
+      "text": "แค่นั้นก็ไม่ได้",
+      "start": 580.136
+    },
+    {
+      "text": "ในหลวงรัชกาลที่หกทรงตั้งชื่อเรื่องนี้ไว้ดีแล้ว",
+      "start": 582.394
+    },
+    {
+      "text": "มัทนะพาธาความเจ็บปวดแห่งความรัก",
+      "start": 586.428
+    },
+    {
+      "text": "ไม่ใช่เพราะรักผิดคน",
+      "start": 589.61
+    },
+    {
+      "text": "แต่เพราะความรักนั้น",
+      "start": 592.082
+    },
+    {
+      "text": "เมื่อกำไว้มันก็เจ็บ",
+      "start": 594.283
+    },
+    {
+      "text": "ถ้าวันนี้เรามีอะไรที่ยังกำไว้แน่น",
+      "start": 596.514
+    },
+    {
+      "text": "ลองค่อยๆคลายมือลง",
+      "start": 599.866
+    },
+    {
+      "text": "ไม่ต้องปล่อยทั้งหมดในคืนนี้",
+      "start": 602.238
+    },
+    {
+      "text": "แค่รู้ตัวว่าเรากำอะไรอยู่",
+      "start": 604.937
+    },
+    {
+      "text": "ก็พอแล้ว",
+      "start": 607.948
+    },
+    {
+      "text": "ไม่ต้องตัดสินตัวเองว่าผิดหรือถูก",
+      "start": 609.724
+    },
+    {
+      "text": "ที่เรารักใครสักคนมากๆ",
+      "start": 612.607
+    },
+    {
+      "text": "ไม่ใช่ความผิด",
+      "start": 615.391
+    },
+    {
+      "text": "ที่เรากลัวจะเสียเขาไป",
+      "start": 617.266
+    },
+    {
+      "text": "ก็ไม่ใช่ความผิด",
+      "start": 619.809
+    },
+    {
+      "text": "มันเป็นเพียงธรรมชาติของหัวใจ",
+      "start": 621.964
+    },
+    {
+      "text": "ที่ยังยึดยังหวงยังกลัว",
+      "start": 624.833
+    },
+    {
+      "text": "คืนนี้ไม่ต้องแก้ไขอะไร",
+      "start": 627.276
+    },
+    {
+      "text": "ไม่ต้องคิดหาคำตอบ",
+      "start": 629.904
+    },
+    {
+      "text": "แค่ฟังเรื่องนี้จบ",
+      "start": 632.134
+    },
+    {
+      "text": "แล้วปล่อยให้เรื่องมันผ่านไป",
+      "start": 634.222
+    },
+    {
+      "text": "เหมือนน้ำที่ไหลผ่านก้อนหิน",
+      "start": 636.921
+    },
+    {
+      "text": "ไม่ต้องเกาะไม่ต้องดึงไว้",
+      "start": 639.733
+    },
+    {
+      "text": "หายใจเข้าลึกๆอีกครั้ง",
+      "start": 642.162
+    },
+    {
+      "text": "ปล่อยลมออกช้าๆ",
+      "start": 644.719
+    },
+    {
+      "text": "ให้ลมหายใจยาวขึ้นอีกนิด",
+      "start": 647.02
+    },
+    {
+      "text": "แล้วอีกนิด",
+      "start": 649.748
+    },
+    {
+      "text": "คืนนี้ขอให้หลับสบาย",
+      "start": 651.452
+    },
+    {
+      "text": "ฝันดี",
+      "start": 653.952
+    },
+    {
+      "text": "แล้วพรุ่งนี้ค่อยกลับมาฟังใหม่",
+      "start": 655.657
+    },
+    {
+      "text": "ราตรีสวัสดิ์",
+      "start": 658.469
+    }
+  ]
+}
