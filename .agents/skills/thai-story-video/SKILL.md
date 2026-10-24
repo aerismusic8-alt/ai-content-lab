@@ -123,6 +123,23 @@ release tag and attribution. Without it, values are derived from `scenes.json`.
 Client for the pulling side: `scripts/post.py --list | --platform | --download
 | --report`. Docs: `docs/API.md`.
 
+### Handing the channel to another AI
+
+Three ways, in order of how little work they need:
+
+1. **MCP** — `scripts/mcp_server.py` exposes five tools over stdio
+   (`list_episodes`, `get_episode`, `get_posting`, `report_posted`,
+   `list_posted`). Registration is in `mcp.json`. Needs `pip install mcp`; the
+   server handles both the 1.x and 2.x API, because 2.x renamed `FastMCP` to
+   `MCPServer`.
+2. **llms.txt** — `GET /llms.txt` carries the publishing steps inline, so an
+   agent that reads it needs no other document.
+3. **A pasted prompt** — `docs/AGENT-PROMPT.md` has a copy-paste block for hosts
+   that support neither.
+
+Test the server over the real protocol, not by importing it: send
+`initialize`, then `tools/list`, then a `tools/call`.
+
 ## Traps that already cost time — do not rediscover these
 
 * **Thai TTS emits `SentenceBoundary`, not `WordBoundary`.** Use those events for
