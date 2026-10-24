@@ -38,10 +38,38 @@ SCOPES = [
 ]
 TOKEN_PATH = os.environ.get(
     "YT_TOKEN_PATH", os.path.expanduser("~/.config/content-lab/yt_token.json"))
-SANDBOX_HOSTS = [
+# The pod's public hostname changes every time the sandbox is recreated, and the
+# OAuth client must have the matching redirect URI registered. Reading the host
+# from the environment is what stops redirect_uri_mismatch after a recycle; the
+# literal list is only a fallback for when the variables are absent.
+FALLBACK_HOSTS = [
     "work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev",
     "work-2-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev",
 ]
+
+
+def sandbox_hosts() -> list[tuple[str, str]]:
+    """Return (host, where it came from), environment first."""
+    found: list[tuple[str, str]] = []
+    runtime = os.environ.get("RUNTIME_URL", "").strip()
+    if runtime:
+        found.append((runtime.replace("https://", "").replace("http://", "")
+                      .strip("/"), "$RUNTIME_URL"))
+    for name in ("WORK_HOST_1", "WORK_HOST_2"):
+        value = os.environ.get(name, "").strip()
+        if value:
+            found.append((value.replace("https://", "").replace("http://", "")
+                          .strip("/"), f"${name}"))
+    found.extend((h, "fallback list") for h in FALLBACK_HOSTS)
+    seen, unique = set(), []
+    for host, source in found:
+        if host and host not in seen:
+            seen.add(host)
+            unique.append((host, source))
+    return unique
+
+
+SANDBOX_HOSTS = [h for h, _ in sandbox_hosts()]
 
 
 def load_client_secrets(path: str | None) -> dict:
@@ -92,7 +120,21 @@ def channel_of(creds) -> dict | None:
     return items[0] if items else None
 
 
+def _require_google():
+    """Import the Google libraries, or exit with the command that installs them."""
+    try:
+        from google.auth.transport.requests import Request  # noqa: F401
+        from google.oauth2.credentials import Credentials  # noqa: F401
+        import google_auth_oauthlib.flow  # noqa: F401
+        import googleapiclient.discovery  # noqa: F401
+    except ModuleNotFoundError as exc:
+        sys.exit(f"Missing {exc.name}. Install the Google libraries first:\n"
+                 "  pip install -r requirements.txt\n"
+                 "  (google-api-python-client, google-auth-oauthlib)")
+
+
 def load_credentials():
+    _require_google()
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
 
@@ -156,8 +198,8 @@ def main() -> int:
     if args.print_redirects:
         print("Add these under APIs & Services > Credentials > your OAuth client")
         print("> Authorised redirect URIs, then save:\n")
-        for host in SANDBOX_HOSTS:
-            print(f"  https://{host}/oauth2callback")
+        for host, source in sandbox_hosts():
+            print(f"  https://{host}/oauth2callback   ({source})")
         print("\nThese hostnames change when the sandbox is recreated, so the")
         print("redirect URI has to be re-registered whenever the pod changes.")
         return 0

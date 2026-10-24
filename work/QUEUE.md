@@ -1,11 +1,11 @@
 # QUEUE — what to build next, and who has it
 
 The shared backlog. Two OpenHands accounts work from this file. Claim an episode
-with `scripts/queue.py claim <ep>` **before** starting, so the other account does
+with `scripts/claims.py claim <ep>` **before** starting, so the other account does
 not build the same one.
 
 Status lives in `work/CLAIMS.json`; this file is the intent, that file is the
-record. `python3 scripts/queue.py list` shows both.
+record. `python3 scripts/claims.py list` shows both.
 
 ## Ground rules
 
@@ -67,7 +67,7 @@ only authors who died before 1976 are free.
 
 | Task | Why | Account |
 |---|---|---|
-| Fill in the four channels (name, handle, angle, audience) | blocks everything else | K |
+| ~~Fill in the four channels~~ — **done**, see `../AX_CHANNELS.md` | all four recorded with handles, ids, directions, goals, quotas | done |
 | `channels.json` for each channel | needed before any upload | pipeline owner |
 | Quality gate on a finished episode | catches problems the maker cannot see | the other account |
 | Copyright check for a new work | slow, parallel, no pipeline work | either |
@@ -84,4 +84,4 @@ From `docs/GOAL.md`, so both accounts judge it the same way:
 * loudness about -14 LUFS, true peak at or below -3 dBFS
 * the machine-readable channel regenerated (`scripts/build_api.py`)
 * media attached to a GitHub Release
-* uploaded private, with the URL recorded via `scripts/queue.py done`
+* uploaded private, with the URL recorded via `scripts/claims.py done`

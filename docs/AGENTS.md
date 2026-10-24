@@ -40,7 +40,7 @@ work is pushed to `kongkeat938/ai-content-lab` and served from a link.
 5. **Verify before claiming done.** Loudness, true peak, colour range, line
    timings and seekability all have a check in the skill. Run them.
 6. **Claim before you build, if another account may be working too.** Run
-   `python3 scripts/queue.py list`, then `claim <ep> --as <you> --push`. The
+   `python3 scripts/claims.py list`, then `claim <ep> --as <you> --push`. The
    queue file is the lock; whoever commits first wins. Only the pipeline owner
    edits `scripts/` — propose changes instead.
 7. **Publish the channel after every episode.** Run `scripts/build_api.py` and

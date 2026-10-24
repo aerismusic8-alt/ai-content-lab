@@ -8,10 +8,10 @@ bus has to be the repository, which both accounts can read and write.
 This script is that bus. It keeps one file, `work/CLAIMS.json`, that says who is
 doing which episode right now.
 
-    python3 scripts/queue.py list
-    python3 scripts/queue.py claim ep02 --as account-1
-    python3 scripts/queue.py done ep02 --as account-1 --url https://youtu.be/XXXX
-    python3 scripts/queue.py release ep02 --as account-1
+    python3 scripts/claims.py list
+    python3 scripts/claims.py claim ep02 --as account-1
+    python3 scripts/claims.py done ep02 --as account-1 --url https://youtu.be/XXXX
+    python3 scripts/claims.py release ep02 --as account-1
 
 The identity is taken from --as, else $OH_ACCOUNT, else the local
 `.work-account` file, else git's user.name.
@@ -190,7 +190,7 @@ def finish(args, message: str) -> int:
 
 def main() -> int:
     # Shared so --as works on either side of the subcommand: people type
-    # `queue.py claim ep02 --as x` far more often than the other order.
+    # `claims.py claim ep02 --as x` far more often than the other order.
     common = argparse.ArgumentParser(add_help=False)
     common.add_argument("--as", dest="account", help="which account you are")
     common.add_argument("--push", action="store_true",

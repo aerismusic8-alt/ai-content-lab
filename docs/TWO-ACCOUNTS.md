@@ -28,13 +28,13 @@ Both accounts clone the same repo and use three shared files:
 | `work/CLAIMS.json` | who is doing which episode, right now |
 | `docs/` | the shared brief, so both judge quality the same way |
 
-And one tool, `scripts/queue.py`:
+And one tool, `scripts/claims.py`:
 
 ```bash
-python3 scripts/queue.py list                      # what is free, what is taken
-python3 scripts/queue.py claim ep02 --as account-1  # take it
-python3 scripts/queue.py done ep02 --as account-1 --url https://youtu.be/XXXX
-python3 scripts/queue.py release ep02 --as account-1
+python3 scripts/claims.py list                      # what is free, what is taken
+python3 scripts/claims.py claim ep02 --as account-1  # take it
+python3 scripts/claims.py done ep02 --as account-1 --url https://youtu.be/XXXX
+python3 scripts/claims.py release ep02 --as account-1
 ```
 
 Add `--push` to publish the claim immediately so the other account sees it at

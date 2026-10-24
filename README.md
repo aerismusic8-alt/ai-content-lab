@@ -117,11 +117,11 @@ that has to be registered in Google Cloud console, are in
 
 Two OpenHands accounts cannot see each other's conversations, so they coordinate
 through this repository: `work/QUEUE.md` is the backlog and
-`scripts/queue.py` records who has which episode.
+`scripts/claims.py` records who has which episode.
 
 ```bash
-python3 scripts/queue.py list
-python3 scripts/queue.py claim ep02 --as account-1 --push
+python3 scripts/claims.py list
+python3 scripts/claims.py claim ep02 --as account-1 --push
 ```
 
 See `docs/TWO-ACCOUNTS.md`, and `docs/GITHUB-LIMITS.md` for what GitHub actually

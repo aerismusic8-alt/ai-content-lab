@@ -114,7 +114,7 @@ That roughly **halves the time to reach 1 GB** and costs nothing.
 
 1. **Coordination cost.** Two writers to one repository need the claim rule and
    pull requests. Skip that and they overwrite each other. This is the price, and
-   it is why `scripts/queue.py` exists.
+   it is why `scripts/claims.py` exists.
 2. **Two sandboxes, two sets of credentials.** Each account needs its own OAuth
    authorisation, and each token dies with its pod.
 3. **Two clones, twice the disk.** GitHub's size limit is per repository, so this
@@ -132,7 +132,7 @@ That roughly **halves the time to reach 1 GB** and costs nothing.
 |---|---|---|---|
 | 1 | YouTube ~19 uploads/day per Google account | immediately at 4 channels | split channels across the two accounts |
 | 2 | Repository size | ~6–12 months at a real pace | compression (done), and prune blob history when it hurts |
-| 3 | Two writers colliding | immediately, if unmanaged | `scripts/queue.py` claim rule (done) |
+| 3 | Two writers colliding | immediately, if unmanaged | `scripts/claims.py` claim rule (done) |
 | 4 | GitHub API rate limit | never at this scale | nothing |
 | 5 | 100 MiB per-file block | never, if media stays in Releases | keep the release step |
 
