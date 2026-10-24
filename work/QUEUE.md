@@ -21,12 +21,23 @@ record. `python3 scripts/queue.py list` shows both.
 
 ## Channel assignment
 
-| Channel | Slug | Account | Status |
-|---|---|---|---|
-| _(to be filled — 4 channels exist, angles not recorded yet)_ | | | |
+Two of the four channels were found by inspecting YouTube on 2026-10-24. The
+other two are not discoverable without a name, handle or id — see below.
 
-Fill this in first. Everything else follows from it: which stories, which voice,
-which posting style.
+| Channel | Handle | Channel ID | Angle | Account |
+|---|---|---|---|---|
+| Farmmer | `@Farmmer-n9t` | `UCM3QO5L_pmj34n1JVlbhh-w` | ธรรมะก่อนนอน — คำสอนพระพุทธเจ้า | openhands-1 |
+| ตาต้า GenX Shop | `@tatagenxgeny` | `UCI6EfsgM1HNjrYarvigxyrQ` | ปรัชญาชีวิต — มุมมองดี ๆ | openhands-1 |
+| _(unknown)_ | ? | ? | ? | ? |
+| _(unknown)_ | ? | ? | ? | ? |
+
+Both found channels already have published videos: Farmmer 10, ตาต้า GenX 14.
+They are **not yet authorised** in this sandbox — each needs its own OAuth token.
+
+The other two cannot be found by browsing. A channel is only reachable from a
+name, a handle, or a channel id, and none of those is recorded anywhere. To find
+them, either give the handle, or sign in and open
+<https://studio.youtube.com> to list every channel the account can switch to.
 
 ## Episode backlog
 

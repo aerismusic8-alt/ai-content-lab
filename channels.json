@@ -1,14 +1,47 @@
 {
+  "_comment": "One entry per YouTube channel. `channel_id` is checked before every upload, so a token for one channel cannot publish to another. `token_path` keeps each channel's credentials separate. Found by inspecting YouTube on 2026-10-24; the other two channels are not discoverable without a name, handle or id.",
   "channels": [
     {
-      "slug": "default",
-      "name": "ยังไม่ตั้งชื่อ",
-      "channel_id": null,
-      "handle": null,
+      "slug": "dharma",
+      "name": "Farmmer",
+      "handle": "@Farmmer-n9t",
+      "channel_id": "UCM3QO5L_pmj34n1JVlbhh-w",
+      "angle": "ธรรมะก่อนนอน — คำสอนพระพุทธเจ้า ปล่อยใจให้สงบ หลับสบาย",
+      "videos_seen": 10,
       "account": "openhands-1",
-      "token_path": "~/.config/content-lab/yt_token_default.json",
-      "series": "เรื่องเล่าไทย",
-      "status": "planned"
+      "token_path": "~/.config/content-lab/yt_token_dharma.json",
+      "status": "exists, not yet authorised in this sandbox"
+    },
+    {
+      "slug": "genx",
+      "name": "ตาต้า GenX Shop",
+      "handle": "@tatagenxgeny",
+      "channel_id": "UCI6EfsgM1HNjrYarvigxyrQ",
+      "angle": "ปรัชญาชีวิต — มุมมองดี ๆ ที่ทำให้วันธรรมดาเบาสบายขึ้น",
+      "videos_seen": 14,
+      "account": "openhands-1",
+      "token_path": "~/.config/content-lab/yt_token_genx.json",
+      "status": "exists, not yet authorised in this sandbox"
+    },
+    {
+      "slug": "channel-3",
+      "name": "UNKNOWN — needs the name or handle",
+      "handle": null,
+      "channel_id": null,
+      "angle": null,
+      "account": null,
+      "token_path": "~/.config/content-lab/yt_token_channel-3.json",
+      "status": "not found"
+    },
+    {
+      "slug": "channel-4",
+      "name": "UNKNOWN — needs the name or handle",
+      "handle": null,
+      "channel_id": null,
+      "angle": null,
+      "account": null,
+      "token_path": "~/.config/content-lab/yt_token_channel-4.json",
+      "status": "not found"
     }
   ]
 }
