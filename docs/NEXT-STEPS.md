@@ -156,6 +156,45 @@ would drift apart.
 
 # Part B — only the owner can do these
 
+## B0. Two tokens, and only one of them works (verified 2026-10-24)
+
+| token | account | scopes | what it can do |
+|---|---|---|---|
+| `GITHUB_TOKEN` | `aerismusic8-alt` | **none** (fine-grained) | nothing useful — sees 1 repo; 403 on push, fork, delete, even on its own repos |
+| `KONGKEAT_GH_TOKEN` | `kongkeat938` | `repo, workflow` | **works** — push verified (created and deleted a probe branch on `ai-content-lab`) |
+
+So the 403s were never a GitHub outage and never a repo-permission problem:
+`GITHUB_TOKEN` is a fine-grained token with no scopes granted. **Use
+`KONGKEAT_GH_TOKEN` for all GitHub work.**
+
+**Why repo deletion still fails with the working token:** `delete_repo` is a
+**separate OAuth scope** from `repo`. `KONGKEAT_GH_TOKEN` has `repo, workflow` but
+not `delete_repo`, so `DELETE /repos/...` returns 403 while push and release
+upload succeed. To let the agent delete repositories, regenerate the token with
+`delete_repo` added. Otherwise delete by hand (see B2).
+
+## B0b. The `fix/ai-can-post` handoff cannot be executed — the artifacts do not exist
+
+Reported as: push commit `7268f1b` (branch `fix/ai-can-post`), or apply
+`ops/patches/ai-content-lab-let-ai-post.patch` from the vault.
+
+Checked, all negative:
+
+* `GET /repos/kongkeat938/ai-content-lab/commits/7268f1b` → **No commit found**
+* `GET .../commits/fix/ai-can-post` → **No commit found**
+* `git ls-remote --heads` → **`main` is the only branch on the remote**
+* no `ops/` directory in `ai-content-lab` or `ax-workspace`
+* GitHub code search for the filename → **0 results**
+* the other account's repos (`aeris-drive-automation`, `autonomous-zero-baht`,
+  `autonomous-zero-baht-1`) contain **no patch and no `ops/` tree**
+* no vault or `.patch` file anywhere in this pod
+
+So there is nothing to push and nothing to apply. Whatever produced that report
+was on the **other OpenHands account's sandbox**, and its output never reached
+GitHub or this pod. If it still exists, it has to be exported from that account —
+or the change simply has to be redone here, where the working token lives.
+
+
 ## B1. Grant the token — **no Console change needed**
 
 **Superseded the earlier advice.** I probed Google directly with the client's own
