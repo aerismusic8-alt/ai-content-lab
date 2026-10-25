@@ -283,6 +283,30 @@ Paste this, with the two repos already cloned:
 
 # Part C — handing the YouTube token between sandboxes
 
+## C0. Only ONE secret has to be handed over (verified 2026-10-24)
+
+`CLIENT_SECRET` is already registered in this account and holds the whole OAuth
+client JSON (`web` section: client_id, client_secret, token_uri). So the client
+half needs no handover at all — `client_from_env()` now falls back to it.
+
+That leaves exactly one thing to move: the **refresh token**.
+
+    YT_CH2_REFRESH_TOKEN = <refresh token for UCM3QO5L_pmj34n1JVlbhh-w>
+
+Register it in the account that is going to upload. Then:
+
+    python3 scripts/publish_youtube.py ep02 --channel dharma --privacy private
+
+and it works with no browser, no token file, and no human.
+
+**How to tell the secret is not registered.** Referencing a secret name in a shell
+command injects it as an environment variable — verified for the six registered
+names (`GITHUB_TOKEN`, `KONGKEAT_GH_TOKEN`, `KONGKEAT_OH_KEY`, `CLIENT_SECRET`,
+`PC1_MCP_TOKEN`, `OPENHANDS_API_KEY`). If `YT_CH2_REFRESH_TOKEN` injects nowhere,
+it is not registered in that account, and `publish_youtube.py` will say so rather
+than fail obscurely.
+
+
 The OAuth token lives at `~/.config/content-lab/yt_token_dharma.json` **inside one
 pod**, and a pod is recycled with the session. A token created in one sandbox is
 therefore invisible to every other sandbox. The only durable path is the secret

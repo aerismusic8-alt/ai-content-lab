@@ -216,10 +216,27 @@ def _channel_id_for_refresh(refresh_token: str, client: tuple[str, str]) -> str 
 
 
 def client_from_env() -> tuple[str, str] | None:
-    """(client_id, client_secret) from the environment, or None."""
+    """(client_id, client_secret) from the environment, or None.
+
+    Falls back to CLIENT_SECRET, which holds the whole OAuth client JSON. That
+    variable is already present in a normal session, so an agent that has it needs
+    only the refresh token to be handed over — one secret, not three.
+    """
     cid = (os.environ.get("YT_CLIENT_ID") or os.environ.get("YOUTUBE_CLIENT_ID") or "").strip()
     secret = (os.environ.get("YT_CLIENT_SECRET") or os.environ.get("YOUTUBE_CLIENT_SECRET") or "").strip()
-    return (cid, secret) if cid and secret else None
+    if cid and secret:
+        return (cid, secret)
+    raw = (os.environ.get("CLIENT_SECRET") or "").strip()
+    if raw:
+        try:
+            doc = json.loads(raw)
+        except json.JSONDecodeError:
+            return None
+        for key in ("web", "installed"):
+            section = doc.get(key)
+            if isinstance(section, dict) and section.get("client_id") and section.get("client_secret"):
+                return (section["client_id"], section["client_secret"])
+    return None
 
 
 def materialise_env_token(slug: str | None, expected_channel: str | None = None) -> str | None:
