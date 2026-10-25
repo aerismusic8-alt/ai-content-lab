@@ -28,7 +28,13 @@ import os
 import re
 
 REPO = "kongkeat938/ai-content-lab"
-DEFAULT_BASE = "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev"
+# The pod's public hostname changes on every recycle, so the catalogue used to
+# advertise URLs on a host that no longer existed. Prefer the environment; the
+# literal is only a fallback for when RUNTIME_URL is absent.
+_FALLBACK_BASE = "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev"
+DEFAULT_BASE = (os.environ.get("CHANNEL_BASE", "").rstrip("/")
+                or os.environ.get("RUNTIME_URL", "").rstrip("/")
+                or _FALLBACK_BASE)
 GITHUB = f"https://github.com/{REPO}"
 RAW = f"https://raw.githubusercontent.com/{REPO}/main"
 

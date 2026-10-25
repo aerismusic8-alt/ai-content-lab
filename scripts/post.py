@@ -22,9 +22,10 @@ import sys
 import urllib.error
 import urllib.request
 
-DEFAULT_BASE = os.environ.get(
-    "CHANNEL_BASE",
-    "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev")
+# Follow the environment rather than a frozen hostname; see build_api.py.
+DEFAULT_BASE = (os.environ.get("CHANNEL_BASE", "").rstrip("/")
+                or os.environ.get("RUNTIME_URL", "").rstrip("/")
+                or "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev")
 
 
 def fetch_json(url: str) -> dict:

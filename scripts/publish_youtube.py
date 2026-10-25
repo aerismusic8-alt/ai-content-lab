@@ -24,9 +24,12 @@ import os
 import sys
 import urllib.request
 
-DEFAULT_BASE = os.environ.get(
-    "CHANNEL_BASE",
-    "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev")
+# Read the generated site from disk by default. A baked-in hostname goes stale on
+# every sandbox recycle and then answers 502, which used to surface here as a raw
+# traceback instead of a usable message. CHANNEL_BASE still wins when set.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_SITE = os.path.join(os.path.dirname(_HERE), "site")
+DEFAULT_BASE = os.environ.get("CHANNEL_BASE", "").rstrip("/") or f"file://{_SITE}"
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload",
           "https://www.googleapis.com/auth/youtube.readonly"]
 CATEGORY_IDS = {"film": "1", "music": "10", "entertainment": "24",
@@ -88,6 +91,9 @@ def assert_channel(yt, expected: str | None, slug: str) -> dict:
 
 
 def fetch(url: str) -> dict:
+    if url.startswith("file://"):
+        with open(url[len("file://"):], encoding="utf-8") as fh:
+            return json.load(fh)
     req = urllib.request.Request(url, headers={"User-Agent": "content-lab-publish/1.0"})
     with urllib.request.urlopen(req, timeout=60) as fh:
         return json.loads(fh.read().decode("utf-8"))
@@ -104,9 +110,13 @@ def post(url: str, payload: dict) -> dict:
 
 
 def resolve(base: str, key: str) -> dict:
+    """Find one episode. index.json records served URLs, so under file:// the
+    episode document is read from the matching path on disk instead."""
     cat = fetch(f"{base}/api/index.json")
     for ep in cat.get("episodes", []):
         if key in (ep.get("id"), ep.get("slug")):
+            if base.startswith("file://"):
+                return fetch(f"{base}/api/episodes/{ep['slug']}.json")
             return fetch(ep["url"])
     sys.exit(f"no episode matches {key!r}; try scripts/post.py --list")
 

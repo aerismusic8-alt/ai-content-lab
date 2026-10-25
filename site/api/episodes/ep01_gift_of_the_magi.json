@@ -22,7 +22,7 @@
   "media": {
     "video": {
       "url": "https://github.com/kongkeat938/ai-content-lab/releases/download/ep01/ep01.mp4",
-      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01.mp4",
+      "local_url": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01.mp4",
       "bytes": 15283573,
       "mime": "video/mp4",
       "width": 1920,
@@ -32,7 +32,7 @@
     },
     "audio": {
       "url": "https://github.com/kongkeat938/ai-content-lab/releases/download/ep01/ep01.mp3",
-      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01.mp3",
+      "local_url": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01.mp3",
       "bytes": 4888172,
       "mime": "audio/mpeg",
       "lufs": "-14.4",
@@ -43,7 +43,7 @@
     },
     "poster": {
       "url": "https://raw.githubusercontent.com/kongkeat938/ai-content-lab/main/site/media/ep01_poster.jpg",
-      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01_poster.jpg",
+      "local_url": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep01_poster.jpg",
       "mime": "image/jpeg"
     }
   },
@@ -301,6 +301,6 @@
       "วรรณกรรมคลาสสิก"
     ]
   },
-  "self": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json",
-  "webpage": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/"
+  "self": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json",
+  "webpage": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/"
 }

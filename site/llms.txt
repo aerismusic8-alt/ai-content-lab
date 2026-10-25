@@ -10,16 +10,16 @@
 You are expected to publish these episodes. Follow this exactly.
 
 1. Read the catalogue to see what exists:
-   GET https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json
+   GET https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json
 2. Fetch the episode you want. Use its `posting` object verbatim — the
    text is already formatted for the platform, including the chapter
    timestamps, the source and the attribution:
-   GET https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/<slug>.json
+   GET https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/<slug>.json
 3. Before posting, check what has already been published, so you do not
    post the same episode twice:
-   GET https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
+   GET https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
 4. After posting, report the public URL back:
-   POST https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
+   POST https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
    body: {"episode":"ep01","platform":"youtube","url":"<link>"}
 
 Attach `media.video.url` as the video and `media.poster.url` as the
@@ -38,15 +38,15 @@ If you speak MCP, run `scripts/mcp_server.py` and use its tools:
 
 ## Endpoints
 
-- Catalogue: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json
-- One episode: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/<slug>.json
-- Feed: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml
-- Receipts: https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
+- Catalogue: https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json
+- One episode: https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/<slug>.json
+- Feed: https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml
+- Receipts: https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/receipts
 
 ## Episodes
 
-- [ของขวัญของคนโง่](https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json): 05:06, เรื่องเล่าต่างแดน, 2026-10-24
-- [มัทนะพาธา ตำนานแห่งดอกกุหลาบ](https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json): 11:03, ช่องธรรมะก่อนนอน, 2026-10-24
+- [ของขวัญของคนโง่](https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json): 05:06, เรื่องเล่าต่างแดน, 2026-10-24
+- [มัทนะพาธา ตำนานแห่งดอกกุหลาบ](https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json): 11:03, ช่องธรรมะก่อนนอน, 2026-10-24
 
 ## Licence
 

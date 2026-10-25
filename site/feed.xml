@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>เรื่องเล่าไทย — Thai Story Episodes</title>
-  <id>https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml</id>
-  <link href="https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml" rel="self"/>
-  <link href="https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json" rel="alternate" type="application/json"/>
-  <updated>2026-10-24T20:30:04+00:00</updated>
+  <id>https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml</id>
+  <link href="https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/feed.xml" rel="self"/>
+  <link href="https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/index.json" rel="alternate" type="application/json"/>
+  <updated>2026-10-25T01:08:12+00:00</updated>
   <entry>
     <title>ของขวัญของคนโง่</title>
-    <id>https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json</id>
-    <link href="https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json"/>
+    <id>https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json</id>
+    <link href="https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep01_gift_of_the_magi.json"/>
     <updated>2026-10-24T00:00:00Z</updated>
     <summary>ของขวัญของคนโง่
 The Gift of the Magi
@@ -135,8 +135,8 @@ The Gift of the Magi
   </entry>
   <entry>
     <title>มัทนะพาธา ตำนานแห่งดอกกุหลาบ</title>
-    <id>https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json</id>
-    <link href="https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json"/>
+    <id>https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json</id>
+    <link href="https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json"/>
     <updated>2026-10-24T00:00:00Z</updated>
     <summary>มัทนะพาธา ตำนานแห่งดอกกุหลาบ
 Manthana Phatha — The Pain of Love

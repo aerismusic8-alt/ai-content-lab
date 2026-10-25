@@ -22,7 +22,7 @@
   "media": {
     "video": {
       "url": "https://github.com/kongkeat938/ai-content-lab/releases/download/ep02/ep02.mp4",
-      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep02.mp4",
+      "local_url": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep02.mp4",
       "bytes": 34353452,
       "mime": "video/mp4",
       "width": 1920,
@@ -32,7 +32,7 @@
     },
     "audio": {
       "url": "https://github.com/kongkeat938/ai-content-lab/releases/download/ep02/ep02.mp3",
-      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep02.mp3",
+      "local_url": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep02.mp3",
       "bytes": 10605548,
       "mime": "audio/mpeg",
       "lufs": "-14.4",
@@ -43,7 +43,7 @@
     },
     "poster": {
       "url": "https://raw.githubusercontent.com/kongkeat938/ai-content-lab/main/site/media/ep02_poster.jpg",
-      "local_url": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep02_poster.jpg",
+      "local_url": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/media/ep02_poster.jpg",
       "mime": "image/jpeg"
     }
   },
@@ -341,6 +341,6 @@
       "บทละครคำฉันท์"
     ]
   },
-  "self": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json",
-  "webpage": "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/"
+  "self": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/api/episodes/ep02_manthana_phatha.json",
+  "webpage": "https://zcfjbytjdlcldhbg.prod-runtime.all-hands.dev/"
 }
