@@ -279,3 +279,46 @@ Paste this, with the two repos already cloned:
 * GitHub is not a bottleneck (12 of 5,000 requests/hour; 4.0 MB of 1 GB). Repo
   size is the only limit that approaches, and `fetch_images.py` now compresses on
   save (measured 31% smaller).
+
+
+# Part C — handing the YouTube token between sandboxes
+
+The OAuth token lives at `~/.config/content-lab/yt_token_dharma.json` **inside one
+pod**, and a pod is recycled with the session. A token created in one sandbox is
+therefore invisible to every other sandbox. The only durable path is the secret
+store, which is shared across the account's sandboxes.
+
+Verified working (2026-10-24): referencing a registered secret name in a shell
+command injects its value as an environment variable. `CLIENT_SECRET`,
+`KONGKEAT_OH_KEY`, `PC1_MCP_TOKEN` and `OPENHANDS_API_KEY` all inject.
+
+So the handover is:
+
+1. On the sandbox that completed the OAuth flow, register the token as a secret
+   whose value is the **contents** of the token file:
+
+       PUT /api/settings/secrets
+       {"name": "YT_TOKEN_DHARMA",
+        "value": "<contents of yt_token_dharma.json>",
+        "description": "OAuth token for the dharma channel"}
+
+2. On any other sandbox, write it back out and publish:
+
+       mkdir -p ~/.config/content-lab
+       printf '%s' "$YT_TOKEN_DHARMA" > ~/.config/content-lab/yt_token_dharma.json
+       chmod 600 ~/.config/content-lab/yt_token_dharma.json
+       python3 scripts/yt_auth.py --check
+       python3 scripts/publish_youtube.py ep02 --channel dharma --privacy private --report
+
+Never paste the token into chat, and never commit it — `*_token.json` and
+`receipts/` are gitignored for exactly this reason.
+
+## What to send when reporting an upload
+
+A claim of a successful upload cannot be checked from another sandbox: private
+videos are invisible without the token, and nothing in git records it. Send the
+**video URL** and it can be recorded with
+
+    python3 scripts/claims.py done ep02 --as account-1 --url https://youtu.be/<id>
+
+which is the record the other account reads.
