@@ -44,9 +44,15 @@ except ImportError:  # mcp < 2 kept FastMCP under a different name
         print("The 'mcp' package is required: pip install mcp", file=sys.stderr)
         raise
 
-DEFAULT_BASE = os.environ.get(
-    "CHANNEL_BASE",
-    "https://work-1-zcfjbytjdlcldhbg.prod-runtime.all-hands.dev")
+# The site is generated into site/, next to this script. Reading it from disk
+# keeps every tool working when no server is running and when the pod's public
+# hostname has changed — a baked-in URL goes stale on every sandbox recycle and
+# answers 502, which is what broke list_episodes. CHANNEL_BASE is still honoured
+# when it is set explicitly; otherwise the files on disk win.
+HERE = os.path.dirname(os.path.abspath(__file__))
+SITE_DIR = os.path.join(os.path.dirname(HERE), "site")
+CHANNEL_BASE = os.environ.get("CHANNEL_BASE", "").rstrip("/")
+DEFAULT_BASE = CHANNEL_BASE or f"file://{SITE_DIR}"
 PLATFORMS = ("youtube", "facebook", "tiktok", "blog")
 
 mcp = MCPServer(
@@ -64,7 +70,16 @@ mcp = MCPServer(
 
 
 def _fetch(path: str, base: str = None) -> dict:
+    """Read one API document, from the generated site on disk or from a server."""
     base = (base or DEFAULT_BASE).rstrip("/")
+    if base.startswith("file://"):
+        local = os.path.join(base[len("file://"):], path.lstrip("/"))
+        try:
+            with open(local, encoding="utf-8") as fh:
+                return json.load(fh)
+        except FileNotFoundError:
+            raise FileNotFoundError(
+                f"{local} is missing — run: python3 scripts/build_api.py") from None
     req = urllib.request.Request(f"{base}{path}",
                                 headers={"User-Agent": "content-lab-mcp/1.0"})
     with urllib.request.urlopen(req, timeout=60) as fh:
