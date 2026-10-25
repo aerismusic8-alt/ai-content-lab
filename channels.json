@@ -7,7 +7,7 @@
       "handle": "@tatagenxgeny",
       "channel_id": "UCI6EfsgM1HNjrYarvigxyrQ",
       "angle": "ช่องปรัชญา — พูดปรัชญาที่คนฟังจนจบ",
-      "videos_seen": 14,
+      "videos_seen": 26,
       "account": "openhands-1",
       "token_path": "~/.config/content-lab/yt_token_genx.json",
       "status": "live, not authorised in this sandbox"
@@ -15,7 +15,7 @@
     {
       "slug": "dharma",
       "name": "Farmmer",
-      "handle": "@Farmmer-n9t",
+      "handle": "@farmmer-n9t",
       "channel_id": "UCM3QO5L_pmj34n1JVlbhh-w",
       "angle": "ช่องธรรมะก่อนนอน — หลับก่อนจบ กลับมาทุกคืน",
       "videos_seen": 10,
@@ -29,18 +29,18 @@
       "handle": "@aerismusicth",
       "channel_id": "UCm44BjAn03ruOF-WaA3ZRww",
       "angle": "ช่องสร้างศิลปินเพลง — 1 ศิลปิน/เดือน 10 เพลง",
-      "videos_seen": 1,
+      "videos_seen": 4,
       "account": null,
       "token_path": "~/.config/content-lab/yt_token_aeris-music.json",
       "status": "live, not authorised in this sandbox"
     },
     {
       "slug": "aeris-anime",
-      "name": "Aeris Anime",
-      "handle": "@aerisanime",
-      "channel_id": "UCR2AQNtI2o_rxQIEkQeTk9Q",
+      "name": "kongkeat pratumma",
+      "handle": "@kongkeatpratumma",
+      "channel_id": "UC7gCIu4G_7QCEJ8hJ-34zoQ",
       "angle": "ช่องละคร · การ์ตูนอะนิเมะ — ซีรี่ส์ที่คนติดตามตอนต่อตอน",
-      "videos_seen": 3,
+      "videos_seen": 0,
       "account": null,
       "token_path": "~/.config/content-lab/yt_token_aeris-anime.json",
       "status": "live, not authorised in this sandbox"
