@@ -212,7 +212,7 @@ def main() -> int:
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from yt_auth import load_credentials
 
-    creds = load_credentials()
+    creds = load_credentials(expected)
     yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
 
     # Refuse before uploading a single byte if the token is for another channel.

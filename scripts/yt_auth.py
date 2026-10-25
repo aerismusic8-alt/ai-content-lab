@@ -4,12 +4,22 @@
 Run this once. It prints a URL; open it in a browser, approve, and the refresh
 token is saved. After that `publish_youtube.py` uploads unattended.
 
+    python3 scripts/yt_auth.py --loopback          # preferred: grant on your PC
+    python3 scripts/yt_auth.py --loopback --slug dharma
     python3 scripts/yt_auth.py --url-only          # just print the URL
-    python3 scripts/yt_auth.py                     # wait for the callback
+    python3 scripts/yt_auth.py                     # wait on the sandbox callback
     python3 scripts/yt_auth.py --check             # verify the saved token
 
 The token is written to `~/.config/content-lab/yt_token.json` (mode 600), never
-into the repository. Override the location with YT_TOKEN_PATH.
+into the repository. Override the location with YT_TOKEN_PATH, or name a channel
+with `--slug` to write `yt_token_<slug>.json`.
+
+NO BROWSER NEEDED WHEN A TOKEN IS ALREADY IN THE ENVIRONMENT: an agent session
+that has `YT_<SLUG>_REFRESH_TOKEN` (or `YT_REFRESH_TOKEN` / `YOUTUBE_REFRESH_TOKEN`)
+plus `YT_CLIENT_ID` / `YT_CLIENT_SECRET` can upload with no human at all. The
+first `--check` or upload materialises that refresh token into the token file, so
+the rest of the pipeline works unchanged. This is why "the AI cannot post" is
+usually a missing token file, not a missing grant.
 
 WHY A CALLBACK SERVER: the sandbox has no browser, so `run_local_server()`
 cannot work. Google's OAuth needs a redirect URI registered on the client, and
@@ -38,6 +48,11 @@ SCOPES = [
 ]
 TOKEN_PATH = os.environ.get(
     "YT_TOKEN_PATH", os.path.expanduser("~/.config/content-lab/yt_token.json"))
+# A loopback redirect is registered once and never changes, unlike a sandbox
+# hostname. That is why it is the preferred method: the pod can be recycled
+# without the owner touching the Google console again.
+LOOPBACK_PORT = 8080
+LOOPBACK_REDIRECT = f"http://127.0.0.1:{LOOPBACK_PORT}/oauth2callback"
 # The PKCE verifier must survive between `--url-only` and the later run that
 # finishes the flow, or the exchange fails with "invalid_grant". It is a
 # short-lived secret, so it is written 0600 beside the token and removed on use.
@@ -124,6 +139,140 @@ def channel_of(creds) -> dict | None:
     return items[0] if items else None
 
 
+def slug_from_env() -> str | None:
+    """Which channel slug this session is meant to post as, if any."""
+    for name in ("YT_SLUG", "YT_CHANNEL", "CHANNEL_SLUG"):
+        value = os.environ.get(name, "").strip()
+        if value:
+            return value
+    return None
+
+
+def env_refresh_token(slug: str | None) -> tuple[str, str] | None:
+    """Find a refresh token in the environment. Returns (refresh_token, source).
+
+    Checked in order: the slug-specific variable, the numbered `YT_CH<N>_`
+    variables, a multi-channel JSON blob, then the generic single-channel
+    variables. Returns None when nothing is set, so a session with no credentials
+    behaves exactly as before.
+    """
+    candidates = env_token_candidates(slug)
+    return candidates[0] if candidates else None
+
+
+def env_token_candidates(slug: str | None = None) -> list[tuple[str, str]]:
+    """Every refresh token the environment offers, most specific first."""
+    out: list[tuple[str, str]] = []
+    seen: set[str] = set()
+
+    def add(value: str | None, source: str) -> None:
+        value = (value or "").strip()
+        if value and value not in seen:
+            seen.add(value)
+            out.append((value, source))
+
+    if slug:
+        upper = slug.upper().replace("-", "_")
+        add(os.environ.get(f"YT_{upper}_REFRESH_TOKEN"), f"$YT_{upper}_REFRESH_TOKEN")
+        add(os.environ.get(f"YT_CH_{upper}_REFRESH_TOKEN"), f"$YT_CH_{upper}_REFRESH_TOKEN")
+    for n in range(1, 9):
+        add(os.environ.get(f"YT_CH{n}_REFRESH_TOKEN"), f"$YT_CH{n}_REFRESH_TOKEN")
+    blob = os.environ.get("YT_CHANNEL_TOKENS", "").strip()
+    if blob:
+        try:
+            tokens = json.loads(blob)
+        except json.JSONDecodeError:
+            tokens = {}
+        if isinstance(tokens, dict):
+            for key, value in tokens.items():
+                add(value, f"$YT_CHANNEL_TOKENS[{key}]")
+    for name in ("YT_REFRESH_TOKEN", "YOUTUBE_REFRESH_TOKEN"):
+        add(os.environ.get(name), f"${name}")
+    return out
+
+
+def _channel_id_for_refresh(refresh_token: str, client: tuple[str, str]) -> str | None:
+    """The channel a refresh token belongs to, or None if it cannot be read."""
+    import urllib.request
+    cid, secret = client
+    data = urllib.parse.urlencode({
+        "client_id": cid, "client_secret": secret,
+        "refresh_token": refresh_token, "grant_type": "refresh_token",
+    }).encode()
+    try:
+        with urllib.request.urlopen("https://oauth2.googleapis.com/token", data=data,
+                                    timeout=30) as fh:
+            token = json.loads(fh.read().decode()).get("access_token")
+        if not token:
+            return None
+        req = urllib.request.Request(
+            "https://www.googleapis.com/youtube/v3/channels?part=id&mine=true",
+            headers={"Authorization": f"Bearer {token}"})
+        with urllib.request.urlopen(req, timeout=30) as fh:
+            items = json.loads(fh.read().decode()).get("items", [])
+        return items[0]["id"] if items else None
+    except Exception:
+        return None
+
+
+def client_from_env() -> tuple[str, str] | None:
+    """(client_id, client_secret) from the environment, or None."""
+    cid = (os.environ.get("YT_CLIENT_ID") or os.environ.get("YOUTUBE_CLIENT_ID") or "").strip()
+    secret = (os.environ.get("YT_CLIENT_SECRET") or os.environ.get("YOUTUBE_CLIENT_SECRET") or "").strip()
+    return (cid, secret) if cid and secret else None
+
+
+def materialise_env_token(slug: str | None, expected_channel: str | None = None) -> str | None:
+    """Write the environment's refresh token to the token file, if there is one.
+
+    When `expected_channel` is given and the environment holds several tokens, the
+    matching one is found by asking Google which channel each belongs to. That
+    makes a four-channel secret self-selecting: no channel-to-variable mapping has
+    to be configured by hand, and a token for the wrong channel is never used.
+
+    Returns the path it wrote, or None when the environment holds no token.
+    """
+    candidates = env_token_candidates(slug)
+    if not candidates:
+        return None
+    client = client_from_env()
+    if not client:
+        sys.exit(f"Found a refresh token in {candidates[0][1]} but no client "
+                 f"id/secret. Set YT_CLIENT_ID and YT_CLIENT_SECRET too.")
+
+    chosen = candidates[0]
+    if expected_channel:
+        for refresh_token, source in candidates:
+            if _channel_id_for_refresh(refresh_token, client) == expected_channel:
+                chosen = (refresh_token, source)
+                break
+        else:
+            sys.exit(f"No refresh token in the environment belongs to channel "
+                     f"{expected_channel}. Authorise that channel first with "
+                     f"scripts/yt_auth.py --loopback --slug <slug>.")
+
+    refresh_token, source = chosen
+    cid, secret = client
+    os.makedirs(os.path.dirname(TOKEN_PATH), exist_ok=True)
+    doc = {
+        "token": None,
+        "refresh_token": refresh_token,
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "client_id": cid,
+        "client_secret": secret,
+        # Deliberately no "scopes": a refresh that names scopes the grant does not
+        # hold fails with invalid_scope. The environment's tokens carry the full
+        # youtube scope, which is wider than the two this script asks for, so let
+        # the grant speak for itself.
+        "scopes": None,
+    }
+    fd = os.open(TOKEN_PATH, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w", encoding="utf-8") as fh:
+        json.dump(doc, fh, indent=2)
+    print(f"using refresh token from {source} -> {TOKEN_PATH}")
+    return TOKEN_PATH
+
+
 def _require_google():
     """Import the Google libraries, or exit with the command that installs them."""
     try:
@@ -137,20 +286,34 @@ def _require_google():
                  "  (google-api-python-client, google-auth-oauthlib)")
 
 
-def load_credentials():
+def load_credentials(expected_channel: str | None = None):
     _require_google()
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
 
     if not os.path.exists(TOKEN_PATH):
-        sys.exit(f"No saved token at {TOKEN_PATH}. Run scripts/yt_auth.py first.")
+        # No file, but the session may already hold a grant. Use it instead of
+        # stopping to ask a human for a browser they do not need.
+        materialise_env_token(slug_from_env(), expected_channel)
+    if not os.path.exists(TOKEN_PATH):
+        sys.exit(f"No saved token at {TOKEN_PATH}. Run scripts/yt_auth.py first, "
+                 f"or set YT_REFRESH_TOKEN + YT_CLIENT_ID + YT_CLIENT_SECRET.")
     creds = Credentials.from_authorized_user_file(TOKEN_PATH, SCOPES)
     if not creds.valid:
-        if creds.expired and creds.refresh_token:
+        if creds.refresh_token:
+            # Refresh must not re-declare scopes: the grant may be wider than
+            # SCOPES (the account-wide tokens carry the full `youtube` scope), and
+            # asking for a scope the grant lacks returns invalid_scope.
+            creds = Credentials(
+                token=None, refresh_token=creds.refresh_token,
+                token_uri=creds.token_uri or "https://oauth2.googleapis.com/token",
+                client_id=creds.client_id, client_secret=creds.client_secret,
+                scopes=None)
             creds.refresh(Request())
             save_token(creds)
         else:
-            sys.exit("Saved token is not usable. Delete it and authorise again.")
+            sys.exit("Saved token is not usable and has no refresh token. "
+                     "Delete it and authorise again.")
     return creds
 
 
@@ -187,13 +350,15 @@ def main() -> int:
                     help="must match a URI registered on the OAuth client")
     ap.add_argument("--port", type=int, default=12001,
                     help="local port the callback lands on (default 12001)")
+    ap.add_argument("--loopback", action="store_true",
+                    help="use http://127.0.0.1:<port>/oauth2callback (must be registered; "
+                         "this is the URI that never changes)")
+    ap.add_argument("--slug", help="channel slug; writes yt_token_<slug>.json "
+                                   "and picks YT_<SLUG>_REFRESH_TOKEN from the env")
     ap.add_argument("--url-only", action="store_true",
                     help="print the URL and exit, without waiting")
     ap.add_argument("--manual-code", action="store_true",
                     help="read the code from stdin instead of waiting for a callback")
-    ap.add_argument("--loopback", action="store_true",
-                    help="use http://127.0.0.1:<port>/oauth2callback (must be registered; "
-                         "this is the URI that never changes)")
     ap.add_argument("--check", action="store_true",
                     help="verify the saved token against the API and exit")
     ap.add_argument("--print-redirects", action="store_true",
@@ -202,17 +367,34 @@ def main() -> int:
                     help="fail if the token belongs to a different channel")
     args = ap.parse_args()
 
+    if args.slug:
+        # One token file per channel, so two channels never share credentials.
+        globals()["TOKEN_PATH"] = os.path.expanduser(
+            f"~/.config/content-lab/yt_token_{args.slug}.json")
+
     if args.print_redirects:
         print("Add these under APIs & Services > Credentials > your OAuth client")
         print("> Authorised redirect URIs, then save:\n")
+        print(f"  {LOOPBACK_REDIRECT}   (loopback — register once, never changes)")
         for host, source in sandbox_hosts():
             print(f"  https://{host}/oauth2callback   ({source})")
-        print("\nThese hostnames change when the sandbox is recreated, so the")
-        print("redirect URI has to be re-registered whenever the pod changes.")
+        if args.loopback:
+            print(f"\nPreferred: use --loopback and register ONLY the loopback URI.")
+        print("\nThe sandbox hostnames change when the pod is recreated, so those")
+        print("URIs need re-registering whenever the pod changes. The loopback URI")
+        print("does not.")
+        runtime = os.environ.get("RUNTIME_URL", "").strip()
+        if runtime:
+            bare = runtime.replace("https://", "").replace("http://", "").strip("/")
+            printed = {h for h, _ in sandbox_hosts()}
+            if bare not in printed:
+                sys.exit(f"\nBUG: $RUNTIME_URL ({bare}) is set but missing from the "
+                         f"printed list. sandbox_hosts() is not reading the environment.")
+            print(f"\n($RUNTIME_URL -> {bare} is in the list above.)")
         return 0
 
     if args.check:
-        creds = load_credentials()
+        creds = load_credentials(args.expected_channel)
         ch = channel_of(creds)
         if not ch:
             print("Token works, but this account has no YouTube channel.")
@@ -236,7 +418,14 @@ def main() -> int:
 
     registered = client.get("redirect_uris", [])
     if args.loopback:
-        args.redirect_uri = f"http://127.0.0.1:{args.port}/oauth2callback"
+        # The owner runs this on their own machine: the browser lands on their
+        # loopback, the code is copied back, and the pod never needs a public
+        # hostname. Default to the canonical 8080 that matches the one redirect
+        # URI worth registering forever.
+        if args.port == 12001:
+            args.port = LOOPBACK_PORT
+        args.redirect_uri = (args.redirect_uri
+                             or f"http://127.0.0.1:{args.port}/oauth2callback")
     if not args.redirect_uri:
         if not registered:
             sys.exit("This OAuth client has no registered redirect URI. Add one:\n"
@@ -292,9 +481,16 @@ def main() -> int:
         print("Reusing the PKCE verifier from the previous run "
               "(its code_challenge is in this URL).")
 
-    print("Open this URL in a browser and approve access:\n")
-    print(url)
-    print()
+    if args.loopback:
+        print("Open this URL in a browser ON YOUR OWN MACHINE and approve:\n")
+        print(url)
+        print(f"\nThe callback lands on {args.redirect_uri} — make sure that exact")
+        print("URI is registered on the OAuth client. It never needs changing again,")
+        print("even when the sandbox is recreated.\n")
+    else:
+        print("Open this URL in a browser and approve access:\n")
+        print(url)
+        print()
 
     if args.url_only:
         print("Then re-run without --url-only to finish. The PKCE verifier was")
@@ -316,6 +512,7 @@ def main() -> int:
                      "Re-run with --manual-code and paste the code from the browser, "
                      "or pass --loopback after registering that URI.")
         port = args.port
+        host = "127.0.0.1" if args.loopback else "0.0.0.0"
         probe = socket.socket()
         if probe.connect_ex(("127.0.0.1", port)) == 0:
             probe.close()
@@ -323,14 +520,15 @@ def main() -> int:
                      f"Pick another with --port and register a matching URI.")
         probe.close()
 
-        httpd = http.server.ThreadingHTTPServer(("0.0.0.0", port), _Catcher)
+        httpd = http.server.ThreadingHTTPServer((host, port), _Catcher)
         t = threading.Thread(target=httpd.serve_forever, daemon=True)
         t.start()
-        print(f"Waiting for the callback on port {port} ...")
-        try:
-            webbrowser.open(url)
-        except Exception:
-            pass
+        print(f"Waiting for the callback on {host}:{port} ...")
+        if not args.loopback:
+            try:
+                webbrowser.open(url)
+            except Exception:
+                pass
         while not _Catcher.result:
             t.join(1)
         httpd.shutdown()
