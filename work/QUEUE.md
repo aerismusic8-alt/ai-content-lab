@@ -52,7 +52,7 @@ channels contradict it: ch3 is the music label. Do not "restore" the old order.
 
 | # | Episode | Source | Target | Status |
 |---|---|---|---|---|
-| ep02 | มัทนะพาธา | King Rama VI, d. 2468 | ~11 min | **READY — built, awaiting upload** |
+| ep02 | มัทนะพาธา | King Rama VI, d. 2468 | ~11 min | **posted (private)** — https://youtu.be/K5BrVH6Pwbg |
 | ep03 | ข้างหลังภาพ | ศรีบูรพา, d. 2517 | ~20 min | open |
 | ep04 | ขุนช้างขุนแผน (one ตอน) | traditional | ~20 min | open |
 | ep05 | ไกรทอง | traditional | ~20 min | open |

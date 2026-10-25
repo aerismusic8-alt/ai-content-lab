@@ -337,6 +337,21 @@ So the handover is:
 Never paste the token into chat, and never commit it — `*_token.json` and
 `receipts/` are gitignored for exactly this reason.
 
+## Two ep02 videos exist on YouTube — one is a duplicate
+
+Both are private, so neither is publicly visible, but there are two:
+
+| video | status | notes |
+|---|---|---|
+| `K5BrVH6Pwbg` | private | the one recorded in `work/CLAIMS.json` |
+| `2r8CGSE-vUc` | private | earlier (02:13Z), not recorded anywhere, cause unknown |
+
+Both were confirmed to exist by fetching `youtube.com/watch?v=<id>` and seeing
+`"status":"LOGIN_REQUIRED"` — an invented id returns `"status":"ERROR"` instead.
+Nothing in this repository or this pod explains `2r8CGSE-vUc`, and it cannot be
+inspected or removed without the channel's token. Delete it in YouTube Studio
+unless it is wanted; the recorded episode is `K5BrVH6Pwbg`.
+
 ## What to send when reporting an upload
 
 A claim of a successful upload cannot be checked from another sandbox: private
